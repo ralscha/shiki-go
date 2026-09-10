@@ -1,8 +1,8 @@
 package textmate
 
 import (
+	"github.com/ralscha/shiki-go/internal/oniguruma"
 	"regexp"
-	"shiki-go/internal/oniguruma"
 	"slices"
 	"strconv"
 	"strings"

@@ -2,7 +2,7 @@ package transformers
 
 import (
 	"fmt"
-	shiki "shiki-go"
+	shiki "github.com/ralscha/shiki-go"
 	"strings"
 )
 

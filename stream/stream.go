@@ -5,8 +5,8 @@ package stream
 import (
 	"context"
 	"fmt"
+	shiki "github.com/ralscha/shiki-go"
 	"io"
-	shiki "shiki-go"
 	"strings"
 	"sync"
 	"unicode/utf8"

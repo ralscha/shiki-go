@@ -6,7 +6,7 @@ package shiki
 import (
 	"bytes"
 	"encoding/json"
-	"shiki-go/internal/textmate"
+	"github.com/ralscha/shiki-go/internal/textmate"
 	"strings"
 	"time"
 )

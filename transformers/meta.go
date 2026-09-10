@@ -1,8 +1,8 @@
 package transformers
 
 import (
+	shiki "github.com/ralscha/shiki-go"
 	"regexp"
-	shiki "shiki-go"
 	"slices"
 	"strconv"
 	"strings"

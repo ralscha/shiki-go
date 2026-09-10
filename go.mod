@@ -1,4 +1,4 @@
-module shiki-go
+module github.com/ralscha/shiki-go
 
 go 1.27.1
 

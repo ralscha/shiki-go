@@ -1,8 +1,8 @@
 package shiki
 
 import (
-	"shiki-go/internal/oniguruma"
-	"shiki-go/internal/textmate"
+	"github.com/ralscha/shiki-go/internal/oniguruma"
+	"github.com/ralscha/shiki-go/internal/textmate"
 )
 
 // RegexCapture uses UTF-8 byte offsets; unmatched captures use -1.

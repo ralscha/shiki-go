@@ -2,8 +2,8 @@ package shiki_test
 
 import (
 	"fmt"
-	shiki "shiki-go"
-	"shiki-go/transformers"
+	shiki "github.com/ralscha/shiki-go"
+	"github.com/ralscha/shiki-go/transformers"
 	"strings"
 )
 

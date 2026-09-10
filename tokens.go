@@ -2,9 +2,9 @@ package shiki
 
 import (
 	"fmt"
+	"github.com/ralscha/shiki-go/internal/textmate"
 	"maps"
 	"regexp"
-	"shiki-go/internal/textmate"
 	"sort"
 	"strings"
 	"time"

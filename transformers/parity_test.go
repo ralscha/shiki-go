@@ -2,8 +2,8 @@ package transformers
 
 import (
 	"encoding/json"
+	shiki "github.com/ralscha/shiki-go"
 	"os"
-	shiki "shiki-go"
 	"testing"
 )
 

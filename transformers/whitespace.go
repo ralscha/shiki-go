@@ -2,8 +2,8 @@ package transformers
 
 import (
 	"fmt"
+	shiki "github.com/ralscha/shiki-go"
 	"regexp"
-	shiki "shiki-go"
 	"strconv"
 	"strings"
 )

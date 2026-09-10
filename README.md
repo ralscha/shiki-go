@@ -14,10 +14,10 @@ and validation limits.
 
 ## Library
 
-The local module path is `shiki-go`. Within this checkout:
+The module is published from [github.com/ralscha/shiki-go](https://github.com/ralscha/shiki-go):
 
 ```go
-import shiki "shiki-go"
+import shiki "github.com/ralscha/shiki-go"
 
 html, err := shiki.CodeToHTML("const answer = 42", shiki.Options{
     Lang:  "javascript",
@@ -101,7 +101,7 @@ object orders automatically.
 ### Transformers and decorations
 
 ```go
-import "shiki-go/transformers"
+import "github.com/ralscha/shiki-go/transformers"
 
 html, err := h.CodeToHTML(code, shiki.Options{
     Lang:  "go",
@@ -146,7 +146,7 @@ Reuse grammar state with the same highlighter, language, and registered themes.
 The syntax stack is immutable and can be used to tokenize multiple branches.
 `GrammarContextCode` supplies preceding code when a saved state is unavailable.
 
-`shiki-go/stream.NewTokenizer(h, options)` implements Shiki's incremental
+`github.com/ralscha/shiki-go/stream.NewTokenizer(h, options)` implements Shiki's incremental
 stable/unstable token protocol. `Enqueue` returns a recall count and new stable
 and provisional tokens. Remove the recalled provisional tokens before
 appending the returned tokens. `Close` returns the remaining provisional

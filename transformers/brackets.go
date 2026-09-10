@@ -2,9 +2,9 @@ package transformers
 
 import (
 	"encoding/json"
+	shiki "github.com/ralscha/shiki-go"
 	"maps"
 	"regexp"
-	shiki "shiki-go"
 	"slices"
 	"sort"
 	"strings"

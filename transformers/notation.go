@@ -2,9 +2,9 @@
 package transformers
 
 import (
+	shiki "github.com/ralscha/shiki-go"
 	"maps"
 	"regexp"
-	shiki "shiki-go"
 	"sort"
 	"strconv"
 	"strings"

@@ -1,8 +1,8 @@
 package transformers
 
 import (
+	shiki "github.com/ralscha/shiki-go"
 	"maps"
-	shiki "shiki-go"
 	"strconv"
 	"strings"
 	"sync"

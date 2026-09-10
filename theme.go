@@ -3,8 +3,8 @@ package shiki
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/ralscha/shiki-go/internal/textmate"
 	"regexp"
-	"shiki-go/internal/textmate"
 	"sort"
 	"strings"
 )

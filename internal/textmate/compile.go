@@ -2,8 +2,8 @@ package textmate
 
 import (
 	"fmt"
+	"github.com/ralscha/shiki-go/internal/oniguruma"
 	"maps"
-	"shiki-go/internal/oniguruma"
 	"sort"
 	"strconv"
 	"strings"

@@ -16,7 +16,7 @@ func testApp(t *testing.T) *app {
 	t.Helper()
 	a := &app{root: filepath.Join(t.TempDir(), "checkout with spaces"), ctx: context.Background(), out: io.Discard, errOut: io.Discard}
 	files := map[string]string{
-		"go.mod":                       "module shiki-go\n",
+		"go.mod":                       "module github.com/ralscha/shiki-go\n",
 		"tools/reference/package.json": `{"dependencies":{"shiki":"4.4.3","tm-grammars":"1.32.3","tm-themes":"1.12.3","vscode-oniguruma":"1.7.0"}}`,
 		"tools/reference/source.json":  `{"sourceCommit":"48cd2cc695ed2e3357c3f9c370578ea843d6d9a3"}`,
 		"assets/catalog.json":          `{"version":"4.4.3","languages":[{"id":"javascript","aliases":["js"]}]}`,

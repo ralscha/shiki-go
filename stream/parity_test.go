@@ -2,9 +2,9 @@ package stream
 
 import (
 	"encoding/json"
+	shiki "github.com/ralscha/shiki-go"
 	"os"
 	"reflect"
-	shiki "shiki-go"
 	"testing"
 )
 

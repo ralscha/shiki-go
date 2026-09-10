@@ -2,9 +2,9 @@ package stream
 
 import (
 	"context"
+	shiki "github.com/ralscha/shiki-go"
 	"io"
 	"reflect"
-	shiki "shiki-go"
 	"strings"
 	"testing"
 )

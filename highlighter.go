@@ -3,7 +3,7 @@ package shiki
 import (
 	"encoding/json"
 	"fmt"
-	"shiki-go/internal/textmate"
+	"github.com/ralscha/shiki-go/internal/textmate"
 	"slices"
 	"sort"
 	"strings"
