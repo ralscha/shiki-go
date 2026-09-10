@@ -1,0 +1,958 @@
+{
+  "kind": "advanced",
+  "highlighter": {
+    "langs": [
+      "js",
+      "markdown",
+      {
+        "name": "test-empty-match",
+        "scopeName": "source.test-empty-match",
+        "patterns": [
+          {
+            "match": "",
+            "name": "invalid"
+          },
+          {
+            "match": "hello",
+            "name": "keyword"
+          }
+        ]
+      },
+      {
+        "name": "test-while",
+        "scopeName": "source.test-while",
+        "patterns": [
+          {
+            "begin": "^(>)( ?)",
+            "while": "^(>)( ?)",
+            "name": "markup.quote",
+            "contentName": "meta.content",
+            "beginCaptures": {
+              "1": {
+                "name": "punctuation.definition.quote"
+              }
+            },
+            "whileCaptures": {
+              "1": {
+                "name": "punctuation.definition.quote"
+              }
+            },
+            "patterns": [
+              {
+                "match": "\\b\\d+\\b",
+                "name": "constant.numeric"
+              }
+            ]
+          },
+          {
+            "match": "\\b\\w+\\b",
+            "name": "keyword.control"
+          }
+        ]
+      },
+      {
+        "name": "test-backref",
+        "scopeName": "source.test-backref",
+        "patterns": [
+          {
+            "begin": "<<([A-Z]+)",
+            "end": "^\\1$",
+            "name": "string.heredoc.$1",
+            "contentName": "meta.heredoc.${1:/downcase}",
+            "beginCaptures": {
+              "1": {
+                "name": "entity.name.tag"
+              }
+            },
+            "endCaptures": {
+              "0": {
+                "name": "entity.name.tag"
+              }
+            },
+            "patterns": [
+              {
+                "match": "\\$\\w+",
+                "name": "variable.other"
+              }
+            ]
+          },
+          {
+            "match": "(\\w+)(:)(.*)$",
+            "name": "meta.assignment",
+            "captures": {
+              "1": {
+                "name": "variable.other"
+              },
+              "2": {
+                "name": "punctuation.separator"
+              },
+              "3": {
+                "patterns": [
+                  {
+                    "match": "\\d+",
+                    "name": "constant.numeric"
+                  },
+                  {
+                    "match": "\"[^\"]*\"",
+                    "name": "string.quoted"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "test-inject",
+        "scopeName": "source.test-inject",
+        "patterns": [
+          {
+            "begin": "/\\*",
+            "end": "\\*/",
+            "name": "comment.block"
+          },
+          {
+            "match": "\\w+",
+            "name": "variable.other"
+          }
+        ],
+        "injections": {
+          "L:comment - comment.block.ignored": {
+            "match": "\\bTODO\\b",
+            "name": "keyword.other.todo"
+          },
+          "R:source.test-inject": {
+            "match": "right",
+            "name": "constant.language"
+          }
+        }
+      },
+      {
+        "name": "test-external",
+        "scopeName": "source.test-external",
+        "injectTo": [
+          "source.test-inject"
+        ],
+        "injectionSelector": "L:comment",
+        "patterns": [
+          {
+            "match": "FIXME",
+            "name": "invalid.illegal"
+          }
+        ]
+      },
+      {
+        "name": "test-end-last",
+        "scopeName": "source.test-end-last",
+        "patterns": [
+          {
+            "begin": "\\[",
+            "end": "\\]",
+            "applyEndPatternLast": true,
+            "name": "meta.square",
+            "patterns": [
+              {
+                "match": "\\]\\]",
+                "name": "constant.character.escape"
+              }
+            ]
+          },
+          {
+            "begin": "\\(",
+            "end": "\\)",
+            "name": "meta.round",
+            "patterns": [
+              {
+                "match": "\\)\\)",
+                "name": "constant.character.escape"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "test-zero",
+        "scopeName": "source.test-zero",
+        "patterns": [
+          {
+            "begin": "(?=a)",
+            "end": "(?=b)",
+            "name": "meta.zero",
+            "patterns": [
+              {
+                "match": "a+",
+                "name": "keyword"
+              }
+            ]
+          },
+          {
+            "match": "b+",
+            "name": "constant"
+          },
+          {
+            "match": "(?=x)",
+            "name": "invalid"
+          }
+        ]
+      }
+    ],
+    "themes": [
+      "github-dark",
+      "github-light",
+      {
+        "name": "custom-invalid",
+        "settings": [
+          {
+            "settings": {
+              "foreground": "#12345",
+              "background": "#xyz"
+            }
+          },
+          {
+            "scope": "keyword",
+            "settings": {
+              "foreground": "#abcdefg"
+            }
+          }
+        ]
+      },
+      {
+        "name": "custom-css",
+        "type": "light",
+        "colors": {
+          "editor.foreground": "#00000001",
+          "editor.background": "#00000002",
+          "terminal.ansiRed": "#00000004"
+        },
+        "tokenColors": [
+          {
+            "settings": {
+              "foreground": "var(--fg)",
+              "background": "var(--bg)"
+            }
+          },
+          {
+            "scope": "keyword",
+            "settings": {
+              "foreground": "var(--kw)",
+              "fontStyle": "bold"
+            }
+          },
+          {
+            "scope": "string",
+            "settings": {
+              "foreground": "var(--fg)"
+            }
+          }
+        ]
+      },
+      {
+        "name": "custom-replace",
+        "settings": [
+          {
+            "settings": {
+              "foreground": "#123456",
+              "background": "#abcdef"
+            }
+          },
+          {
+            "scope": "keyword",
+            "settings": {
+              "foreground": "#654321"
+            }
+          }
+        ],
+        "colorReplacements": {
+          "#123456": "var(--fg)",
+          "#abcdef": "var(--bg)",
+          "#654321": "var(--kw)"
+        }
+      }
+    ]
+  },
+  "grammars": [
+    {
+      "name": "test-empty-match",
+      "scopeName": "source.test-empty-match",
+      "patterns": [
+        {
+          "match": "",
+          "name": "invalid"
+        },
+        {
+          "match": "hello",
+          "name": "keyword"
+        }
+      ]
+    },
+    {
+      "name": "test-while",
+      "scopeName": "source.test-while",
+      "patterns": [
+        {
+          "begin": "^(>)( ?)",
+          "while": "^(>)( ?)",
+          "name": "markup.quote",
+          "contentName": "meta.content",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.definition.quote"
+            }
+          },
+          "whileCaptures": {
+            "1": {
+              "name": "punctuation.definition.quote"
+            }
+          },
+          "patterns": [
+            {
+              "match": "\\b\\d+\\b",
+              "name": "constant.numeric"
+            }
+          ]
+        },
+        {
+          "match": "\\b\\w+\\b",
+          "name": "keyword.control"
+        }
+      ]
+    },
+    {
+      "name": "test-backref",
+      "scopeName": "source.test-backref",
+      "patterns": [
+        {
+          "begin": "<<([A-Z]+)",
+          "end": "^\\1$",
+          "name": "string.heredoc.$1",
+          "contentName": "meta.heredoc.${1:/downcase}",
+          "beginCaptures": {
+            "1": {
+              "name": "entity.name.tag"
+            }
+          },
+          "endCaptures": {
+            "0": {
+              "name": "entity.name.tag"
+            }
+          },
+          "patterns": [
+            {
+              "match": "\\$\\w+",
+              "name": "variable.other"
+            }
+          ]
+        },
+        {
+          "match": "(\\w+)(:)(.*)$",
+          "name": "meta.assignment",
+          "captures": {
+            "1": {
+              "name": "variable.other"
+            },
+            "2": {
+              "name": "punctuation.separator"
+            },
+            "3": {
+              "patterns": [
+                {
+                  "match": "\\d+",
+                  "name": "constant.numeric"
+                },
+                {
+                  "match": "\"[^\"]*\"",
+                  "name": "string.quoted"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "test-inject",
+      "scopeName": "source.test-inject",
+      "patterns": [
+        {
+          "begin": "/\\*",
+          "end": "\\*/",
+          "name": "comment.block"
+        },
+        {
+          "match": "\\w+",
+          "name": "variable.other"
+        }
+      ],
+      "injections": {
+        "L:comment - comment.block.ignored": {
+          "match": "\\bTODO\\b",
+          "name": "keyword.other.todo"
+        },
+        "R:source.test-inject": {
+          "match": "right",
+          "name": "constant.language"
+        }
+      }
+    },
+    {
+      "name": "test-external",
+      "scopeName": "source.test-external",
+      "injectTo": [
+        "source.test-inject"
+      ],
+      "injectionSelector": "L:comment",
+      "patterns": [
+        {
+          "match": "FIXME",
+          "name": "invalid.illegal"
+        }
+      ]
+    },
+    {
+      "name": "test-end-last",
+      "scopeName": "source.test-end-last",
+      "patterns": [
+        {
+          "begin": "\\[",
+          "end": "\\]",
+          "applyEndPatternLast": true,
+          "name": "meta.square",
+          "patterns": [
+            {
+              "match": "\\]\\]",
+              "name": "constant.character.escape"
+            }
+          ]
+        },
+        {
+          "begin": "\\(",
+          "end": "\\)",
+          "name": "meta.round",
+          "patterns": [
+            {
+              "match": "\\)\\)",
+              "name": "constant.character.escape"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "test-zero",
+      "scopeName": "source.test-zero",
+      "patterns": [
+        {
+          "begin": "(?=a)",
+          "end": "(?=b)",
+          "name": "meta.zero",
+          "patterns": [
+            {
+              "match": "a+",
+              "name": "keyword"
+            }
+          ]
+        },
+        {
+          "match": "b+",
+          "name": "constant"
+        },
+        {
+          "match": "(?=x)",
+          "name": "invalid"
+        }
+      ]
+    }
+  ],
+  "themes": [
+    {
+      "name": "custom-invalid",
+      "settings": [
+        {
+          "settings": {
+            "foreground": "#12345",
+            "background": "#xyz"
+          }
+        },
+        {
+          "scope": "keyword",
+          "settings": {
+            "foreground": "#abcdefg"
+          }
+        }
+      ]
+    },
+    {
+      "name": "custom-css",
+      "type": "light",
+      "colors": {
+        "editor.foreground": "#00000001",
+        "editor.background": "#00000002",
+        "terminal.ansiRed": "#00000004"
+      },
+      "tokenColors": [
+        {
+          "settings": {
+            "foreground": "var(--fg)",
+            "background": "var(--bg)"
+          }
+        },
+        {
+          "scope": "keyword",
+          "settings": {
+            "foreground": "var(--kw)",
+            "fontStyle": "bold"
+          }
+        },
+        {
+          "scope": "string",
+          "settings": {
+            "foreground": "var(--fg)"
+          }
+        }
+      ]
+    },
+    {
+      "name": "custom-replace",
+      "settings": [
+        {
+          "settings": {
+            "foreground": "#123456",
+            "background": "#abcdef"
+          }
+        },
+        {
+          "scope": "keyword",
+          "settings": {
+            "foreground": "#654321"
+          }
+        }
+      ],
+      "colorReplacements": {
+        "#123456": "var(--fg)",
+        "#abcdef": "var(--bg)",
+        "#654321": "var(--kw)"
+      }
+    }
+  ],
+  "cases": [
+    {
+      "name": "test-empty-match",
+      "code": "hello\nworld",
+      "options": {
+        "lang": "test-empty-match",
+        "theme": "github-dark",
+        "includeExplanation": true
+      }
+    },
+    {
+      "name": "test-while",
+      "code": "> first 123\n> next 45\nplain\n> last\n",
+      "options": {
+        "lang": "test-while",
+        "theme": "github-dark",
+        "includeExplanation": true
+      }
+    },
+    {
+      "name": "test-backref",
+      "code": "<<HELLO\nhi $USER\nHELLO\nname: 123 \"hi\"\n<<OPEN",
+      "options": {
+        "lang": "test-backref",
+        "theme": "github-dark",
+        "includeExplanation": true
+      }
+    },
+    {
+      "name": "test-inject",
+      "code": "/* TODO FIXME note */ right left",
+      "options": {
+        "lang": "test-inject",
+        "theme": "github-dark",
+        "includeExplanation": true
+      }
+    },
+    {
+      "name": "test-end-last",
+      "code": "[abc]]def] (abc))def)",
+      "options": {
+        "lang": "test-end-last",
+        "theme": "github-dark",
+        "includeExplanation": true
+      }
+    },
+    {
+      "name": "test-zero",
+      "code": "aaabbb\nxxaaabb",
+      "options": {
+        "lang": "test-zero",
+        "theme": "github-dark",
+        "includeExplanation": true
+      }
+    },
+    {
+      "name": "custom-invalid-string",
+      "code": "const x = \"hello\"",
+      "options": {
+        "lang": "js",
+        "theme": "custom-invalid",
+        "includeExplanation": true
+      }
+    },
+    {
+      "name": "custom-invalid-object",
+      "code": "const x = \"hello\"",
+      "options": {
+        "lang": "js",
+        "theme": {
+          "name": "custom-invalid",
+          "settings": [
+            {
+              "settings": {
+                "foreground": "#12345",
+                "background": "#xyz"
+              }
+            },
+            {
+              "scope": "keyword",
+              "settings": {
+                "foreground": "#abcdefg"
+              }
+            }
+          ]
+        },
+        "includeExplanation": true
+      }
+    },
+    {
+      "name": "custom-css-string",
+      "code": "const x = \"hello\"",
+      "options": {
+        "lang": "js",
+        "theme": "custom-css",
+        "includeExplanation": true
+      }
+    },
+    {
+      "name": "custom-css-object",
+      "code": "const x = \"hello\"",
+      "options": {
+        "lang": "js",
+        "theme": {
+          "name": "custom-css",
+          "type": "light",
+          "colors": {
+            "editor.foreground": "#00000001",
+            "editor.background": "#00000002",
+            "terminal.ansiRed": "#00000004"
+          },
+          "tokenColors": [
+            {
+              "settings": {
+                "foreground": "var(--fg)",
+                "background": "var(--bg)"
+              }
+            },
+            {
+              "scope": "keyword",
+              "settings": {
+                "foreground": "var(--kw)",
+                "fontStyle": "bold"
+              }
+            },
+            {
+              "scope": "string",
+              "settings": {
+                "foreground": "var(--fg)"
+              }
+            }
+          ]
+        },
+        "includeExplanation": true
+      }
+    },
+    {
+      "name": "custom-replace-string",
+      "code": "const x = \"hello\"",
+      "options": {
+        "lang": "js",
+        "theme": "custom-replace",
+        "includeExplanation": true
+      }
+    },
+    {
+      "name": "custom-replace-object",
+      "code": "const x = \"hello\"",
+      "options": {
+        "lang": "js",
+        "theme": {
+          "name": "custom-replace",
+          "settings": [
+            {
+              "settings": {
+                "foreground": "#123456",
+                "background": "#abcdef"
+              }
+            },
+            {
+              "scope": "keyword",
+              "settings": {
+                "foreground": "#654321"
+              }
+            }
+          ],
+          "colorReplacements": {
+            "#123456": "var(--fg)",
+            "#abcdef": "var(--bg)",
+            "#654321": "var(--kw)"
+          }
+        },
+        "includeExplanation": true
+      }
+    },
+    {
+      "name": "replacement-12",
+      "code": "const x = 1",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark",
+        "colorReplacements": {
+          "github-dark": {
+            "#f97583": "red"
+          },
+          "#f97583": "blue"
+        }
+      }
+    },
+    {
+      "name": "replacement-13",
+      "code": "const x = 1",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark",
+        "colorReplacements": {
+          "#f97583": "blue",
+          "github-dark": {
+            "#f97583": "red"
+          }
+        }
+      }
+    },
+    {
+      "name": "variants-14",
+      "code": "**bold** *italic* `code`\n\ntext",
+      "options": {
+        "lang": "markdown",
+        "themes": {
+          "dark": "github-dark",
+          "light": "github-light"
+        }
+      }
+    },
+    {
+      "name": "variants-15",
+      "code": "**bold** *italic* `code`\n\ntext",
+      "options": {
+        "lang": "markdown",
+        "themes": {
+          "dark": "github-dark",
+          "light": "github-light"
+        },
+        "defaultColor": false
+      }
+    },
+    {
+      "name": "variants-16",
+      "code": "**bold** *italic* `code`\n\ntext",
+      "options": {
+        "lang": "markdown",
+        "themes": {
+          "dark": "github-dark",
+          "light": "github-light"
+        },
+        "defaultColor": "light-dark()"
+      }
+    },
+    {
+      "name": "variants-17",
+      "code": "**bold** *italic* `code`\n\ntext",
+      "options": {
+        "lang": "markdown",
+        "themes": {
+          "dark": "github-dark",
+          "light": "github-light"
+        },
+        "colorsRendering": "none"
+      }
+    },
+    {
+      "name": "variants-18",
+      "code": "**bold** *italic* `code`\n\ntext",
+      "options": {
+        "lang": "markdown",
+        "themes": {
+          "dark": "github-dark",
+          "light": "github-light"
+        },
+        "defaultColor": "light-dark()",
+        "colorsRendering": "none"
+      }
+    },
+    {
+      "name": "variants-19",
+      "code": "**bold** *italic* `code`\n\ntext",
+      "options": {
+        "lang": "markdown",
+        "themes": {
+          "dark": "github-dark",
+          "light": "github-light"
+        },
+        "cssVariablePrefix": "--syntax-"
+      }
+    },
+    {
+      "name": "duplicate-theme",
+      "code": "const x = 1",
+      "options": {
+        "lang": "js",
+        "themes": {
+          "light": "github-dark",
+          "dark": "github-dark"
+        }
+      }
+    },
+    {
+      "name": "state-21",
+      "code": "comment */ const x = 1",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark"
+      },
+      "prefix": "/* open"
+    },
+    {
+      "name": "state-22",
+      "code": "1 + 2} world`",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark"
+      },
+      "prefix": "const x = `hello ${"
+    },
+    {
+      "name": "state-23",
+      "code": "text\nHEREDOC\nname: 42",
+      "options": {
+        "lang": "test-backref",
+        "theme": "github-dark"
+      },
+      "prefix": "<<HEREDOC"
+    },
+    {
+      "name": "state-24",
+      "code": "> second\nplain",
+      "options": {
+        "lang": "test-while",
+        "theme": "github-dark"
+      },
+      "prefix": "> first"
+    }
+  ],
+  "ansi": [
+    {
+      "name": "github-dark-js",
+      "code": "const x = \"hello\"\n// comment\n",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "github-dark-markdown",
+      "code": "**bold** *italic* ~~strike~~",
+      "options": {
+        "lang": "markdown",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "github-dark-text",
+      "code": "plain\n",
+      "options": {
+        "lang": "text",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "github-light-js",
+      "code": "const x = \"hello\"\n// comment\n",
+      "options": {
+        "lang": "js",
+        "theme": "github-light"
+      }
+    },
+    {
+      "name": "github-light-markdown",
+      "code": "**bold** *italic* ~~strike~~",
+      "options": {
+        "lang": "markdown",
+        "theme": "github-light"
+      }
+    },
+    {
+      "name": "github-light-text",
+      "code": "plain\n",
+      "options": {
+        "lang": "text",
+        "theme": "github-light"
+      }
+    },
+    {
+      "name": "rose-pine-js",
+      "code": "const x = \"hello\"\n// comment\n",
+      "options": {
+        "lang": "js",
+        "theme": "rose-pine"
+      }
+    },
+    {
+      "name": "rose-pine-markdown",
+      "code": "**bold** *italic* ~~strike~~",
+      "options": {
+        "lang": "markdown",
+        "theme": "rose-pine"
+      }
+    },
+    {
+      "name": "rose-pine-text",
+      "code": "plain\n",
+      "options": {
+        "lang": "text",
+        "theme": "rose-pine"
+      }
+    },
+    {
+      "name": "vitesse-dark-js",
+      "code": "const x = \"hello\"\n// comment\n",
+      "options": {
+        "lang": "js",
+        "theme": "vitesse-dark"
+      }
+    },
+    {
+      "name": "vitesse-dark-markdown",
+      "code": "**bold** *italic* ~~strike~~",
+      "options": {
+        "lang": "markdown",
+        "theme": "vitesse-dark"
+      }
+    },
+    {
+      "name": "vitesse-dark-text",
+      "code": "plain\n",
+      "options": {
+        "lang": "text",
+        "theme": "vitesse-dark"
+      }
+    }
+  ]
+}

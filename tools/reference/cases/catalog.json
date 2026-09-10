@@ -1,0 +1,15 @@
+{
+  "kind": "highlight",
+  "highlighter": {
+    "langs": "*",
+    "themes": [
+      "github-dark"
+    ]
+  },
+  "allLanguages": {
+    "code": "// comment\n# comment\n/* block\n comment */\nconst value = \"hello 😀\";\nfunction main(x) {\n  return x + 42;\n}\n<div class=\"x\">hello</div>\n",
+    "options": {
+      "theme": "github-dark"
+    }
+  }
+}

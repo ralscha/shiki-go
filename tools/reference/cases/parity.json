@@ -1,0 +1,1004 @@
+{
+  "kind": "highlight",
+  "highlighter": {
+    "langs": [
+      "javascript",
+      "typescript",
+      "go",
+      "python",
+      "rust",
+      "html",
+      "css",
+      "json",
+      "yaml",
+      "markdown",
+      "shellscript",
+      "ruby",
+      "sql",
+      "vue",
+      "tsx",
+      "text",
+      "ansi",
+      "js"
+    ],
+    "themes": [
+      "github-dark",
+      "github-light",
+      "nord",
+      "vitesse-dark"
+    ]
+  },
+  "cases": [
+    {
+      "name": "javascript-github-dark",
+      "code": "const answer = 42;\nconsole.log(\"hello\", answer) // note\n",
+      "options": {
+        "lang": "javascript",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "javascript-github-light",
+      "code": "const answer = 42;\nconsole.log(\"hello\", answer) // note\n",
+      "options": {
+        "lang": "javascript",
+        "theme": "github-light"
+      }
+    },
+    {
+      "name": "javascript-nord",
+      "code": "const answer = 42;\nconsole.log(\"hello\", answer) // note\n",
+      "options": {
+        "lang": "javascript",
+        "theme": "nord"
+      }
+    },
+    {
+      "name": "typescript-github-dark",
+      "code": "interface User { name: string; age?: number }\nconst f = <T>(x: T): T => x;\n",
+      "options": {
+        "lang": "typescript",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "typescript-github-light",
+      "code": "interface User { name: string; age?: number }\nconst f = <T>(x: T): T => x;\n",
+      "options": {
+        "lang": "typescript",
+        "theme": "github-light"
+      }
+    },
+    {
+      "name": "typescript-nord",
+      "code": "interface User { name: string; age?: number }\nconst f = <T>(x: T): T => x;\n",
+      "options": {
+        "lang": "typescript",
+        "theme": "nord"
+      }
+    },
+    {
+      "name": "go-github-dark",
+      "code": "package main\n\nimport \"fmt\"\nfunc main() { fmt.Println(\"hello 😀\") }\n",
+      "options": {
+        "lang": "go",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "go-github-light",
+      "code": "package main\n\nimport \"fmt\"\nfunc main() { fmt.Println(\"hello 😀\") }\n",
+      "options": {
+        "lang": "go",
+        "theme": "github-light"
+      }
+    },
+    {
+      "name": "go-nord",
+      "code": "package main\n\nimport \"fmt\"\nfunc main() { fmt.Println(\"hello 😀\") }\n",
+      "options": {
+        "lang": "go",
+        "theme": "nord"
+      }
+    },
+    {
+      "name": "python-github-dark",
+      "code": "def hello(name: str):\n    \"\"\"A docstring.\n    Another line.\"\"\"\n    return f\"Hello {name}!\" # comment\n",
+      "options": {
+        "lang": "python",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "python-github-light",
+      "code": "def hello(name: str):\n    \"\"\"A docstring.\n    Another line.\"\"\"\n    return f\"Hello {name}!\" # comment\n",
+      "options": {
+        "lang": "python",
+        "theme": "github-light"
+      }
+    },
+    {
+      "name": "python-nord",
+      "code": "def hello(name: str):\n    \"\"\"A docstring.\n    Another line.\"\"\"\n    return f\"Hello {name}!\" # comment\n",
+      "options": {
+        "lang": "python",
+        "theme": "nord"
+      }
+    },
+    {
+      "name": "rust-github-dark",
+      "code": "fn main() { let x: &str = r#\"hello\"#; println!(\"{}\", x); }",
+      "options": {
+        "lang": "rust",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "rust-github-light",
+      "code": "fn main() { let x: &str = r#\"hello\"#; println!(\"{}\", x); }",
+      "options": {
+        "lang": "rust",
+        "theme": "github-light"
+      }
+    },
+    {
+      "name": "rust-nord",
+      "code": "fn main() { let x: &str = r#\"hello\"#; println!(\"{}\", x); }",
+      "options": {
+        "lang": "rust",
+        "theme": "nord"
+      }
+    },
+    {
+      "name": "html-github-dark",
+      "code": "<!doctype html>\n<div class=\"hello\">&amp; <b>世界</b></div>\n<script>const x = 1</script>",
+      "options": {
+        "lang": "html",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "html-github-light",
+      "code": "<!doctype html>\n<div class=\"hello\">&amp; <b>世界</b></div>\n<script>const x = 1</script>",
+      "options": {
+        "lang": "html",
+        "theme": "github-light"
+      }
+    },
+    {
+      "name": "html-nord",
+      "code": "<!doctype html>\n<div class=\"hello\">&amp; <b>世界</b></div>\n<script>const x = 1</script>",
+      "options": {
+        "lang": "html",
+        "theme": "nord"
+      }
+    },
+    {
+      "name": "css-github-dark",
+      "code": "/* hi */\n.foo:hover { color: #fff; --x: 1; margin: 0 1em; }",
+      "options": {
+        "lang": "css",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "css-github-light",
+      "code": "/* hi */\n.foo:hover { color: #fff; --x: 1; margin: 0 1em; }",
+      "options": {
+        "lang": "css",
+        "theme": "github-light"
+      }
+    },
+    {
+      "name": "css-nord",
+      "code": "/* hi */\n.foo:hover { color: #fff; --x: 1; margin: 0 1em; }",
+      "options": {
+        "lang": "css",
+        "theme": "nord"
+      }
+    },
+    {
+      "name": "json-github-dark",
+      "code": "{ \"name\": \"hello\", \"value\": 42, \"ok\": true, \"none\": null }",
+      "options": {
+        "lang": "json",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "json-github-light",
+      "code": "{ \"name\": \"hello\", \"value\": 42, \"ok\": true, \"none\": null }",
+      "options": {
+        "lang": "json",
+        "theme": "github-light"
+      }
+    },
+    {
+      "name": "json-nord",
+      "code": "{ \"name\": \"hello\", \"value\": 42, \"ok\": true, \"none\": null }",
+      "options": {
+        "lang": "json",
+        "theme": "nord"
+      }
+    },
+    {
+      "name": "yaml-github-dark",
+      "code": "name: hello\nlist:\n  - 1\n  - true\ntext: |\n  hello\n  world\n",
+      "options": {
+        "lang": "yaml",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "yaml-github-light",
+      "code": "name: hello\nlist:\n  - 1\n  - true\ntext: |\n  hello\n  world\n",
+      "options": {
+        "lang": "yaml",
+        "theme": "github-light"
+      }
+    },
+    {
+      "name": "yaml-nord",
+      "code": "name: hello\nlist:\n  - 1\n  - true\ntext: |\n  hello\n  world\n",
+      "options": {
+        "lang": "yaml",
+        "theme": "nord"
+      }
+    },
+    {
+      "name": "markdown-github-dark",
+      "code": "# Hello *world*\n\n```js\nconst x = 1\n```\n\n[link](https://example.com)\n",
+      "options": {
+        "lang": "markdown",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "markdown-github-light",
+      "code": "# Hello *world*\n\n```js\nconst x = 1\n```\n\n[link](https://example.com)\n",
+      "options": {
+        "lang": "markdown",
+        "theme": "github-light"
+      }
+    },
+    {
+      "name": "markdown-nord",
+      "code": "# Hello *world*\n\n```js\nconst x = 1\n```\n\n[link](https://example.com)\n",
+      "options": {
+        "lang": "markdown",
+        "theme": "nord"
+      }
+    },
+    {
+      "name": "shellscript-github-dark",
+      "code": "#!/bin/bash\ncat <<EOF\nhello $USER\nEOF\necho \"done\"\n",
+      "options": {
+        "lang": "shellscript",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "shellscript-github-light",
+      "code": "#!/bin/bash\ncat <<EOF\nhello $USER\nEOF\necho \"done\"\n",
+      "options": {
+        "lang": "shellscript",
+        "theme": "github-light"
+      }
+    },
+    {
+      "name": "shellscript-nord",
+      "code": "#!/bin/bash\ncat <<EOF\nhello $USER\nEOF\necho \"done\"\n",
+      "options": {
+        "lang": "shellscript",
+        "theme": "nord"
+      }
+    },
+    {
+      "name": "ruby-github-dark",
+      "code": "class Hello\n  def hi(name)\n    puts \"Hello #{name}\"\n  end\nend\n",
+      "options": {
+        "lang": "ruby",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "ruby-github-light",
+      "code": "class Hello\n  def hi(name)\n    puts \"Hello #{name}\"\n  end\nend\n",
+      "options": {
+        "lang": "ruby",
+        "theme": "github-light"
+      }
+    },
+    {
+      "name": "ruby-nord",
+      "code": "class Hello\n  def hi(name)\n    puts \"Hello #{name}\"\n  end\nend\n",
+      "options": {
+        "lang": "ruby",
+        "theme": "nord"
+      }
+    },
+    {
+      "name": "sql-github-dark",
+      "code": "SELECT id, 'hello' FROM users WHERE n >= 10; -- comment",
+      "options": {
+        "lang": "sql",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "sql-github-light",
+      "code": "SELECT id, 'hello' FROM users WHERE n >= 10; -- comment",
+      "options": {
+        "lang": "sql",
+        "theme": "github-light"
+      }
+    },
+    {
+      "name": "sql-nord",
+      "code": "SELECT id, 'hello' FROM users WHERE n >= 10; -- comment",
+      "options": {
+        "lang": "sql",
+        "theme": "nord"
+      }
+    },
+    {
+      "name": "vue-github-dark",
+      "code": "<script setup lang=\"ts\">\nconst x = ref(1)\n</script>\n<template><div>{{ x }}</div></template>",
+      "options": {
+        "lang": "vue",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "vue-github-light",
+      "code": "<script setup lang=\"ts\">\nconst x = ref(1)\n</script>\n<template><div>{{ x }}</div></template>",
+      "options": {
+        "lang": "vue",
+        "theme": "github-light"
+      }
+    },
+    {
+      "name": "vue-nord",
+      "code": "<script setup lang=\"ts\">\nconst x = ref(1)\n</script>\n<template><div>{{ x }}</div></template>",
+      "options": {
+        "lang": "vue",
+        "theme": "nord"
+      }
+    },
+    {
+      "name": "tsx-github-dark",
+      "code": "export const App = () => <div className=\"hello\">{1 + 2}</div>",
+      "options": {
+        "lang": "tsx",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "tsx-github-light",
+      "code": "export const App = () => <div className=\"hello\">{1 + 2}</div>",
+      "options": {
+        "lang": "tsx",
+        "theme": "github-light"
+      }
+    },
+    {
+      "name": "tsx-nord",
+      "code": "export const App = () => <div className=\"hello\">{1 + 2}</div>",
+      "options": {
+        "lang": "tsx",
+        "theme": "nord"
+      }
+    },
+    {
+      "name": "text-github-dark",
+      "code": "<hello> & \"world\"\r\n\n😀",
+      "options": {
+        "lang": "text",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "text-github-light",
+      "code": "<hello> & \"world\"\r\n\n😀",
+      "options": {
+        "lang": "text",
+        "theme": "github-light"
+      }
+    },
+    {
+      "name": "text-nord",
+      "code": "<hello> & \"world\"\r\n\n😀",
+      "options": {
+        "lang": "text",
+        "theme": "nord"
+      }
+    },
+    {
+      "name": "ansi-github-dark",
+      "code": "\u001b[31mred\u001b[0m plain\n\u001b[1;4;38;2;12;34;56mRGB\u001b[0m",
+      "options": {
+        "lang": "ansi",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "ansi-github-light",
+      "code": "\u001b[31mred\u001b[0m plain\n\u001b[1;4;38;2;12;34;56mRGB\u001b[0m",
+      "options": {
+        "lang": "ansi",
+        "theme": "github-light"
+      }
+    },
+    {
+      "name": "ansi-nord",
+      "code": "\u001b[31mred\u001b[0m plain\n\u001b[1;4;38;2;12;34;56mRGB\u001b[0m",
+      "options": {
+        "lang": "ansi",
+        "theme": "nord"
+      }
+    },
+    {
+      "name": "js-github-dark",
+      "code": "/* first\n\nlast */\nconst emoji = \"😀é中\";\r\n",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "js-github-light",
+      "code": "/* first\n\nlast */\nconst emoji = \"😀é中\";\r\n",
+      "options": {
+        "lang": "js",
+        "theme": "github-light"
+      }
+    },
+    {
+      "name": "js-nord",
+      "code": "/* first\n\nlast */\nconst emoji = \"😀é中\";\r\n",
+      "options": {
+        "lang": "js",
+        "theme": "nord"
+      }
+    },
+    {
+      "name": "options-54",
+      "code": "  const x = \"😀\";  \n// comment\n",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark",
+        "includeExplanation": "scopeName"
+      }
+    },
+    {
+      "name": "options-55",
+      "code": "  const x = \"😀\";  \n// comment\n",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark",
+        "includeExplanation": "tokenType"
+      }
+    },
+    {
+      "name": "options-56",
+      "code": "  const x = \"😀\";  \n// comment\n",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark",
+        "mergeWhitespaces": false
+      }
+    },
+    {
+      "name": "options-57",
+      "code": "  const x = \"😀\";  \n// comment\n",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark",
+        "mergeWhitespaces": "never"
+      }
+    },
+    {
+      "name": "options-58",
+      "code": "  const x = \"😀\";  \n// comment\n",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark",
+        "mergeSameStyleTokens": true
+      }
+    },
+    {
+      "name": "options-59",
+      "code": "  const x = \"😀\";  \n// comment\n",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark",
+        "structure": "inline"
+      }
+    },
+    {
+      "name": "options-60",
+      "code": "  const x = \"😀\";  \n// comment\n",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark",
+        "rootStyle": false,
+        "tabindex": false
+      }
+    },
+    {
+      "name": "options-61",
+      "code": "  const x = \"😀\";  \n// comment\n",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark",
+        "colorReplacements": {
+          "#f97583": "var(--keyword)"
+        }
+      }
+    },
+    {
+      "name": "options-62",
+      "code": "  const x = \"😀\";  \n// comment\n",
+      "options": {
+        "lang": "js",
+        "theme": "none"
+      }
+    },
+    {
+      "name": "options-63",
+      "code": "  const x = \"😀\";  \n// comment\n",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark",
+        "tokenizeMaxLineLength": 5
+      }
+    },
+    {
+      "name": "options-64",
+      "code": "  const x = \"😀\";  \n// comment\n",
+      "options": {
+        "lang": "js",
+        "themes": {
+          "light": "github-light",
+          "dark": "github-dark"
+        }
+      }
+    },
+    {
+      "name": "options-65",
+      "code": "  const x = \"😀\";  \n// comment\n",
+      "options": {
+        "lang": "js",
+        "themes": {
+          "light": "github-light",
+          "dark": "github-dark"
+        },
+        "defaultColor": false
+      }
+    },
+    {
+      "name": "options-66",
+      "code": "  const x = \"😀\";  \n// comment\n",
+      "options": {
+        "lang": "js",
+        "themes": {
+          "light": "github-light",
+          "dark": "github-dark"
+        },
+        "defaultColor": "light-dark()"
+      }
+    },
+    {
+      "name": "extra-67",
+      "code": "const name = \"hi\"\n// comment\n",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark",
+        "decorations": [
+          {
+            "start": 6,
+            "end": 10,
+            "properties": {
+              "class": "marked",
+              "title": "a \"quote\""
+            }
+          }
+        ]
+      },
+      "hast": true
+    },
+    {
+      "name": "extra-68",
+      "code": "const name = \"hi\"\n// comment\n",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark",
+        "decorations": [
+          {
+            "start": 0,
+            "end": 17,
+            "properties": {
+              "class": "outer"
+            }
+          },
+          {
+            "start": 6,
+            "end": 10,
+            "properties": {
+              "class": "inner"
+            },
+            "alwaysWrap": true
+          }
+        ]
+      },
+      "hast": true
+    },
+    {
+      "name": "extra-69",
+      "code": "const name = \"hi\"\n// comment\n",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark",
+        "decorations": [
+          {
+            "start": {
+              "line": 0,
+              "character": 6
+            },
+            "end": {
+              "line": 1,
+              "character": 5
+            },
+            "properties": {
+              "class": "cross"
+            }
+          }
+        ]
+      },
+      "hast": true
+    },
+    {
+      "name": "extra-70",
+      "code": "const name = \"hi\"\n// comment\n",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark",
+        "decorations": [
+          {
+            "start": 6,
+            "end": 6,
+            "tagName": "i",
+            "properties": {
+              "class": "point"
+            }
+          }
+        ]
+      },
+      "hast": true
+    },
+    {
+      "name": "extra-71",
+      "code": "const name = \"hi\"\n// comment\n",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark",
+        "structure": "inline",
+        "decorations": [
+          {
+            "start": 6,
+            "end": 10,
+            "tagName": "b"
+          }
+        ]
+      },
+      "hast": true
+    },
+    {
+      "name": "extra-72",
+      "code": "const name = \"hi\"\n// comment\n",
+      "options": {
+        "lang": "js",
+        "theme": {
+          "name": "css-variables",
+          "type": "dark",
+          "colors": {
+            "editor.foreground": "#00000001",
+            "editor.background": "#00000002",
+            "terminal.ansiBlack": "#0000000f",
+            "terminal.ansiRed": "#00000010",
+            "terminal.ansiGreen": "#00000011",
+            "terminal.ansiYellow": "#00000012",
+            "terminal.ansiBlue": "#00000013",
+            "terminal.ansiMagenta": "#00000014",
+            "terminal.ansiCyan": "#00000015",
+            "terminal.ansiWhite": "#00000016",
+            "terminal.ansiBrightBlack": "#00000017",
+            "terminal.ansiBrightRed": "#00000018",
+            "terminal.ansiBrightGreen": "#00000019",
+            "terminal.ansiBrightYellow": "#0000001a",
+            "terminal.ansiBrightBlue": "#0000001b",
+            "terminal.ansiBrightMagenta": "#0000001c",
+            "terminal.ansiBrightCyan": "#0000001d",
+            "terminal.ansiBrightWhite": "#0000001e"
+          },
+          "tokenColors": [
+            {
+              "settings": {
+                "foreground": "var(--shiki-foreground)",
+                "background": "var(--shiki-background)"
+              }
+            },
+            {
+              "scope": [
+                "keyword.operator.accessor",
+                "meta.group.braces.round.function.arguments",
+                "meta.template.expression",
+                "markup.fenced_code meta.embedded.block"
+              ],
+              "settings": {
+                "foreground": "var(--shiki-foreground)"
+              }
+            },
+            {
+              "scope": "emphasis",
+              "settings": {
+                "fontStyle": "italic"
+              }
+            },
+            {
+              "scope": [
+                "strong",
+                "markup.heading.markdown",
+                "markup.bold.markdown"
+              ],
+              "settings": {
+                "fontStyle": "bold"
+              }
+            },
+            {
+              "scope": [
+                "markup.italic.markdown"
+              ],
+              "settings": {
+                "fontStyle": "italic"
+              }
+            },
+            {
+              "scope": "meta.link.inline.markdown",
+              "settings": {
+                "fontStyle": "underline",
+                "foreground": "var(--shiki-token-link)"
+              }
+            },
+            {
+              "scope": [
+                "string",
+                "markup.fenced_code",
+                "markup.inline"
+              ],
+              "settings": {
+                "foreground": "var(--shiki-token-string)"
+              }
+            },
+            {
+              "scope": [
+                "comment",
+                "string.quoted.docstring.multi"
+              ],
+              "settings": {
+                "foreground": "var(--shiki-token-comment)"
+              }
+            },
+            {
+              "scope": [
+                "constant.numeric",
+                "constant.language",
+                "constant.other.placeholder",
+                "constant.character.format.placeholder",
+                "variable.language.this",
+                "variable.other.object",
+                "variable.other.class",
+                "variable.other.constant",
+                "meta.property-name",
+                "meta.property-value",
+                "support"
+              ],
+              "settings": {
+                "foreground": "var(--shiki-token-constant)"
+              }
+            },
+            {
+              "scope": [
+                "keyword",
+                "storage.modifier",
+                "storage.type",
+                "storage.control.clojure",
+                "entity.name.function.clojure",
+                "entity.name.tag.yaml",
+                "support.function.node",
+                "support.type.property-name.json",
+                "punctuation.separator.key-value",
+                "punctuation.definition.template-expression"
+              ],
+              "settings": {
+                "foreground": "var(--shiki-token-keyword)"
+              }
+            },
+            {
+              "scope": "variable.parameter.function",
+              "settings": {
+                "foreground": "var(--shiki-token-parameter)"
+              }
+            },
+            {
+              "scope": [
+                "support.function",
+                "entity.name.type",
+                "entity.other.inherited-class",
+                "meta.function-call",
+                "meta.instance.constructor",
+                "entity.other.attribute-name",
+                "entity.name.function",
+                "constant.keyword.clojure"
+              ],
+              "settings": {
+                "foreground": "var(--shiki-token-function)"
+              }
+            },
+            {
+              "scope": [
+                "entity.name.tag",
+                "string.quoted",
+                "string.regexp",
+                "string.interpolated",
+                "string.template",
+                "string.unquoted.plain.out.yaml",
+                "keyword.other.template"
+              ],
+              "settings": {
+                "foreground": "var(--shiki-token-string-expression)"
+              }
+            },
+            {
+              "scope": [
+                "punctuation.definition.arguments",
+                "punctuation.definition.dict",
+                "punctuation.separator",
+                "meta.function-call.arguments"
+              ],
+              "settings": {
+                "foreground": "var(--shiki-token-punctuation)"
+              }
+            },
+            {
+              "scope": [
+                "markup.underline.link",
+                "punctuation.definition.metadata.markdown"
+              ],
+              "settings": {
+                "foreground": "var(--shiki-token-link)"
+              }
+            },
+            {
+              "scope": [
+                "beginning.punctuation.definition.list.markdown"
+              ],
+              "settings": {
+                "foreground": "var(--shiki-token-string)"
+              }
+            },
+            {
+              "scope": [
+                "punctuation.definition.string.begin.markdown",
+                "punctuation.definition.string.end.markdown",
+                "string.other.link.title.markdown",
+                "string.other.link.description.markdown"
+              ],
+              "settings": {
+                "foreground": "var(--shiki-token-keyword)"
+              }
+            },
+            {
+              "scope": [
+                "markup.inserted",
+                "meta.diff.header.to-file",
+                "punctuation.definition.inserted"
+              ],
+              "settings": {
+                "foreground": "var(--shiki-token-inserted)"
+              }
+            },
+            {
+              "scope": [
+                "markup.deleted",
+                "meta.diff.header.from-file",
+                "punctuation.definition.deleted"
+              ],
+              "settings": {
+                "foreground": "var(--shiki-token-deleted)"
+              }
+            },
+            {
+              "scope": [
+                "markup.changed",
+                "punctuation.definition.changed"
+              ],
+              "settings": {
+                "foreground": "var(--shiki-token-changed)"
+              }
+            }
+          ]
+        }
+      },
+      "hast": true
+    },
+    {
+      "name": "extra-73",
+      "code": "const name = \"hi\"\n// comment\n",
+      "options": {
+        "lang": "js",
+        "theme": {
+          "name": "custom",
+          "settings": [
+            {
+              "settings": {
+                "foreground": "#abc",
+                "background": "#123"
+              }
+            },
+            {
+              "scope": "keyword",
+              "settings": {
+                "foreground": "var(--kw)",
+                "fontStyle": "bold italic underline strikethrough"
+              }
+            }
+          ]
+        }
+      },
+      "hast": true
+    },
+    {
+      "name": "extra-74",
+      "code": "const name = \"hi\"\n// comment\n",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark",
+        "meta": {
+          "title": "A \"test\"",
+          "_secret": "hidden"
+        },
+        "data": {
+          "language": "js"
+        }
+      },
+      "hast": true
+    },
+    {
+      "name": "extra-75",
+      "code": "const name = \"hi\"\n// comment\n",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark",
+        "grammarContextCode": "/* open"
+      },
+      "hast": true
+    },
+    {
+      "name": "extra-76",
+      "code": "const name = \"hi\"\n// comment\n",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark",
+        "includeExplanation": true
+      },
+      "hast": true
+    }
+  ],
+  "allThemes": {
+    "code": "# Title\n\n**bold** *italic* `inline` ~~strike~~\n\n```js\nconst answer = true\n```",
+    "options": {
+      "lang": "markdown"
+    }
+  }
+}

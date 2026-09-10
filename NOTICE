@@ -1,0 +1,18 @@
+shiki-go implements the native library and CLI functionality of Shiki 4.4.3.
+
+This project includes Go translations of Shiki and vscode-textmate algorithms,
+the upstream TextMate grammars and themes, the unmodified Oniguruma WebAssembly
+binary, and HAST property metadata. It also reproduces behavior from Shiki's
+transformers, colorized-brackets, stream, and CLI packages, hast-util-to-html,
+property-information, stringify-entities, and ansis.
+
+Shiki reference commit: 48cd2cc695ed2e3357c3f9c370578ea843d6d9a3
+https://github.com/shikijs/shiki
+
+Copyright and license notices for these components and their incorporated
+grammars, themes, and regex engine are retained in the licenses directory.
+The original authors retain their copyrights. The Go runtime dependencies
+wazero and golang.org/x/sys are also covered by the notices in that directory.
+
+Node.js packages under tools/reference are development dependencies only.
+They are not invoked by the Go library or CLI.

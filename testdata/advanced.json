@@ -1,0 +1,5206 @@
+{
+  "grammars": [
+    {
+      "name": "test-empty-match",
+      "scopeName": "source.test-empty-match",
+      "patterns": [
+        {
+          "match": "",
+          "name": "invalid"
+        },
+        {
+          "match": "hello",
+          "name": "keyword"
+        }
+      ]
+    },
+    {
+      "name": "test-while",
+      "scopeName": "source.test-while",
+      "patterns": [
+        {
+          "begin": "^(>)( ?)",
+          "while": "^(>)( ?)",
+          "name": "markup.quote",
+          "contentName": "meta.content",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.definition.quote"
+            }
+          },
+          "whileCaptures": {
+            "1": {
+              "name": "punctuation.definition.quote"
+            }
+          },
+          "patterns": [
+            {
+              "match": "\\b\\d+\\b",
+              "name": "constant.numeric"
+            }
+          ]
+        },
+        {
+          "match": "\\b\\w+\\b",
+          "name": "keyword.control"
+        }
+      ]
+    },
+    {
+      "name": "test-backref",
+      "scopeName": "source.test-backref",
+      "patterns": [
+        {
+          "begin": "<<([A-Z]+)",
+          "end": "^\\1$",
+          "name": "string.heredoc.$1",
+          "contentName": "meta.heredoc.${1:/downcase}",
+          "beginCaptures": {
+            "1": {
+              "name": "entity.name.tag"
+            }
+          },
+          "endCaptures": {
+            "0": {
+              "name": "entity.name.tag"
+            }
+          },
+          "patterns": [
+            {
+              "match": "\\$\\w+",
+              "name": "variable.other"
+            }
+          ]
+        },
+        {
+          "match": "(\\w+)(:)(.*)$",
+          "name": "meta.assignment",
+          "captures": {
+            "1": {
+              "name": "variable.other"
+            },
+            "2": {
+              "name": "punctuation.separator"
+            },
+            "3": {
+              "patterns": [
+                {
+                  "match": "\\d+",
+                  "name": "constant.numeric"
+                },
+                {
+                  "match": "\"[^\"]*\"",
+                  "name": "string.quoted"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "test-inject",
+      "scopeName": "source.test-inject",
+      "patterns": [
+        {
+          "begin": "/\\*",
+          "end": "\\*/",
+          "name": "comment.block"
+        },
+        {
+          "match": "\\w+",
+          "name": "variable.other"
+        }
+      ],
+      "injections": {
+        "L:comment - comment.block.ignored": {
+          "match": "\\bTODO\\b",
+          "name": "keyword.other.todo"
+        },
+        "R:source.test-inject": {
+          "match": "right",
+          "name": "constant.language"
+        }
+      }
+    },
+    {
+      "name": "test-external",
+      "scopeName": "source.test-external",
+      "injectTo": [
+        "source.test-inject"
+      ],
+      "injectionSelector": "L:comment",
+      "patterns": [
+        {
+          "match": "FIXME",
+          "name": "invalid.illegal"
+        }
+      ]
+    },
+    {
+      "name": "test-end-last",
+      "scopeName": "source.test-end-last",
+      "patterns": [
+        {
+          "begin": "\\[",
+          "end": "\\]",
+          "applyEndPatternLast": true,
+          "name": "meta.square",
+          "patterns": [
+            {
+              "match": "\\]\\]",
+              "name": "constant.character.escape"
+            }
+          ]
+        },
+        {
+          "begin": "\\(",
+          "end": "\\)",
+          "name": "meta.round",
+          "patterns": [
+            {
+              "match": "\\)\\)",
+              "name": "constant.character.escape"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "test-zero",
+      "scopeName": "source.test-zero",
+      "patterns": [
+        {
+          "begin": "(?=a)",
+          "end": "(?=b)",
+          "name": "meta.zero",
+          "patterns": [
+            {
+              "match": "a+",
+              "name": "keyword"
+            }
+          ]
+        },
+        {
+          "match": "b+",
+          "name": "constant"
+        },
+        {
+          "match": "(?=x)",
+          "name": "invalid"
+        }
+      ]
+    }
+  ],
+  "themes": [
+    {
+      "name": "custom-invalid",
+      "settings": [
+        {
+          "settings": {
+            "foreground": "#12345",
+            "background": "#xyz"
+          }
+        },
+        {
+          "scope": "keyword",
+          "settings": {
+            "foreground": "#abcdefg"
+          }
+        }
+      ]
+    },
+    {
+      "name": "custom-css",
+      "type": "light",
+      "colors": {
+        "editor.foreground": "#00000001",
+        "editor.background": "#00000002",
+        "terminal.ansiRed": "#00000004"
+      },
+      "tokenColors": [
+        {
+          "settings": {
+            "foreground": "var(--fg)",
+            "background": "var(--bg)"
+          }
+        },
+        {
+          "scope": "keyword",
+          "settings": {
+            "foreground": "var(--kw)",
+            "fontStyle": "bold"
+          }
+        },
+        {
+          "scope": "string",
+          "settings": {
+            "foreground": "var(--fg)"
+          }
+        }
+      ]
+    },
+    {
+      "name": "custom-replace",
+      "settings": [
+        {
+          "settings": {
+            "foreground": "#123456",
+            "background": "#abcdef"
+          }
+        },
+        {
+          "scope": "keyword",
+          "settings": {
+            "foreground": "#654321"
+          }
+        }
+      ],
+      "colorReplacements": {
+        "#123456": "var(--fg)",
+        "#abcdef": "var(--bg)",
+        "#654321": "var(--kw)"
+      }
+    }
+  ],
+  "normalized": [
+    {
+      "name": "custom-invalid",
+      "settings": [
+        {
+          "settings": {
+            "foreground": "#12345",
+            "background": "#xyz"
+          }
+        },
+        {
+          "scope": "keyword",
+          "settings": {
+            "foreground": "#abcdefg"
+          }
+        }
+      ],
+      "type": "dark",
+      "colorReplacements": {},
+      "fg": "#12345",
+      "bg": "#xyz"
+    },
+    {
+      "name": "custom-css",
+      "type": "light",
+      "colors": {
+        "editor.foreground": "#00000001",
+        "editor.background": "#00000002",
+        "terminal.ansiRed": "#00000004"
+      },
+      "settings": [
+        {
+          "settings": {
+            "foreground": "#00000001",
+            "background": "#00000002"
+          }
+        },
+        {
+          "scope": "keyword",
+          "settings": {
+            "foreground": "#00000003",
+            "fontStyle": "bold"
+          }
+        },
+        {
+          "scope": "string",
+          "settings": {
+            "foreground": "#00000001"
+          }
+        }
+      ],
+      "colorReplacements": {
+        "#00000001": "var(--fg)",
+        "#00000002": "var(--bg)",
+        "#00000003": "var(--kw)"
+      },
+      "fg": "var(--fg)",
+      "bg": "var(--bg)"
+    },
+    {
+      "name": "custom-replace",
+      "settings": [
+        {
+          "settings": {
+            "foreground": "#123456",
+            "background": "#abcdef"
+          }
+        },
+        {
+          "scope": "keyword",
+          "settings": {
+            "foreground": "#654321"
+          }
+        }
+      ],
+      "colorReplacements": {
+        "#123456": "var(--fg)",
+        "#abcdef": "var(--bg)",
+        "#654321": "var(--kw)"
+      },
+      "type": "dark",
+      "fg": "#123456",
+      "bg": "#abcdef"
+    }
+  ],
+  "cases": [
+    {
+      "name": "test-empty-match",
+      "code": "hello\nworld",
+      "options": {
+        "lang": "test-empty-match",
+        "theme": "github-dark",
+        "includeExplanation": true
+      },
+      "tokens": {
+        "tokens": [
+          [
+            {
+              "content": "hello",
+              "offset": 0,
+              "color": "#F97583",
+              "fontStyle": 0,
+              "explanation": [
+                {
+                  "content": "hello",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-empty-match",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "keyword",
+                      "themeMatches": [
+                        {
+                          "scope": "keyword",
+                          "settings": {
+                            "foreground": "#f97583"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          [
+            {
+              "content": "world",
+              "offset": 6,
+              "color": "#E1E4E8",
+              "fontStyle": 0,
+              "explanation": [
+                {
+                  "content": "world",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-empty-match",
+                      "themeMatches": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        ],
+        "fg": "#e1e4e8",
+        "bg": "#24292e",
+        "themeName": "github-dark",
+        "grammarState": {
+          "lang": "test-empty-match",
+          "theme": "github-dark",
+          "themes": [
+            "github-dark"
+          ],
+          "scopes": [
+            "source.test-empty-match"
+          ]
+        }
+      },
+      "html": "<pre class=\"shiki github-dark\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#F97583\">hello</span></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\">world</span></span></code></pre>"
+    },
+    {
+      "name": "test-while",
+      "code": "> first 123\n> next 45\nplain\n> last\n",
+      "options": {
+        "lang": "test-while",
+        "theme": "github-dark",
+        "includeExplanation": true
+      },
+      "tokens": {
+        "tokens": [
+          [
+            {
+              "content": "> first ",
+              "offset": 0,
+              "color": "#85E89D",
+              "fontStyle": 0,
+              "explanation": [
+                {
+                  "content": ">",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-while",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "markup.quote",
+                      "themeMatches": [
+                        {
+                          "scope": "markup.quote",
+                          "settings": {
+                            "foreground": "#85e89d"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "scopeName": "punctuation.definition.quote",
+                      "themeMatches": []
+                    }
+                  ]
+                },
+                {
+                  "content": " ",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-while",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "markup.quote",
+                      "themeMatches": [
+                        {
+                          "scope": "markup.quote",
+                          "settings": {
+                            "foreground": "#85e89d"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "content": "first ",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-while",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "markup.quote",
+                      "themeMatches": [
+                        {
+                          "scope": "markup.quote",
+                          "settings": {
+                            "foreground": "#85e89d"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "scopeName": "meta.content",
+                      "themeMatches": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "content": "123",
+              "offset": 8,
+              "color": "#79B8FF",
+              "fontStyle": 0,
+              "explanation": [
+                {
+                  "content": "123",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-while",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "markup.quote",
+                      "themeMatches": [
+                        {
+                          "scope": "markup.quote",
+                          "settings": {
+                            "foreground": "#85e89d"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "scopeName": "meta.content",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "constant.numeric",
+                      "themeMatches": [
+                        {
+                          "scope": [
+                            "constant",
+                            "entity.name.constant",
+                            "variable.other.constant",
+                            "variable.other.enummember",
+                            "variable.language"
+                          ],
+                          "settings": {
+                            "foreground": "#79b8ff"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          [
+            {
+              "content": "> next ",
+              "offset": 12,
+              "color": "#85E89D",
+              "fontStyle": 0,
+              "explanation": [
+                {
+                  "content": ">",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-while",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "markup.quote",
+                      "themeMatches": [
+                        {
+                          "scope": "markup.quote",
+                          "settings": {
+                            "foreground": "#85e89d"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "scopeName": "meta.content",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "punctuation.definition.quote",
+                      "themeMatches": []
+                    }
+                  ]
+                },
+                {
+                  "content": " ",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-while",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "markup.quote",
+                      "themeMatches": [
+                        {
+                          "scope": "markup.quote",
+                          "settings": {
+                            "foreground": "#85e89d"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "scopeName": "meta.content",
+                      "themeMatches": []
+                    }
+                  ]
+                },
+                {
+                  "content": "next ",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-while",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "markup.quote",
+                      "themeMatches": [
+                        {
+                          "scope": "markup.quote",
+                          "settings": {
+                            "foreground": "#85e89d"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "scopeName": "meta.content",
+                      "themeMatches": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "content": "45",
+              "offset": 19,
+              "color": "#79B8FF",
+              "fontStyle": 0,
+              "explanation": [
+                {
+                  "content": "45",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-while",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "markup.quote",
+                      "themeMatches": [
+                        {
+                          "scope": "markup.quote",
+                          "settings": {
+                            "foreground": "#85e89d"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "scopeName": "meta.content",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "constant.numeric",
+                      "themeMatches": [
+                        {
+                          "scope": [
+                            "constant",
+                            "entity.name.constant",
+                            "variable.other.constant",
+                            "variable.other.enummember",
+                            "variable.language"
+                          ],
+                          "settings": {
+                            "foreground": "#79b8ff"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          [
+            {
+              "content": "plain",
+              "offset": 22,
+              "color": "#F97583",
+              "fontStyle": 0,
+              "explanation": [
+                {
+                  "content": "plain",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-while",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "keyword.control",
+                      "themeMatches": [
+                        {
+                          "scope": "keyword",
+                          "settings": {
+                            "foreground": "#f97583"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          [
+            {
+              "content": "> last",
+              "offset": 28,
+              "color": "#85E89D",
+              "fontStyle": 0,
+              "explanation": [
+                {
+                  "content": ">",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-while",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "markup.quote",
+                      "themeMatches": [
+                        {
+                          "scope": "markup.quote",
+                          "settings": {
+                            "foreground": "#85e89d"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "scopeName": "punctuation.definition.quote",
+                      "themeMatches": []
+                    }
+                  ]
+                },
+                {
+                  "content": " ",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-while",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "markup.quote",
+                      "themeMatches": [
+                        {
+                          "scope": "markup.quote",
+                          "settings": {
+                            "foreground": "#85e89d"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "content": "last",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-while",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "markup.quote",
+                      "themeMatches": [
+                        {
+                          "scope": "markup.quote",
+                          "settings": {
+                            "foreground": "#85e89d"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "scopeName": "meta.content",
+                      "themeMatches": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          []
+        ],
+        "fg": "#e1e4e8",
+        "bg": "#24292e",
+        "themeName": "github-dark",
+        "grammarState": {
+          "lang": "test-while",
+          "theme": "github-dark",
+          "themes": [
+            "github-dark"
+          ],
+          "scopes": [
+            "markup.quote",
+            "source.test-while"
+          ]
+        }
+      },
+      "html": "<pre class=\"shiki github-dark\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#85E89D\">> first </span><span style=\"color:#79B8FF\">123</span></span>\n<span class=\"line\"><span style=\"color:#85E89D\">> next </span><span style=\"color:#79B8FF\">45</span></span>\n<span class=\"line\"><span style=\"color:#F97583\">plain</span></span>\n<span class=\"line\"><span style=\"color:#85E89D\">> last</span></span>\n<span class=\"line\"></span></code></pre>"
+    },
+    {
+      "name": "test-backref",
+      "code": "<<HELLO\nhi $USER\nHELLO\nname: 123 \"hi\"\n<<OPEN",
+      "options": {
+        "lang": "test-backref",
+        "theme": "github-dark",
+        "includeExplanation": true
+      },
+      "tokens": {
+        "tokens": [
+          [
+            {
+              "content": "<<",
+              "offset": 0,
+              "color": "#9ECBFF",
+              "fontStyle": 0,
+              "explanation": [
+                {
+                  "content": "<<",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-backref",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "string.heredoc.HELLO",
+                      "themeMatches": [
+                        {
+                          "scope": [
+                            "string",
+                            "punctuation.definition.string",
+                            "string punctuation.section.embedded source"
+                          ],
+                          "settings": {
+                            "foreground": "#9ecbff"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "content": "HELLO",
+              "offset": 2,
+              "color": "#85E89D",
+              "fontStyle": 0,
+              "explanation": [
+                {
+                  "content": "HELLO",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-backref",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "string.heredoc.HELLO",
+                      "themeMatches": [
+                        {
+                          "scope": [
+                            "string",
+                            "punctuation.definition.string",
+                            "string punctuation.section.embedded source"
+                          ],
+                          "settings": {
+                            "foreground": "#9ecbff"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "scopeName": "entity.name.tag",
+                      "themeMatches": [
+                        {
+                          "scope": [
+                            "entity",
+                            "entity.name"
+                          ],
+                          "settings": {
+                            "foreground": "#b392f0"
+                          }
+                        },
+                        {
+                          "scope": "entity.name.tag",
+                          "settings": {
+                            "foreground": "#85e89d"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          [
+            {
+              "content": "hi ",
+              "offset": 8,
+              "color": "#9ECBFF",
+              "fontStyle": 0,
+              "explanation": [
+                {
+                  "content": "hi ",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-backref",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "string.heredoc.HELLO",
+                      "themeMatches": [
+                        {
+                          "scope": [
+                            "string",
+                            "punctuation.definition.string",
+                            "string punctuation.section.embedded source"
+                          ],
+                          "settings": {
+                            "foreground": "#9ecbff"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "scopeName": "meta.heredoc.hello",
+                      "themeMatches": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "content": "$USER",
+              "offset": 11,
+              "color": "#E1E4E8",
+              "fontStyle": 0,
+              "explanation": [
+                {
+                  "content": "$USER",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-backref",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "string.heredoc.HELLO",
+                      "themeMatches": [
+                        {
+                          "scope": [
+                            "string",
+                            "punctuation.definition.string",
+                            "string punctuation.section.embedded source"
+                          ],
+                          "settings": {
+                            "foreground": "#9ecbff"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "scopeName": "meta.heredoc.hello",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "variable.other",
+                      "themeMatches": [
+                        {
+                          "scope": "variable",
+                          "settings": {
+                            "foreground": "#ffab70"
+                          }
+                        },
+                        {
+                          "scope": "variable.other",
+                          "settings": {
+                            "foreground": "#e1e4e8"
+                          }
+                        },
+                        {
+                          "scope": "string variable",
+                          "settings": {
+                            "foreground": "#79b8ff"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          [
+            {
+              "content": "HELLO",
+              "offset": 17,
+              "color": "#85E89D",
+              "fontStyle": 0,
+              "explanation": [
+                {
+                  "content": "HELLO",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-backref",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "string.heredoc.HELLO",
+                      "themeMatches": [
+                        {
+                          "scope": [
+                            "string",
+                            "punctuation.definition.string",
+                            "string punctuation.section.embedded source"
+                          ],
+                          "settings": {
+                            "foreground": "#9ecbff"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "scopeName": "entity.name.tag",
+                      "themeMatches": [
+                        {
+                          "scope": [
+                            "entity",
+                            "entity.name"
+                          ],
+                          "settings": {
+                            "foreground": "#b392f0"
+                          }
+                        },
+                        {
+                          "scope": "entity.name.tag",
+                          "settings": {
+                            "foreground": "#85e89d"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          [
+            {
+              "content": "name: ",
+              "offset": 23,
+              "color": "#E1E4E8",
+              "fontStyle": 0,
+              "explanation": [
+                {
+                  "content": "name",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-backref",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.assignment",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "variable.other",
+                      "themeMatches": [
+                        {
+                          "scope": "variable",
+                          "settings": {
+                            "foreground": "#ffab70"
+                          }
+                        },
+                        {
+                          "scope": "variable.other",
+                          "settings": {
+                            "foreground": "#e1e4e8"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "content": ":",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-backref",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.assignment",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "punctuation.separator",
+                      "themeMatches": []
+                    }
+                  ]
+                },
+                {
+                  "content": " ",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-backref",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.assignment",
+                      "themeMatches": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "content": "123",
+              "offset": 29,
+              "color": "#79B8FF",
+              "fontStyle": 0,
+              "explanation": [
+                {
+                  "content": "123",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-backref",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.assignment",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "constant.numeric",
+                      "themeMatches": [
+                        {
+                          "scope": [
+                            "constant",
+                            "entity.name.constant",
+                            "variable.other.constant",
+                            "variable.other.enummember",
+                            "variable.language"
+                          ],
+                          "settings": {
+                            "foreground": "#79b8ff"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "content": " ",
+              "offset": 32,
+              "color": "#E1E4E8",
+              "fontStyle": 0,
+              "explanation": [
+                {
+                  "content": " ",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-backref",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.assignment",
+                      "themeMatches": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "content": "\"hi\"",
+              "offset": 33,
+              "color": "#9ECBFF",
+              "fontStyle": 0,
+              "explanation": [
+                {
+                  "content": "\"hi\"",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-backref",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.assignment",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "string.quoted",
+                      "themeMatches": [
+                        {
+                          "scope": [
+                            "string",
+                            "punctuation.definition.string",
+                            "string punctuation.section.embedded source"
+                          ],
+                          "settings": {
+                            "foreground": "#9ecbff"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          [
+            {
+              "content": "<<",
+              "offset": 38,
+              "color": "#9ECBFF",
+              "fontStyle": 0,
+              "explanation": [
+                {
+                  "content": "<<",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-backref",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "string.heredoc.OPEN",
+                      "themeMatches": [
+                        {
+                          "scope": [
+                            "string",
+                            "punctuation.definition.string",
+                            "string punctuation.section.embedded source"
+                          ],
+                          "settings": {
+                            "foreground": "#9ecbff"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "content": "OPEN",
+              "offset": 40,
+              "color": "#85E89D",
+              "fontStyle": 0,
+              "explanation": [
+                {
+                  "content": "OPEN",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-backref",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "string.heredoc.OPEN",
+                      "themeMatches": [
+                        {
+                          "scope": [
+                            "string",
+                            "punctuation.definition.string",
+                            "string punctuation.section.embedded source"
+                          ],
+                          "settings": {
+                            "foreground": "#9ecbff"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "scopeName": "entity.name.tag",
+                      "themeMatches": [
+                        {
+                          "scope": [
+                            "entity",
+                            "entity.name"
+                          ],
+                          "settings": {
+                            "foreground": "#b392f0"
+                          }
+                        },
+                        {
+                          "scope": "entity.name.tag",
+                          "settings": {
+                            "foreground": "#85e89d"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        ],
+        "fg": "#e1e4e8",
+        "bg": "#24292e",
+        "themeName": "github-dark",
+        "grammarState": {
+          "lang": "test-backref",
+          "theme": "github-dark",
+          "themes": [
+            "github-dark"
+          ],
+          "scopes": [
+            "string.heredoc.OPEN",
+            "source.test-backref"
+          ]
+        }
+      },
+      "html": "<pre class=\"shiki github-dark\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#9ECBFF\">&#x3C;&#x3C;</span><span style=\"color:#85E89D\">HELLO</span></span>\n<span class=\"line\"><span style=\"color:#9ECBFF\">hi </span><span style=\"color:#E1E4E8\">$USER</span></span>\n<span class=\"line\"><span style=\"color:#85E89D\">HELLO</span></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\">name: </span><span style=\"color:#79B8FF\">123</span><span style=\"color:#9ECBFF\"> \"hi\"</span></span>\n<span class=\"line\"><span style=\"color:#9ECBFF\">&#x3C;&#x3C;</span><span style=\"color:#85E89D\">OPEN</span></span></code></pre>"
+    },
+    {
+      "name": "test-inject",
+      "code": "/* TODO FIXME note */ right left",
+      "options": {
+        "lang": "test-inject",
+        "theme": "github-dark",
+        "includeExplanation": true
+      },
+      "tokens": {
+        "tokens": [
+          [
+            {
+              "content": "/* ",
+              "offset": 0,
+              "color": "#6A737D",
+              "fontStyle": 0,
+              "explanation": [
+                {
+                  "content": "/*",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-inject",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "comment.block",
+                      "themeMatches": [
+                        {
+                          "scope": [
+                            "comment",
+                            "punctuation.definition.comment",
+                            "string.comment"
+                          ],
+                          "settings": {
+                            "foreground": "#6a737d"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "content": " ",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-inject",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "comment.block",
+                      "themeMatches": [
+                        {
+                          "scope": [
+                            "comment",
+                            "punctuation.definition.comment",
+                            "string.comment"
+                          ],
+                          "settings": {
+                            "foreground": "#6a737d"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "content": "TODO",
+              "offset": 3,
+              "color": "#F97583",
+              "fontStyle": 0,
+              "explanation": [
+                {
+                  "content": "TODO",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-inject",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "comment.block",
+                      "themeMatches": [
+                        {
+                          "scope": [
+                            "comment",
+                            "punctuation.definition.comment",
+                            "string.comment"
+                          ],
+                          "settings": {
+                            "foreground": "#6a737d"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "scopeName": "keyword.other.todo",
+                      "themeMatches": [
+                        {
+                          "scope": "keyword",
+                          "settings": {
+                            "foreground": "#f97583"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "content": " ",
+              "offset": 7,
+              "color": "#6A737D",
+              "fontStyle": 0,
+              "explanation": [
+                {
+                  "content": " ",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-inject",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "comment.block",
+                      "themeMatches": [
+                        {
+                          "scope": [
+                            "comment",
+                            "punctuation.definition.comment",
+                            "string.comment"
+                          ],
+                          "settings": {
+                            "foreground": "#6a737d"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "content": "FIXME",
+              "offset": 8,
+              "color": "#FDAEB7",
+              "fontStyle": 1,
+              "explanation": [
+                {
+                  "content": "FIXME",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-inject",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "comment.block",
+                      "themeMatches": [
+                        {
+                          "scope": [
+                            "comment",
+                            "punctuation.definition.comment",
+                            "string.comment"
+                          ],
+                          "settings": {
+                            "foreground": "#6a737d"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "scopeName": "invalid.illegal",
+                      "themeMatches": [
+                        {
+                          "scope": "invalid.illegal",
+                          "settings": {
+                            "fontStyle": "italic",
+                            "foreground": "#fdaeb7"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "content": " note */",
+              "offset": 13,
+              "color": "#6A737D",
+              "fontStyle": 0,
+              "explanation": [
+                {
+                  "content": " note ",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-inject",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "comment.block",
+                      "themeMatches": [
+                        {
+                          "scope": [
+                            "comment",
+                            "punctuation.definition.comment",
+                            "string.comment"
+                          ],
+                          "settings": {
+                            "foreground": "#6a737d"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "content": "*/",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-inject",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "comment.block",
+                      "themeMatches": [
+                        {
+                          "scope": [
+                            "comment",
+                            "punctuation.definition.comment",
+                            "string.comment"
+                          ],
+                          "settings": {
+                            "foreground": "#6a737d"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "content": " right left",
+              "offset": 21,
+              "color": "#E1E4E8",
+              "fontStyle": 0,
+              "explanation": [
+                {
+                  "content": " ",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-inject",
+                      "themeMatches": []
+                    }
+                  ]
+                },
+                {
+                  "content": "right",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-inject",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "variable.other",
+                      "themeMatches": [
+                        {
+                          "scope": "variable",
+                          "settings": {
+                            "foreground": "#ffab70"
+                          }
+                        },
+                        {
+                          "scope": "variable.other",
+                          "settings": {
+                            "foreground": "#e1e4e8"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "content": " ",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-inject",
+                      "themeMatches": []
+                    }
+                  ]
+                },
+                {
+                  "content": "left",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-inject",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "variable.other",
+                      "themeMatches": [
+                        {
+                          "scope": "variable",
+                          "settings": {
+                            "foreground": "#ffab70"
+                          }
+                        },
+                        {
+                          "scope": "variable.other",
+                          "settings": {
+                            "foreground": "#e1e4e8"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        ],
+        "fg": "#e1e4e8",
+        "bg": "#24292e",
+        "themeName": "github-dark",
+        "grammarState": {
+          "lang": "test-inject",
+          "theme": "github-dark",
+          "themes": [
+            "github-dark"
+          ],
+          "scopes": [
+            "source.test-inject"
+          ]
+        }
+      },
+      "html": "<pre class=\"shiki github-dark\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#6A737D\">/* </span><span style=\"color:#F97583\">TODO</span><span style=\"color:#FDAEB7;font-style:italic\"> FIXME</span><span style=\"color:#6A737D\"> note */</span><span style=\"color:#E1E4E8\"> right left</span></span></code></pre>"
+    },
+    {
+      "name": "test-end-last",
+      "code": "[abc]]def] (abc))def)",
+      "options": {
+        "lang": "test-end-last",
+        "theme": "github-dark",
+        "includeExplanation": true
+      },
+      "tokens": {
+        "tokens": [
+          [
+            {
+              "content": "[abc",
+              "offset": 0,
+              "color": "#E1E4E8",
+              "fontStyle": 0,
+              "explanation": [
+                {
+                  "content": "[",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-end-last",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.square",
+                      "themeMatches": []
+                    }
+                  ]
+                },
+                {
+                  "content": "abc",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-end-last",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.square",
+                      "themeMatches": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "content": "]]",
+              "offset": 4,
+              "color": "#79B8FF",
+              "fontStyle": 0,
+              "explanation": [
+                {
+                  "content": "]]",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-end-last",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.square",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "constant.character.escape",
+                      "themeMatches": [
+                        {
+                          "scope": [
+                            "constant",
+                            "entity.name.constant",
+                            "variable.other.constant",
+                            "variable.other.enummember",
+                            "variable.language"
+                          ],
+                          "settings": {
+                            "foreground": "#79b8ff"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "content": "def] (abc))def)",
+              "offset": 6,
+              "color": "#E1E4E8",
+              "fontStyle": 0,
+              "explanation": [
+                {
+                  "content": "def",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-end-last",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.square",
+                      "themeMatches": []
+                    }
+                  ]
+                },
+                {
+                  "content": "]",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-end-last",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.square",
+                      "themeMatches": []
+                    }
+                  ]
+                },
+                {
+                  "content": " ",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-end-last",
+                      "themeMatches": []
+                    }
+                  ]
+                },
+                {
+                  "content": "(",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-end-last",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.round",
+                      "themeMatches": []
+                    }
+                  ]
+                },
+                {
+                  "content": "abc",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-end-last",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.round",
+                      "themeMatches": []
+                    }
+                  ]
+                },
+                {
+                  "content": ")",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-end-last",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.round",
+                      "themeMatches": []
+                    }
+                  ]
+                },
+                {
+                  "content": ")def)",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-end-last",
+                      "themeMatches": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        ],
+        "fg": "#e1e4e8",
+        "bg": "#24292e",
+        "themeName": "github-dark",
+        "grammarState": {
+          "lang": "test-end-last",
+          "theme": "github-dark",
+          "themes": [
+            "github-dark"
+          ],
+          "scopes": [
+            "source.test-end-last"
+          ]
+        }
+      },
+      "html": "<pre class=\"shiki github-dark\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#E1E4E8\">[abc</span><span style=\"color:#79B8FF\">]]</span><span style=\"color:#E1E4E8\">def] (abc))def)</span></span></code></pre>"
+    },
+    {
+      "name": "test-zero",
+      "code": "aaabbb\nxxaaabb",
+      "options": {
+        "lang": "test-zero",
+        "theme": "github-dark",
+        "includeExplanation": true
+      },
+      "tokens": {
+        "tokens": [
+          [
+            {
+              "content": "aaa",
+              "offset": 0,
+              "color": "#F97583",
+              "fontStyle": 0,
+              "explanation": [
+                {
+                  "content": "aaa",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-zero",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.zero",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "keyword",
+                      "themeMatches": [
+                        {
+                          "scope": "keyword",
+                          "settings": {
+                            "foreground": "#f97583"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "content": "bbb",
+              "offset": 3,
+              "color": "#79B8FF",
+              "fontStyle": 0,
+              "explanation": [
+                {
+                  "content": "bbb",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-zero",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "constant",
+                      "themeMatches": [
+                        {
+                          "scope": [
+                            "constant",
+                            "entity.name.constant",
+                            "variable.other.constant",
+                            "variable.other.enummember",
+                            "variable.language"
+                          ],
+                          "settings": {
+                            "foreground": "#79b8ff"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          [
+            {
+              "content": "xxaaabb",
+              "offset": 7,
+              "color": "#E1E4E8",
+              "fontStyle": 0,
+              "explanation": [
+                {
+                  "content": "xxaaabb",
+                  "scopes": [
+                    {
+                      "scopeName": "source.test-zero",
+                      "themeMatches": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        ],
+        "fg": "#e1e4e8",
+        "bg": "#24292e",
+        "themeName": "github-dark",
+        "grammarState": {
+          "lang": "test-zero",
+          "theme": "github-dark",
+          "themes": [
+            "github-dark"
+          ],
+          "scopes": [
+            "source.test-zero"
+          ]
+        }
+      },
+      "html": "<pre class=\"shiki github-dark\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#F97583\">aaa</span><span style=\"color:#79B8FF\">bbb</span></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\">xxaaabb</span></span></code></pre>"
+    },
+    {
+      "name": "custom-invalid-string",
+      "code": "const x = \"hello\"",
+      "options": {
+        "lang": "js",
+        "theme": "custom-invalid",
+        "includeExplanation": true
+      },
+      "tokens": {
+        "tokens": [
+          [
+            {
+              "content": "const x = ",
+              "offset": 0,
+              "color": "#000000",
+              "fontStyle": 0,
+              "explanation": [
+                {
+                  "content": "const",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "storage.type.js",
+                      "themeMatches": []
+                    }
+                  ]
+                },
+                {
+                  "content": " ",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    }
+                  ]
+                },
+                {
+                  "content": "x",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var-single-variable.expr.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.definition.variable.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "variable.other.constant.js",
+                      "themeMatches": []
+                    }
+                  ]
+                },
+                {
+                  "content": " ",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var-single-variable.expr.js",
+                      "themeMatches": []
+                    }
+                  ]
+                },
+                {
+                  "content": "=",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "keyword.operator.assignment.js",
+                      "themeMatches": [
+                        {
+                          "scope": "keyword",
+                          "settings": {
+                            "foreground": "#abcdefg"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "content": " ",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "content": "\"hello\"",
+              "offset": 10,
+              "color": "#000000",
+              "fontStyle": 0,
+              "explanation": [
+                {
+                  "content": "\"",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "string.quoted.double.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "punctuation.definition.string.begin.js",
+                      "themeMatches": []
+                    }
+                  ]
+                },
+                {
+                  "content": "hello",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "string.quoted.double.js",
+                      "themeMatches": []
+                    }
+                  ]
+                },
+                {
+                  "content": "\"",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "string.quoted.double.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "punctuation.definition.string.end.js",
+                      "themeMatches": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        ],
+        "fg": "#12345",
+        "bg": "#xyz",
+        "themeName": "custom-invalid",
+        "grammarState": {
+          "lang": "javascript",
+          "theme": "custom-invalid",
+          "themes": [
+            "custom-invalid"
+          ],
+          "scopes": [
+            "source.js"
+          ]
+        }
+      },
+      "html": "<pre class=\"shiki custom-invalid\" style=\"background-color:#xyz;color:#12345\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#000000\">const x = </span><span style=\"color:#000000\">\"hello\"</span></span></code></pre>"
+    },
+    {
+      "name": "custom-invalid-object",
+      "code": "const x = \"hello\"",
+      "options": {
+        "lang": "js",
+        "theme": {
+          "name": "custom-invalid",
+          "settings": [
+            {
+              "settings": {
+                "foreground": "#12345",
+                "background": "#xyz"
+              }
+            },
+            {
+              "scope": "keyword",
+              "settings": {
+                "foreground": "#abcdefg"
+              }
+            }
+          ]
+        },
+        "includeExplanation": true
+      },
+      "tokens": {
+        "tokens": [
+          [
+            {
+              "content": "const x = ",
+              "offset": 0,
+              "color": "#000000",
+              "fontStyle": 0,
+              "explanation": [
+                {
+                  "content": "const",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "storage.type.js",
+                      "themeMatches": []
+                    }
+                  ]
+                },
+                {
+                  "content": " ",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    }
+                  ]
+                },
+                {
+                  "content": "x",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var-single-variable.expr.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.definition.variable.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "variable.other.constant.js",
+                      "themeMatches": []
+                    }
+                  ]
+                },
+                {
+                  "content": " ",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var-single-variable.expr.js",
+                      "themeMatches": []
+                    }
+                  ]
+                },
+                {
+                  "content": "=",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "keyword.operator.assignment.js",
+                      "themeMatches": [
+                        {
+                          "scope": "keyword",
+                          "settings": {
+                            "foreground": "#abcdefg"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "content": " ",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "content": "\"hello\"",
+              "offset": 10,
+              "color": "#000000",
+              "fontStyle": 0,
+              "explanation": [
+                {
+                  "content": "\"",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "string.quoted.double.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "punctuation.definition.string.begin.js",
+                      "themeMatches": []
+                    }
+                  ]
+                },
+                {
+                  "content": "hello",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "string.quoted.double.js",
+                      "themeMatches": []
+                    }
+                  ]
+                },
+                {
+                  "content": "\"",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "string.quoted.double.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "punctuation.definition.string.end.js",
+                      "themeMatches": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        ],
+        "fg": "#12345",
+        "bg": "#xyz",
+        "themeName": "custom-invalid",
+        "grammarState": {
+          "lang": "javascript",
+          "theme": "custom-invalid",
+          "themes": [
+            "custom-invalid"
+          ],
+          "scopes": [
+            "source.js"
+          ]
+        }
+      },
+      "html": "<pre class=\"shiki custom-invalid\" style=\"background-color:#xyz;color:#12345\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#000000\">const x = </span><span style=\"color:#000000\">\"hello\"</span></span></code></pre>"
+    },
+    {
+      "name": "custom-css-string",
+      "code": "const x = \"hello\"",
+      "options": {
+        "lang": "js",
+        "theme": "custom-css",
+        "includeExplanation": true
+      },
+      "tokens": {
+        "tokens": [
+          [
+            {
+              "content": "const x ",
+              "offset": 0,
+              "color": "var(--fg)",
+              "fontStyle": 0,
+              "explanation": [
+                {
+                  "content": "const",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "storage.type.js",
+                      "themeMatches": []
+                    }
+                  ]
+                },
+                {
+                  "content": " ",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    }
+                  ]
+                },
+                {
+                  "content": "x",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var-single-variable.expr.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.definition.variable.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "variable.other.constant.js",
+                      "themeMatches": []
+                    }
+                  ]
+                },
+                {
+                  "content": " ",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var-single-variable.expr.js",
+                      "themeMatches": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "content": "=",
+              "offset": 8,
+              "color": "var(--kw)",
+              "fontStyle": 2,
+              "explanation": [
+                {
+                  "content": "=",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "keyword.operator.assignment.js",
+                      "themeMatches": [
+                        {
+                          "scope": "keyword",
+                          "settings": {
+                            "foreground": "#00000003",
+                            "fontStyle": "bold"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "content": " ",
+              "offset": 9,
+              "color": "var(--fg)",
+              "fontStyle": 0,
+              "explanation": [
+                {
+                  "content": " ",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "content": "\"hello\"",
+              "offset": 10,
+              "color": "var(--fg)",
+              "fontStyle": 0,
+              "explanation": [
+                {
+                  "content": "\"",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "string.quoted.double.js",
+                      "themeMatches": [
+                        {
+                          "scope": "string",
+                          "settings": {
+                            "foreground": "#00000001"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "scopeName": "punctuation.definition.string.begin.js",
+                      "themeMatches": []
+                    }
+                  ]
+                },
+                {
+                  "content": "hello",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "string.quoted.double.js",
+                      "themeMatches": [
+                        {
+                          "scope": "string",
+                          "settings": {
+                            "foreground": "#00000001"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "content": "\"",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "string.quoted.double.js",
+                      "themeMatches": [
+                        {
+                          "scope": "string",
+                          "settings": {
+                            "foreground": "#00000001"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "scopeName": "punctuation.definition.string.end.js",
+                      "themeMatches": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        ],
+        "fg": "var(--fg)",
+        "bg": "var(--bg)",
+        "themeName": "custom-css",
+        "grammarState": {
+          "lang": "javascript",
+          "theme": "custom-css",
+          "themes": [
+            "custom-css"
+          ],
+          "scopes": [
+            "source.js"
+          ]
+        }
+      },
+      "html": "<pre class=\"shiki custom-css\" style=\"background-color:var(--bg);color:var(--fg)\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:var(--fg)\">const x </span><span style=\"color:var(--kw);font-weight:bold\">=</span><span style=\"color:var(--fg)\"> \"hello\"</span></span></code></pre>"
+    },
+    {
+      "name": "custom-css-object",
+      "code": "const x = \"hello\"",
+      "options": {
+        "lang": "js",
+        "theme": {
+          "name": "custom-css",
+          "type": "light",
+          "colors": {
+            "editor.foreground": "#00000001",
+            "editor.background": "#00000002",
+            "terminal.ansiRed": "#00000004"
+          },
+          "tokenColors": [
+            {
+              "settings": {
+                "foreground": "var(--fg)",
+                "background": "var(--bg)"
+              }
+            },
+            {
+              "scope": "keyword",
+              "settings": {
+                "foreground": "var(--kw)",
+                "fontStyle": "bold"
+              }
+            },
+            {
+              "scope": "string",
+              "settings": {
+                "foreground": "var(--fg)"
+              }
+            }
+          ]
+        },
+        "includeExplanation": true
+      },
+      "tokens": {
+        "tokens": [
+          [
+            {
+              "content": "const x ",
+              "offset": 0,
+              "color": "var(--fg)",
+              "fontStyle": 0,
+              "explanation": [
+                {
+                  "content": "const",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "storage.type.js",
+                      "themeMatches": []
+                    }
+                  ]
+                },
+                {
+                  "content": " ",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    }
+                  ]
+                },
+                {
+                  "content": "x",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var-single-variable.expr.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.definition.variable.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "variable.other.constant.js",
+                      "themeMatches": []
+                    }
+                  ]
+                },
+                {
+                  "content": " ",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var-single-variable.expr.js",
+                      "themeMatches": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "content": "=",
+              "offset": 8,
+              "color": "var(--kw)",
+              "fontStyle": 2,
+              "explanation": [
+                {
+                  "content": "=",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "keyword.operator.assignment.js",
+                      "themeMatches": [
+                        {
+                          "scope": "keyword",
+                          "settings": {
+                            "foreground": "#00000003",
+                            "fontStyle": "bold"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "content": " ",
+              "offset": 9,
+              "color": "var(--fg)",
+              "fontStyle": 0,
+              "explanation": [
+                {
+                  "content": " ",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "content": "\"hello\"",
+              "offset": 10,
+              "color": "var(--fg)",
+              "fontStyle": 0,
+              "explanation": [
+                {
+                  "content": "\"",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "string.quoted.double.js",
+                      "themeMatches": [
+                        {
+                          "scope": "string",
+                          "settings": {
+                            "foreground": "#00000001"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "scopeName": "punctuation.definition.string.begin.js",
+                      "themeMatches": []
+                    }
+                  ]
+                },
+                {
+                  "content": "hello",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "string.quoted.double.js",
+                      "themeMatches": [
+                        {
+                          "scope": "string",
+                          "settings": {
+                            "foreground": "#00000001"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "content": "\"",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "string.quoted.double.js",
+                      "themeMatches": [
+                        {
+                          "scope": "string",
+                          "settings": {
+                            "foreground": "#00000001"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "scopeName": "punctuation.definition.string.end.js",
+                      "themeMatches": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        ],
+        "fg": "var(--fg)",
+        "bg": "var(--bg)",
+        "themeName": "custom-css",
+        "grammarState": {
+          "lang": "javascript",
+          "theme": "custom-css",
+          "themes": [
+            "custom-css"
+          ],
+          "scopes": [
+            "source.js"
+          ]
+        }
+      },
+      "html": "<pre class=\"shiki custom-css\" style=\"background-color:var(--bg);color:var(--fg)\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:var(--fg)\">const x </span><span style=\"color:var(--kw);font-weight:bold\">=</span><span style=\"color:var(--fg)\"> \"hello\"</span></span></code></pre>"
+    },
+    {
+      "name": "custom-replace-string",
+      "code": "const x = \"hello\"",
+      "options": {
+        "lang": "js",
+        "theme": "custom-replace",
+        "includeExplanation": true
+      },
+      "tokens": {
+        "tokens": [
+          [
+            {
+              "content": "const x ",
+              "offset": 0,
+              "color": "var(--fg)",
+              "fontStyle": 0,
+              "explanation": [
+                {
+                  "content": "const",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "storage.type.js",
+                      "themeMatches": []
+                    }
+                  ]
+                },
+                {
+                  "content": " ",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    }
+                  ]
+                },
+                {
+                  "content": "x",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var-single-variable.expr.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.definition.variable.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "variable.other.constant.js",
+                      "themeMatches": []
+                    }
+                  ]
+                },
+                {
+                  "content": " ",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var-single-variable.expr.js",
+                      "themeMatches": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "content": "=",
+              "offset": 8,
+              "color": "var(--kw)",
+              "fontStyle": 0,
+              "explanation": [
+                {
+                  "content": "=",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "keyword.operator.assignment.js",
+                      "themeMatches": [
+                        {
+                          "scope": "keyword",
+                          "settings": {
+                            "foreground": "#654321"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "content": " ",
+              "offset": 9,
+              "color": "var(--fg)",
+              "fontStyle": 0,
+              "explanation": [
+                {
+                  "content": " ",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "content": "\"hello\"",
+              "offset": 10,
+              "color": "var(--fg)",
+              "fontStyle": 0,
+              "explanation": [
+                {
+                  "content": "\"",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "string.quoted.double.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "punctuation.definition.string.begin.js",
+                      "themeMatches": []
+                    }
+                  ]
+                },
+                {
+                  "content": "hello",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "string.quoted.double.js",
+                      "themeMatches": []
+                    }
+                  ]
+                },
+                {
+                  "content": "\"",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "string.quoted.double.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "punctuation.definition.string.end.js",
+                      "themeMatches": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        ],
+        "fg": "#123456",
+        "bg": "#abcdef",
+        "themeName": "custom-replace",
+        "grammarState": {
+          "lang": "javascript",
+          "theme": "custom-replace",
+          "themes": [
+            "custom-replace"
+          ],
+          "scopes": [
+            "source.js"
+          ]
+        }
+      },
+      "html": "<pre class=\"shiki custom-replace\" style=\"background-color:#abcdef;color:#123456\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:var(--fg)\">const x </span><span style=\"color:var(--kw)\">=</span><span style=\"color:var(--fg)\"> \"hello\"</span></span></code></pre>"
+    },
+    {
+      "name": "custom-replace-object",
+      "code": "const x = \"hello\"",
+      "options": {
+        "lang": "js",
+        "theme": {
+          "name": "custom-replace",
+          "settings": [
+            {
+              "settings": {
+                "foreground": "#123456",
+                "background": "#abcdef"
+              }
+            },
+            {
+              "scope": "keyword",
+              "settings": {
+                "foreground": "#654321"
+              }
+            }
+          ],
+          "colorReplacements": {
+            "#123456": "var(--fg)",
+            "#abcdef": "var(--bg)",
+            "#654321": "var(--kw)"
+          }
+        },
+        "includeExplanation": true
+      },
+      "tokens": {
+        "tokens": [
+          [
+            {
+              "content": "const x ",
+              "offset": 0,
+              "color": "var(--fg)",
+              "fontStyle": 0,
+              "explanation": [
+                {
+                  "content": "const",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "storage.type.js",
+                      "themeMatches": []
+                    }
+                  ]
+                },
+                {
+                  "content": " ",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    }
+                  ]
+                },
+                {
+                  "content": "x",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var-single-variable.expr.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.definition.variable.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "variable.other.constant.js",
+                      "themeMatches": []
+                    }
+                  ]
+                },
+                {
+                  "content": " ",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var-single-variable.expr.js",
+                      "themeMatches": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "content": "=",
+              "offset": 8,
+              "color": "var(--kw)",
+              "fontStyle": 0,
+              "explanation": [
+                {
+                  "content": "=",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "keyword.operator.assignment.js",
+                      "themeMatches": [
+                        {
+                          "scope": "keyword",
+                          "settings": {
+                            "foreground": "#654321"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "content": " ",
+              "offset": 9,
+              "color": "var(--fg)",
+              "fontStyle": 0,
+              "explanation": [
+                {
+                  "content": " ",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "content": "\"hello\"",
+              "offset": 10,
+              "color": "var(--fg)",
+              "fontStyle": 0,
+              "explanation": [
+                {
+                  "content": "\"",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "string.quoted.double.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "punctuation.definition.string.begin.js",
+                      "themeMatches": []
+                    }
+                  ]
+                },
+                {
+                  "content": "hello",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "string.quoted.double.js",
+                      "themeMatches": []
+                    }
+                  ]
+                },
+                {
+                  "content": "\"",
+                  "scopes": [
+                    {
+                      "scopeName": "source.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "meta.var.expr.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "string.quoted.double.js",
+                      "themeMatches": []
+                    },
+                    {
+                      "scopeName": "punctuation.definition.string.end.js",
+                      "themeMatches": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        ],
+        "fg": "var(--fg)",
+        "bg": "var(--bg)",
+        "themeName": "custom-replace",
+        "grammarState": {
+          "lang": "javascript",
+          "theme": "custom-replace",
+          "themes": [
+            "custom-replace"
+          ],
+          "scopes": [
+            "source.js"
+          ]
+        }
+      },
+      "html": "<pre class=\"shiki custom-replace\" style=\"background-color:var(--bg);color:var(--fg)\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:var(--fg)\">const x </span><span style=\"color:var(--kw)\">=</span><span style=\"color:var(--fg)\"> \"hello\"</span></span></code></pre>"
+    },
+    {
+      "name": "replacement-12",
+      "code": "const x = 1",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark",
+        "colorReplacements": {
+          "github-dark": {
+            "#f97583": "red"
+          },
+          "#f97583": "blue"
+        }
+      },
+      "tokens": {
+        "tokens": [
+          [
+            {
+              "content": "const",
+              "offset": 0,
+              "color": "blue",
+              "fontStyle": 0
+            },
+            {
+              "content": " ",
+              "offset": 5,
+              "color": "#E1E4E8",
+              "fontStyle": 0
+            },
+            {
+              "content": "x",
+              "offset": 6,
+              "color": "#79B8FF",
+              "fontStyle": 0
+            },
+            {
+              "content": " ",
+              "offset": 7,
+              "color": "#E1E4E8",
+              "fontStyle": 0
+            },
+            {
+              "content": "=",
+              "offset": 8,
+              "color": "blue",
+              "fontStyle": 0
+            },
+            {
+              "content": " ",
+              "offset": 9,
+              "color": "#E1E4E8",
+              "fontStyle": 0
+            },
+            {
+              "content": "1",
+              "offset": 10,
+              "color": "#79B8FF",
+              "fontStyle": 0
+            }
+          ]
+        ],
+        "fg": "#e1e4e8",
+        "bg": "#24292e",
+        "themeName": "github-dark",
+        "grammarState": {
+          "lang": "javascript",
+          "theme": "github-dark",
+          "themes": [
+            "github-dark"
+          ],
+          "scopes": [
+            "source.js"
+          ]
+        }
+      },
+      "html": "<pre class=\"shiki github-dark\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:blue\">const</span><span style=\"color:#79B8FF\"> x</span><span style=\"color:blue\"> =</span><span style=\"color:#79B8FF\"> 1</span></span></code></pre>"
+    },
+    {
+      "name": "replacement-13",
+      "code": "const x = 1",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark",
+        "colorReplacements": {
+          "#f97583": "blue",
+          "github-dark": {
+            "#f97583": "red"
+          }
+        }
+      },
+      "tokens": {
+        "tokens": [
+          [
+            {
+              "content": "const",
+              "offset": 0,
+              "color": "red",
+              "fontStyle": 0
+            },
+            {
+              "content": " ",
+              "offset": 5,
+              "color": "#E1E4E8",
+              "fontStyle": 0
+            },
+            {
+              "content": "x",
+              "offset": 6,
+              "color": "#79B8FF",
+              "fontStyle": 0
+            },
+            {
+              "content": " ",
+              "offset": 7,
+              "color": "#E1E4E8",
+              "fontStyle": 0
+            },
+            {
+              "content": "=",
+              "offset": 8,
+              "color": "red",
+              "fontStyle": 0
+            },
+            {
+              "content": " ",
+              "offset": 9,
+              "color": "#E1E4E8",
+              "fontStyle": 0
+            },
+            {
+              "content": "1",
+              "offset": 10,
+              "color": "#79B8FF",
+              "fontStyle": 0
+            }
+          ]
+        ],
+        "fg": "#e1e4e8",
+        "bg": "#24292e",
+        "themeName": "github-dark",
+        "grammarState": {
+          "lang": "javascript",
+          "theme": "github-dark",
+          "themes": [
+            "github-dark"
+          ],
+          "scopes": [
+            "source.js"
+          ]
+        }
+      },
+      "html": "<pre class=\"shiki github-dark\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:red\">const</span><span style=\"color:#79B8FF\"> x</span><span style=\"color:red\"> =</span><span style=\"color:#79B8FF\"> 1</span></span></code></pre>"
+    },
+    {
+      "name": "variants-14",
+      "code": "**bold** *italic* `code`\n\ntext",
+      "options": {
+        "lang": "markdown",
+        "themes": {
+          "dark": "github-dark",
+          "light": "github-light"
+        }
+      },
+      "tokens": {
+        "tokens": [
+          [
+            {
+              "content": "**bold**",
+              "offset": 0,
+              "htmlStyle": {
+                "color": "#24292E",
+                "--shiki-light-font-weight": "bold",
+                "--shiki-dark": "#E1E4E8",
+                "--shiki-dark-font-weight": "bold"
+              }
+            },
+            {
+              "content": " ",
+              "offset": 8,
+              "htmlStyle": {
+                "color": "#24292E",
+                "--shiki-dark": "#E1E4E8"
+              }
+            },
+            {
+              "content": "*italic*",
+              "offset": 9,
+              "htmlStyle": {
+                "color": "#24292E",
+                "--shiki-light-font-style": "italic",
+                "--shiki-dark": "#E1E4E8",
+                "--shiki-dark-font-style": "italic"
+              }
+            },
+            {
+              "content": " ",
+              "offset": 17,
+              "htmlStyle": {
+                "color": "#24292E",
+                "--shiki-dark": "#E1E4E8"
+              }
+            },
+            {
+              "content": "`code`",
+              "offset": 18,
+              "htmlStyle": {
+                "color": "#005CC5",
+                "--shiki-dark": "#79B8FF"
+              }
+            }
+          ],
+          [],
+          [
+            {
+              "content": "text",
+              "offset": 26,
+              "htmlStyle": {
+                "color": "#24292E",
+                "--shiki-dark": "#E1E4E8"
+              }
+            }
+          ]
+        ],
+        "fg": "#24292e;--shiki-dark:#e1e4e8",
+        "bg": "#fff;--shiki-dark-bg:#24292e",
+        "themeName": "shiki-themes github-light github-dark",
+        "grammarState": {
+          "lang": "markdown",
+          "theme": "github-dark",
+          "themes": [
+            "github-dark",
+            "github-light"
+          ],
+          "scopes": [
+            "meta.paragraph.markdown",
+            "text.html.markdown"
+          ]
+        }
+      },
+      "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#24292E;--shiki-light-font-weight:bold;--shiki-dark:#E1E4E8;--shiki-dark-font-weight:bold\">**bold**</span><span style=\"color:#24292E;--shiki-light-font-style:italic;--shiki-dark:#E1E4E8;--shiki-dark-font-style:italic\"> *italic*</span><span style=\"color:#005CC5;--shiki-dark:#79B8FF\"> `code`</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E;--shiki-dark:#E1E4E8\">text</span></span></code></pre>",
+      "variants": [
+        [
+          {
+            "content": "**bold**",
+            "variants": {
+              "dark": {
+                "color": "#E1E4E8",
+                "fontStyle": 2
+              },
+              "light": {
+                "color": "#24292E",
+                "fontStyle": 2
+              }
+            },
+            "offset": 0
+          },
+          {
+            "content": " ",
+            "variants": {
+              "dark": {
+                "color": "#E1E4E8",
+                "fontStyle": 0
+              },
+              "light": {
+                "color": "#24292E",
+                "fontStyle": 0
+              }
+            },
+            "offset": 8
+          },
+          {
+            "content": "*italic*",
+            "variants": {
+              "dark": {
+                "color": "#E1E4E8",
+                "fontStyle": 1
+              },
+              "light": {
+                "color": "#24292E",
+                "fontStyle": 1
+              }
+            },
+            "offset": 9
+          },
+          {
+            "content": " ",
+            "variants": {
+              "dark": {
+                "color": "#E1E4E8",
+                "fontStyle": 0
+              },
+              "light": {
+                "color": "#24292E",
+                "fontStyle": 0
+              }
+            },
+            "offset": 17
+          },
+          {
+            "content": "`code`",
+            "variants": {
+              "dark": {
+                "color": "#79B8FF",
+                "fontStyle": 0
+              },
+              "light": {
+                "color": "#005CC5",
+                "fontStyle": 0
+              }
+            },
+            "offset": 18
+          }
+        ],
+        [],
+        [
+          {
+            "content": "text",
+            "variants": {
+              "dark": {
+                "color": "#E1E4E8",
+                "fontStyle": 0
+              },
+              "light": {
+                "color": "#24292E",
+                "fontStyle": 0
+              }
+            },
+            "offset": 26
+          }
+        ]
+      ]
+    },
+    {
+      "name": "variants-15",
+      "code": "**bold** *italic* `code`\n\ntext",
+      "options": {
+        "lang": "markdown",
+        "themes": {
+          "dark": "github-dark",
+          "light": "github-light"
+        },
+        "defaultColor": false
+      },
+      "tokens": {
+        "tokens": [
+          [
+            {
+              "content": "**bold**",
+              "offset": 0,
+              "htmlStyle": {
+                "--shiki-dark": "#E1E4E8",
+                "--shiki-dark-font-weight": "bold",
+                "--shiki-light": "#24292E",
+                "--shiki-light-font-weight": "bold"
+              }
+            },
+            {
+              "content": " ",
+              "offset": 8,
+              "htmlStyle": {
+                "--shiki-dark": "#E1E4E8",
+                "--shiki-light": "#24292E"
+              }
+            },
+            {
+              "content": "*italic*",
+              "offset": 9,
+              "htmlStyle": {
+                "--shiki-dark": "#E1E4E8",
+                "--shiki-dark-font-style": "italic",
+                "--shiki-light": "#24292E",
+                "--shiki-light-font-style": "italic"
+              }
+            },
+            {
+              "content": " ",
+              "offset": 17,
+              "htmlStyle": {
+                "--shiki-dark": "#E1E4E8",
+                "--shiki-light": "#24292E"
+              }
+            },
+            {
+              "content": "`code`",
+              "offset": 18,
+              "htmlStyle": {
+                "--shiki-dark": "#79B8FF",
+                "--shiki-light": "#005CC5"
+              }
+            }
+          ],
+          [],
+          [
+            {
+              "content": "text",
+              "offset": 26,
+              "htmlStyle": {
+                "--shiki-dark": "#E1E4E8",
+                "--shiki-light": "#24292E"
+              }
+            }
+          ]
+        ],
+        "fg": "--shiki-dark:#e1e4e8;--shiki-light:#24292e",
+        "bg": "--shiki-dark-bg:#24292e;--shiki-light-bg:#fff",
+        "themeName": "shiki-themes github-dark github-light",
+        "rootStyle": "--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff",
+        "grammarState": {
+          "lang": "markdown",
+          "theme": "github-dark",
+          "themes": [
+            "github-dark",
+            "github-light"
+          ],
+          "scopes": [
+            "meta.paragraph.markdown",
+            "text.html.markdown"
+          ]
+        }
+      },
+      "html": "<pre class=\"shiki shiki-themes github-dark github-light\" style=\"--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff\" tabindex=\"0\"><code><span class=\"line\"><span style=\"--shiki-dark:#E1E4E8;--shiki-dark-font-weight:bold;--shiki-light:#24292E;--shiki-light-font-weight:bold\">**bold**</span><span style=\"--shiki-dark:#E1E4E8;--shiki-dark-font-style:italic;--shiki-light:#24292E;--shiki-light-font-style:italic\"> *italic*</span><span style=\"--shiki-dark:#79B8FF;--shiki-light:#005CC5\"> `code`</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"--shiki-dark:#E1E4E8;--shiki-light:#24292E\">text</span></span></code></pre>",
+      "variants": [
+        [
+          {
+            "content": "**bold**",
+            "variants": {
+              "dark": {
+                "color": "#E1E4E8",
+                "fontStyle": 2
+              },
+              "light": {
+                "color": "#24292E",
+                "fontStyle": 2
+              }
+            },
+            "offset": 0
+          },
+          {
+            "content": " ",
+            "variants": {
+              "dark": {
+                "color": "#E1E4E8",
+                "fontStyle": 0
+              },
+              "light": {
+                "color": "#24292E",
+                "fontStyle": 0
+              }
+            },
+            "offset": 8
+          },
+          {
+            "content": "*italic*",
+            "variants": {
+              "dark": {
+                "color": "#E1E4E8",
+                "fontStyle": 1
+              },
+              "light": {
+                "color": "#24292E",
+                "fontStyle": 1
+              }
+            },
+            "offset": 9
+          },
+          {
+            "content": " ",
+            "variants": {
+              "dark": {
+                "color": "#E1E4E8",
+                "fontStyle": 0
+              },
+              "light": {
+                "color": "#24292E",
+                "fontStyle": 0
+              }
+            },
+            "offset": 17
+          },
+          {
+            "content": "`code`",
+            "variants": {
+              "dark": {
+                "color": "#79B8FF",
+                "fontStyle": 0
+              },
+              "light": {
+                "color": "#005CC5",
+                "fontStyle": 0
+              }
+            },
+            "offset": 18
+          }
+        ],
+        [],
+        [
+          {
+            "content": "text",
+            "variants": {
+              "dark": {
+                "color": "#E1E4E8",
+                "fontStyle": 0
+              },
+              "light": {
+                "color": "#24292E",
+                "fontStyle": 0
+              }
+            },
+            "offset": 26
+          }
+        ]
+      ]
+    },
+    {
+      "name": "variants-16",
+      "code": "**bold** *italic* `code`\n\ntext",
+      "options": {
+        "lang": "markdown",
+        "themes": {
+          "dark": "github-dark",
+          "light": "github-light"
+        },
+        "defaultColor": "light-dark()"
+      },
+      "tokens": {
+        "tokens": [
+          [
+            {
+              "content": "**bold**",
+              "offset": 0,
+              "htmlStyle": {
+                "color": "light-dark(#24292E, #E1E4E8)",
+                "--shiki-dark": "#E1E4E8",
+                "--shiki-dark-font-weight": "bold",
+                "--shiki-light": "#24292E",
+                "--shiki-light-font-weight": "bold"
+              }
+            },
+            {
+              "content": " ",
+              "offset": 8,
+              "htmlStyle": {
+                "color": "light-dark(#24292E, #E1E4E8)",
+                "--shiki-dark": "#E1E4E8",
+                "--shiki-light": "#24292E"
+              }
+            },
+            {
+              "content": "*italic*",
+              "offset": 9,
+              "htmlStyle": {
+                "color": "light-dark(#24292E, #E1E4E8)",
+                "--shiki-dark": "#E1E4E8",
+                "--shiki-dark-font-style": "italic",
+                "--shiki-light": "#24292E",
+                "--shiki-light-font-style": "italic"
+              }
+            },
+            {
+              "content": " ",
+              "offset": 17,
+              "htmlStyle": {
+                "color": "light-dark(#24292E, #E1E4E8)",
+                "--shiki-dark": "#E1E4E8",
+                "--shiki-light": "#24292E"
+              }
+            },
+            {
+              "content": "`code`",
+              "offset": 18,
+              "htmlStyle": {
+                "color": "light-dark(#005CC5, #79B8FF)",
+                "--shiki-dark": "#79B8FF",
+                "--shiki-light": "#005CC5"
+              }
+            }
+          ],
+          [],
+          [
+            {
+              "content": "text",
+              "offset": 26,
+              "htmlStyle": {
+                "color": "light-dark(#24292E, #E1E4E8)",
+                "--shiki-dark": "#E1E4E8",
+                "--shiki-light": "#24292E"
+              }
+            }
+          ]
+        ],
+        "fg": "light-dark(#24292e, #e1e4e8);--shiki-dark:#e1e4e8;--shiki-light:#24292e",
+        "bg": "light-dark(#fff, #24292e);--shiki-dark-bg:#24292e;--shiki-light-bg:#fff",
+        "themeName": "shiki-themes github-dark github-light",
+        "grammarState": {
+          "lang": "markdown",
+          "theme": "github-dark",
+          "themes": [
+            "github-dark",
+            "github-light"
+          ],
+          "scopes": [
+            "meta.paragraph.markdown",
+            "text.html.markdown"
+          ]
+        }
+      },
+      "html": "<pre class=\"shiki shiki-themes github-dark github-light\" style=\"background-color:light-dark(#fff, #24292e);--shiki-dark-bg:#24292e;--shiki-light-bg:#fff;color:light-dark(#24292e, #e1e4e8);--shiki-dark:#e1e4e8;--shiki-light:#24292e\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-dark:#E1E4E8;--shiki-dark-font-weight:bold;--shiki-light:#24292E;--shiki-light-font-weight:bold\">**bold**</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-dark:#E1E4E8;--shiki-dark-font-style:italic;--shiki-light:#24292E;--shiki-light-font-style:italic\"> *italic*</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-dark:#79B8FF;--shiki-light:#005CC5\"> `code`</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-dark:#E1E4E8;--shiki-light:#24292E\">text</span></span></code></pre>",
+      "variants": [
+        [
+          {
+            "content": "**bold**",
+            "variants": {
+              "dark": {
+                "color": "#E1E4E8",
+                "fontStyle": 2
+              },
+              "light": {
+                "color": "#24292E",
+                "fontStyle": 2
+              }
+            },
+            "offset": 0
+          },
+          {
+            "content": " ",
+            "variants": {
+              "dark": {
+                "color": "#E1E4E8",
+                "fontStyle": 0
+              },
+              "light": {
+                "color": "#24292E",
+                "fontStyle": 0
+              }
+            },
+            "offset": 8
+          },
+          {
+            "content": "*italic*",
+            "variants": {
+              "dark": {
+                "color": "#E1E4E8",
+                "fontStyle": 1
+              },
+              "light": {
+                "color": "#24292E",
+                "fontStyle": 1
+              }
+            },
+            "offset": 9
+          },
+          {
+            "content": " ",
+            "variants": {
+              "dark": {
+                "color": "#E1E4E8",
+                "fontStyle": 0
+              },
+              "light": {
+                "color": "#24292E",
+                "fontStyle": 0
+              }
+            },
+            "offset": 17
+          },
+          {
+            "content": "`code`",
+            "variants": {
+              "dark": {
+                "color": "#79B8FF",
+                "fontStyle": 0
+              },
+              "light": {
+                "color": "#005CC5",
+                "fontStyle": 0
+              }
+            },
+            "offset": 18
+          }
+        ],
+        [],
+        [
+          {
+            "content": "text",
+            "variants": {
+              "dark": {
+                "color": "#E1E4E8",
+                "fontStyle": 0
+              },
+              "light": {
+                "color": "#24292E",
+                "fontStyle": 0
+              }
+            },
+            "offset": 26
+          }
+        ]
+      ]
+    },
+    {
+      "name": "variants-17",
+      "code": "**bold** *italic* `code`\n\ntext",
+      "options": {
+        "lang": "markdown",
+        "themes": {
+          "dark": "github-dark",
+          "light": "github-light"
+        },
+        "colorsRendering": "none"
+      },
+      "tokens": {
+        "tokens": [
+          [
+            {
+              "content": "**bold**",
+              "offset": 0,
+              "htmlStyle": {
+                "color": "#24292E"
+              }
+            },
+            {
+              "content": " ",
+              "offset": 8,
+              "htmlStyle": {
+                "color": "#24292E"
+              }
+            },
+            {
+              "content": "*italic*",
+              "offset": 9,
+              "htmlStyle": {
+                "color": "#24292E"
+              }
+            },
+            {
+              "content": " ",
+              "offset": 17,
+              "htmlStyle": {
+                "color": "#24292E"
+              }
+            },
+            {
+              "content": "`code`",
+              "offset": 18,
+              "htmlStyle": {
+                "color": "#005CC5"
+              }
+            }
+          ],
+          [],
+          [
+            {
+              "content": "text",
+              "offset": 26,
+              "htmlStyle": {
+                "color": "#24292E"
+              }
+            }
+          ]
+        ],
+        "fg": "#24292e",
+        "bg": "#fff",
+        "themeName": "shiki-themes github-light github-dark",
+        "grammarState": {
+          "lang": "markdown",
+          "theme": "github-dark",
+          "themes": [
+            "github-dark",
+            "github-light"
+          ],
+          "scopes": [
+            "meta.paragraph.markdown",
+            "text.html.markdown"
+          ]
+        }
+      },
+      "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:#fff;color:#24292e\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#24292E\">**bold**</span><span style=\"color:#24292E\"> *italic*</span><span style=\"color:#005CC5\"> `code`</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">text</span></span></code></pre>",
+      "variants": [
+        [
+          {
+            "content": "**bold**",
+            "variants": {
+              "dark": {
+                "color": "#E1E4E8",
+                "fontStyle": 2
+              },
+              "light": {
+                "color": "#24292E",
+                "fontStyle": 2
+              }
+            },
+            "offset": 0
+          },
+          {
+            "content": " ",
+            "variants": {
+              "dark": {
+                "color": "#E1E4E8",
+                "fontStyle": 0
+              },
+              "light": {
+                "color": "#24292E",
+                "fontStyle": 0
+              }
+            },
+            "offset": 8
+          },
+          {
+            "content": "*italic*",
+            "variants": {
+              "dark": {
+                "color": "#E1E4E8",
+                "fontStyle": 1
+              },
+              "light": {
+                "color": "#24292E",
+                "fontStyle": 1
+              }
+            },
+            "offset": 9
+          },
+          {
+            "content": " ",
+            "variants": {
+              "dark": {
+                "color": "#E1E4E8",
+                "fontStyle": 0
+              },
+              "light": {
+                "color": "#24292E",
+                "fontStyle": 0
+              }
+            },
+            "offset": 17
+          },
+          {
+            "content": "`code`",
+            "variants": {
+              "dark": {
+                "color": "#79B8FF",
+                "fontStyle": 0
+              },
+              "light": {
+                "color": "#005CC5",
+                "fontStyle": 0
+              }
+            },
+            "offset": 18
+          }
+        ],
+        [],
+        [
+          {
+            "content": "text",
+            "variants": {
+              "dark": {
+                "color": "#E1E4E8",
+                "fontStyle": 0
+              },
+              "light": {
+                "color": "#24292E",
+                "fontStyle": 0
+              }
+            },
+            "offset": 26
+          }
+        ]
+      ]
+    },
+    {
+      "name": "variants-18",
+      "code": "**bold** *italic* `code`\n\ntext",
+      "options": {
+        "lang": "markdown",
+        "themes": {
+          "dark": "github-dark",
+          "light": "github-light"
+        },
+        "defaultColor": "light-dark()",
+        "colorsRendering": "none"
+      },
+      "tokens": {
+        "tokens": [
+          [
+            {
+              "content": "**bold**",
+              "offset": 0,
+              "htmlStyle": {
+                "color": "light-dark(#24292E, #E1E4E8)"
+              }
+            },
+            {
+              "content": " ",
+              "offset": 8,
+              "htmlStyle": {
+                "color": "light-dark(#24292E, #E1E4E8)"
+              }
+            },
+            {
+              "content": "*italic*",
+              "offset": 9,
+              "htmlStyle": {
+                "color": "light-dark(#24292E, #E1E4E8)"
+              }
+            },
+            {
+              "content": " ",
+              "offset": 17,
+              "htmlStyle": {
+                "color": "light-dark(#24292E, #E1E4E8)"
+              }
+            },
+            {
+              "content": "`code`",
+              "offset": 18,
+              "htmlStyle": {
+                "color": "light-dark(#005CC5, #79B8FF)"
+              }
+            }
+          ],
+          [],
+          [
+            {
+              "content": "text",
+              "offset": 26,
+              "htmlStyle": {
+                "color": "light-dark(#24292E, #E1E4E8)"
+              }
+            }
+          ]
+        ],
+        "fg": "light-dark(#24292e, #e1e4e8);--shiki-dark:#e1e4e8",
+        "bg": "light-dark(#fff, #24292e);--shiki-dark-bg:#24292e",
+        "themeName": "shiki-themes github-dark github-light",
+        "grammarState": {
+          "lang": "markdown",
+          "theme": "github-dark",
+          "themes": [
+            "github-dark",
+            "github-light"
+          ],
+          "scopes": [
+            "meta.paragraph.markdown",
+            "text.html.markdown"
+          ]
+        }
+      },
+      "html": "<pre class=\"shiki shiki-themes github-dark github-light\" style=\"background-color:light-dark(#fff, #24292e);--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8)\">**bold**</span><span style=\"color:light-dark(#24292E, #E1E4E8)\"> *italic*</span><span style=\"color:light-dark(#005CC5, #79B8FF)\"> `code`</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:light-dark(#24292E, #E1E4E8)\">text</span></span></code></pre>",
+      "variants": [
+        [
+          {
+            "content": "**bold**",
+            "variants": {
+              "dark": {
+                "color": "#E1E4E8",
+                "fontStyle": 2
+              },
+              "light": {
+                "color": "#24292E",
+                "fontStyle": 2
+              }
+            },
+            "offset": 0
+          },
+          {
+            "content": " ",
+            "variants": {
+              "dark": {
+                "color": "#E1E4E8",
+                "fontStyle": 0
+              },
+              "light": {
+                "color": "#24292E",
+                "fontStyle": 0
+              }
+            },
+            "offset": 8
+          },
+          {
+            "content": "*italic*",
+            "variants": {
+              "dark": {
+                "color": "#E1E4E8",
+                "fontStyle": 1
+              },
+              "light": {
+                "color": "#24292E",
+                "fontStyle": 1
+              }
+            },
+            "offset": 9
+          },
+          {
+            "content": " ",
+            "variants": {
+              "dark": {
+                "color": "#E1E4E8",
+                "fontStyle": 0
+              },
+              "light": {
+                "color": "#24292E",
+                "fontStyle": 0
+              }
+            },
+            "offset": 17
+          },
+          {
+            "content": "`code`",
+            "variants": {
+              "dark": {
+                "color": "#79B8FF",
+                "fontStyle": 0
+              },
+              "light": {
+                "color": "#005CC5",
+                "fontStyle": 0
+              }
+            },
+            "offset": 18
+          }
+        ],
+        [],
+        [
+          {
+            "content": "text",
+            "variants": {
+              "dark": {
+                "color": "#E1E4E8",
+                "fontStyle": 0
+              },
+              "light": {
+                "color": "#24292E",
+                "fontStyle": 0
+              }
+            },
+            "offset": 26
+          }
+        ]
+      ]
+    },
+    {
+      "name": "variants-19",
+      "code": "**bold** *italic* `code`\n\ntext",
+      "options": {
+        "lang": "markdown",
+        "themes": {
+          "dark": "github-dark",
+          "light": "github-light"
+        },
+        "cssVariablePrefix": "--syntax-"
+      },
+      "tokens": {
+        "tokens": [
+          [
+            {
+              "content": "**bold**",
+              "offset": 0,
+              "htmlStyle": {
+                "color": "#24292E",
+                "--syntax-light-font-weight": "bold",
+                "--syntax-dark": "#E1E4E8",
+                "--syntax-dark-font-weight": "bold"
+              }
+            },
+            {
+              "content": " ",
+              "offset": 8,
+              "htmlStyle": {
+                "color": "#24292E",
+                "--syntax-dark": "#E1E4E8"
+              }
+            },
+            {
+              "content": "*italic*",
+              "offset": 9,
+              "htmlStyle": {
+                "color": "#24292E",
+                "--syntax-light-font-style": "italic",
+                "--syntax-dark": "#E1E4E8",
+                "--syntax-dark-font-style": "italic"
+              }
+            },
+            {
+              "content": " ",
+              "offset": 17,
+              "htmlStyle": {
+                "color": "#24292E",
+                "--syntax-dark": "#E1E4E8"
+              }
+            },
+            {
+              "content": "`code`",
+              "offset": 18,
+              "htmlStyle": {
+                "color": "#005CC5",
+                "--syntax-dark": "#79B8FF"
+              }
+            }
+          ],
+          [],
+          [
+            {
+              "content": "text",
+              "offset": 26,
+              "htmlStyle": {
+                "color": "#24292E",
+                "--syntax-dark": "#E1E4E8"
+              }
+            }
+          ]
+        ],
+        "fg": "#24292e;--syntax-dark:#e1e4e8",
+        "bg": "#fff;--syntax-dark-bg:#24292e",
+        "themeName": "shiki-themes github-light github-dark",
+        "grammarState": {
+          "lang": "markdown",
+          "theme": "github-dark",
+          "themes": [
+            "github-dark",
+            "github-light"
+          ],
+          "scopes": [
+            "meta.paragraph.markdown",
+            "text.html.markdown"
+          ]
+        }
+      },
+      "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:#fff;--syntax-dark-bg:#24292e;color:#24292e;--syntax-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#24292E;--syntax-light-font-weight:bold;--syntax-dark:#E1E4E8;--syntax-dark-font-weight:bold\">**bold**</span><span style=\"color:#24292E;--syntax-light-font-style:italic;--syntax-dark:#E1E4E8;--syntax-dark-font-style:italic\"> *italic*</span><span style=\"color:#005CC5;--syntax-dark:#79B8FF\"> `code`</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E;--syntax-dark:#E1E4E8\">text</span></span></code></pre>",
+      "variants": [
+        [
+          {
+            "content": "**bold**",
+            "variants": {
+              "dark": {
+                "color": "#E1E4E8",
+                "fontStyle": 2
+              },
+              "light": {
+                "color": "#24292E",
+                "fontStyle": 2
+              }
+            },
+            "offset": 0
+          },
+          {
+            "content": " ",
+            "variants": {
+              "dark": {
+                "color": "#E1E4E8",
+                "fontStyle": 0
+              },
+              "light": {
+                "color": "#24292E",
+                "fontStyle": 0
+              }
+            },
+            "offset": 8
+          },
+          {
+            "content": "*italic*",
+            "variants": {
+              "dark": {
+                "color": "#E1E4E8",
+                "fontStyle": 1
+              },
+              "light": {
+                "color": "#24292E",
+                "fontStyle": 1
+              }
+            },
+            "offset": 9
+          },
+          {
+            "content": " ",
+            "variants": {
+              "dark": {
+                "color": "#E1E4E8",
+                "fontStyle": 0
+              },
+              "light": {
+                "color": "#24292E",
+                "fontStyle": 0
+              }
+            },
+            "offset": 17
+          },
+          {
+            "content": "`code`",
+            "variants": {
+              "dark": {
+                "color": "#79B8FF",
+                "fontStyle": 0
+              },
+              "light": {
+                "color": "#005CC5",
+                "fontStyle": 0
+              }
+            },
+            "offset": 18
+          }
+        ],
+        [],
+        [
+          {
+            "content": "text",
+            "variants": {
+              "dark": {
+                "color": "#E1E4E8",
+                "fontStyle": 0
+              },
+              "light": {
+                "color": "#24292E",
+                "fontStyle": 0
+              }
+            },
+            "offset": 26
+          }
+        ]
+      ]
+    },
+    {
+      "name": "duplicate-theme",
+      "code": "const x = 1",
+      "options": {
+        "lang": "js",
+        "themes": {
+          "light": "github-dark",
+          "dark": "github-dark"
+        }
+      },
+      "tokens": {
+        "tokens": [
+          [
+            {
+              "content": "const",
+              "offset": 0,
+              "htmlStyle": {
+                "color": "#F97583",
+                "--shiki-dark": "#F97583"
+              }
+            },
+            {
+              "content": " ",
+              "offset": 5,
+              "htmlStyle": {
+                "color": "#E1E4E8",
+                "--shiki-dark": "#E1E4E8"
+              }
+            },
+            {
+              "content": "x",
+              "offset": 6,
+              "htmlStyle": {
+                "color": "#79B8FF",
+                "--shiki-dark": "#79B8FF"
+              }
+            },
+            {
+              "content": " ",
+              "offset": 7,
+              "htmlStyle": {
+                "color": "#E1E4E8",
+                "--shiki-dark": "#E1E4E8"
+              }
+            },
+            {
+              "content": "=",
+              "offset": 8,
+              "htmlStyle": {
+                "color": "#F97583",
+                "--shiki-dark": "#F97583"
+              }
+            },
+            {
+              "content": " ",
+              "offset": 9,
+              "htmlStyle": {
+                "color": "#E1E4E8",
+                "--shiki-dark": "#E1E4E8"
+              }
+            },
+            {
+              "content": "1",
+              "offset": 10,
+              "htmlStyle": {
+                "color": "#79B8FF",
+                "--shiki-dark": "#79B8FF"
+              }
+            }
+          ]
+        ],
+        "fg": "#e1e4e8;--shiki-dark:#e1e4e8",
+        "bg": "#24292e;--shiki-dark-bg:#24292e",
+        "themeName": "shiki-themes github-dark github-dark",
+        "grammarState": {
+          "lang": "javascript",
+          "theme": "github-dark",
+          "themes": [
+            "github-dark"
+          ],
+          "scopes": [
+            "source.js"
+          ]
+        }
+      },
+      "html": "<pre class=\"shiki shiki-themes github-dark github-dark\" style=\"background-color:#24292e;--shiki-dark-bg:#24292e;color:#e1e4e8;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#F97583;--shiki-dark:#F97583\">const</span><span style=\"color:#79B8FF;--shiki-dark:#79B8FF\"> x</span><span style=\"color:#F97583;--shiki-dark:#F97583\"> =</span><span style=\"color:#79B8FF;--shiki-dark:#79B8FF\"> 1</span></span></code></pre>",
+      "variants": [
+        [
+          {
+            "content": "const",
+            "variants": {
+              "light": {
+                "color": "#F97583",
+                "fontStyle": 0
+              },
+              "dark": {
+                "color": "#F97583",
+                "fontStyle": 0
+              }
+            },
+            "offset": 0
+          },
+          {
+            "content": " ",
+            "variants": {
+              "light": {
+                "color": "#E1E4E8",
+                "fontStyle": 0
+              },
+              "dark": {
+                "color": "#E1E4E8",
+                "fontStyle": 0
+              }
+            },
+            "offset": 5
+          },
+          {
+            "content": "x",
+            "variants": {
+              "light": {
+                "color": "#79B8FF",
+                "fontStyle": 0
+              },
+              "dark": {
+                "color": "#79B8FF",
+                "fontStyle": 0
+              }
+            },
+            "offset": 6
+          },
+          {
+            "content": " ",
+            "variants": {
+              "light": {
+                "color": "#E1E4E8",
+                "fontStyle": 0
+              },
+              "dark": {
+                "color": "#E1E4E8",
+                "fontStyle": 0
+              }
+            },
+            "offset": 7
+          },
+          {
+            "content": "=",
+            "variants": {
+              "light": {
+                "color": "#F97583",
+                "fontStyle": 0
+              },
+              "dark": {
+                "color": "#F97583",
+                "fontStyle": 0
+              }
+            },
+            "offset": 8
+          },
+          {
+            "content": " ",
+            "variants": {
+              "light": {
+                "color": "#E1E4E8",
+                "fontStyle": 0
+              },
+              "dark": {
+                "color": "#E1E4E8",
+                "fontStyle": 0
+              }
+            },
+            "offset": 9
+          },
+          {
+            "content": "1",
+            "variants": {
+              "light": {
+                "color": "#79B8FF",
+                "fontStyle": 0
+              },
+              "dark": {
+                "color": "#79B8FF",
+                "fontStyle": 0
+              }
+            },
+            "offset": 10
+          }
+        ]
+      ]
+    },
+    {
+      "name": "state-21",
+      "code": "comment */ const x = 1",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark"
+      },
+      "prefix": "/* open",
+      "tokens": {
+        "tokens": [
+          [
+            {
+              "content": "comment */",
+              "offset": 0,
+              "color": "#6A737D",
+              "fontStyle": 0
+            },
+            {
+              "content": " ",
+              "offset": 10,
+              "color": "#E1E4E8",
+              "fontStyle": 0
+            },
+            {
+              "content": "const",
+              "offset": 11,
+              "color": "#F97583",
+              "fontStyle": 0
+            },
+            {
+              "content": " ",
+              "offset": 16,
+              "color": "#E1E4E8",
+              "fontStyle": 0
+            },
+            {
+              "content": "x",
+              "offset": 17,
+              "color": "#79B8FF",
+              "fontStyle": 0
+            },
+            {
+              "content": " ",
+              "offset": 18,
+              "color": "#E1E4E8",
+              "fontStyle": 0
+            },
+            {
+              "content": "=",
+              "offset": 19,
+              "color": "#F97583",
+              "fontStyle": 0
+            },
+            {
+              "content": " ",
+              "offset": 20,
+              "color": "#E1E4E8",
+              "fontStyle": 0
+            },
+            {
+              "content": "1",
+              "offset": 21,
+              "color": "#79B8FF",
+              "fontStyle": 0
+            }
+          ]
+        ],
+        "fg": "#e1e4e8",
+        "bg": "#24292e",
+        "themeName": "github-dark",
+        "grammarState": {
+          "lang": "javascript",
+          "theme": "github-dark",
+          "themes": [
+            "github-dark"
+          ],
+          "scopes": [
+            "source.js"
+          ]
+        }
+      },
+      "html": "<pre class=\"shiki github-dark\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#6A737D\">comment */</span><span style=\"color:#F97583\"> const</span><span style=\"color:#79B8FF\"> x</span><span style=\"color:#F97583\"> =</span><span style=\"color:#79B8FF\"> 1</span></span></code></pre>"
+    },
+    {
+      "name": "state-22",
+      "code": "1 + 2} world`",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark"
+      },
+      "prefix": "const x = `hello ${",
+      "tokens": {
+        "tokens": [
+          [
+            {
+              "content": "1",
+              "offset": 0,
+              "color": "#79B8FF",
+              "fontStyle": 0
+            },
+            {
+              "content": " ",
+              "offset": 1,
+              "color": "#9ECBFF",
+              "fontStyle": 0
+            },
+            {
+              "content": "+",
+              "offset": 2,
+              "color": "#F97583",
+              "fontStyle": 0
+            },
+            {
+              "content": " ",
+              "offset": 3,
+              "color": "#9ECBFF",
+              "fontStyle": 0
+            },
+            {
+              "content": "2",
+              "offset": 4,
+              "color": "#79B8FF",
+              "fontStyle": 0
+            },
+            {
+              "content": "} world`",
+              "offset": 5,
+              "color": "#9ECBFF",
+              "fontStyle": 0
+            }
+          ]
+        ],
+        "fg": "#e1e4e8",
+        "bg": "#24292e",
+        "themeName": "github-dark",
+        "grammarState": {
+          "lang": "javascript",
+          "theme": "github-dark",
+          "themes": [
+            "github-dark"
+          ],
+          "scopes": [
+            "source.js"
+          ]
+        }
+      },
+      "html": "<pre class=\"shiki github-dark\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#79B8FF\">1</span><span style=\"color:#F97583\"> +</span><span style=\"color:#79B8FF\"> 2</span><span style=\"color:#9ECBFF\">} world`</span></span></code></pre>"
+    },
+    {
+      "name": "state-23",
+      "code": "text\nHEREDOC\nname: 42",
+      "options": {
+        "lang": "test-backref",
+        "theme": "github-dark"
+      },
+      "prefix": "<<HEREDOC",
+      "tokens": {
+        "tokens": [
+          [
+            {
+              "content": "text",
+              "offset": 0,
+              "color": "#9ECBFF",
+              "fontStyle": 0
+            }
+          ],
+          [
+            {
+              "content": "HEREDOC",
+              "offset": 5,
+              "color": "#85E89D",
+              "fontStyle": 0
+            }
+          ],
+          [
+            {
+              "content": "name: ",
+              "offset": 13,
+              "color": "#E1E4E8",
+              "fontStyle": 0
+            },
+            {
+              "content": "42",
+              "offset": 19,
+              "color": "#79B8FF",
+              "fontStyle": 0
+            }
+          ]
+        ],
+        "fg": "#e1e4e8",
+        "bg": "#24292e",
+        "themeName": "github-dark",
+        "grammarState": {
+          "lang": "test-backref",
+          "theme": "github-dark",
+          "themes": [
+            "github-dark"
+          ],
+          "scopes": [
+            "source.test-backref"
+          ]
+        }
+      },
+      "html": "<pre class=\"shiki github-dark\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#9ECBFF\">text</span></span>\n<span class=\"line\"><span style=\"color:#85E89D\">HEREDOC</span></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\">name: </span><span style=\"color:#79B8FF\">42</span></span></code></pre>"
+    },
+    {
+      "name": "state-24",
+      "code": "> second\nplain",
+      "options": {
+        "lang": "test-while",
+        "theme": "github-dark"
+      },
+      "prefix": "> first",
+      "tokens": {
+        "tokens": [
+          [
+            {
+              "content": "> second",
+              "offset": 0,
+              "color": "#85E89D",
+              "fontStyle": 0
+            }
+          ],
+          [
+            {
+              "content": "plain",
+              "offset": 9,
+              "color": "#F97583",
+              "fontStyle": 0
+            }
+          ]
+        ],
+        "fg": "#e1e4e8",
+        "bg": "#24292e",
+        "themeName": "github-dark",
+        "grammarState": {
+          "lang": "test-while",
+          "theme": "github-dark",
+          "themes": [
+            "github-dark"
+          ],
+          "scopes": [
+            "source.test-while"
+          ]
+        }
+      },
+      "html": "<pre class=\"shiki github-dark\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#85E89D\">> second</span></span>\n<span class=\"line\"><span style=\"color:#F97583\">plain</span></span></code></pre>"
+    }
+  ],
+  "ansi": [
+    {
+      "name": "github-dark-js",
+      "code": "const x = \"hello\"\n// comment\n",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark"
+      },
+      "ansi": "\u001b[38;2;249;117;131mconst\u001b[39m\u001b[38;2;225;228;232m \u001b[39m\u001b[38;2;121;184;255mx\u001b[39m\u001b[38;2;225;228;232m \u001b[39m\u001b[38;2;249;117;131m=\u001b[39m\u001b[38;2;225;228;232m \u001b[39m\u001b[38;2;158;203;255m\"hello\"\u001b[39m\n\u001b[38;2;106;115;125m// comment\u001b[39m\n\n"
+    },
+    {
+      "name": "github-dark-markdown",
+      "code": "**bold** *italic* ~~strike~~",
+      "options": {
+        "lang": "markdown",
+        "theme": "github-dark"
+      },
+      "ansi": "\u001b[1m\u001b[38;2;225;228;232m**bold**\u001b[39m\u001b[22m\u001b[38;2;225;228;232m \u001b[39m\u001b[3m\u001b[38;2;225;228;232m*italic*\u001b[39m\u001b[23m\u001b[38;2;225;228;232m \u001b[39m\u001b[9m\u001b[38;2;225;228;232m~~strike~~\u001b[39m\u001b[29m\n"
+    },
+    {
+      "name": "github-dark-text",
+      "code": "plain\n",
+      "options": {
+        "lang": "text",
+        "theme": "github-dark"
+      },
+      "ansi": "\u001b[38;2;225;228;232mplain\u001b[39m\n\n"
+    },
+    {
+      "name": "github-light-js",
+      "code": "const x = \"hello\"\n// comment\n",
+      "options": {
+        "lang": "js",
+        "theme": "github-light"
+      },
+      "ansi": "\u001b[38;2;215;58;73mconst\u001b[39m\u001b[38;2;36;41;46m \u001b[39m\u001b[38;2;0;92;197mx\u001b[39m\u001b[38;2;36;41;46m \u001b[39m\u001b[38;2;215;58;73m=\u001b[39m\u001b[38;2;36;41;46m \u001b[39m\u001b[38;2;3;47;98m\"hello\"\u001b[39m\n\u001b[38;2;106;115;125m// comment\u001b[39m\n\n"
+    },
+    {
+      "name": "github-light-markdown",
+      "code": "**bold** *italic* ~~strike~~",
+      "options": {
+        "lang": "markdown",
+        "theme": "github-light"
+      },
+      "ansi": "\u001b[1m\u001b[38;2;36;41;46m**bold**\u001b[39m\u001b[22m\u001b[38;2;36;41;46m \u001b[39m\u001b[3m\u001b[38;2;36;41;46m*italic*\u001b[39m\u001b[23m\u001b[38;2;36;41;46m \u001b[39m\u001b[9m\u001b[38;2;36;41;46m~~strike~~\u001b[39m\u001b[29m\n"
+    },
+    {
+      "name": "github-light-text",
+      "code": "plain\n",
+      "options": {
+        "lang": "text",
+        "theme": "github-light"
+      },
+      "ansi": "\u001b[38;2;36;41;46mplain\u001b[39m\n\n"
+    },
+    {
+      "name": "rose-pine-js",
+      "code": "const x = \"hello\"\n// comment\n",
+      "options": {
+        "lang": "js",
+        "theme": "rose-pine"
+      },
+      "ansi": "\u001b[38;2;49;116;143mconst\u001b[39m\u001b[38;2;224;222;244m \u001b[39m\u001b[3m\u001b[38;2;224;222;244mx\u001b[39m\u001b[23m\u001b[38;2;224;222;244m \u001b[39m\u001b[38;2;49;116;143m=\u001b[39m\u001b[38;2;224;222;244m \u001b[39m\u001b[38;2;246;193;119m\"hello\"\u001b[39m\n\u001b[3m\u001b[38;2;144;140;170m//\u001b[39m\u001b[23m\u001b[3m\u001b[38;2;110;106;134m comment\u001b[39m\u001b[23m\n\n"
+    },
+    {
+      "name": "rose-pine-markdown",
+      "code": "**bold** *italic* ~~strike~~",
+      "options": {
+        "lang": "markdown",
+        "theme": "rose-pine"
+      },
+      "ansi": "\u001b[1m\u001b[38;2;144;140;170m**\u001b[39m\u001b[22m\u001b[1m\u001b[38;2;224;222;244mbold\u001b[39m\u001b[22m\u001b[1m\u001b[38;2;144;140;170m**\u001b[39m\u001b[22m\u001b[38;2;224;222;244m \u001b[39m\u001b[3m\u001b[38;2;144;140;170m*\u001b[39m\u001b[23m\u001b[3m\u001b[38;2;224;222;244mitalic\u001b[39m\u001b[23m\u001b[3m\u001b[38;2;144;140;170m*\u001b[39m\u001b[23m\u001b[38;2;224;222;244m \u001b[39m\u001b[38;2;144;140;170m~~\u001b[39m\u001b[38;2;224;222;244mstrike\u001b[39m\u001b[38;2;144;140;170m~~\u001b[39m\n"
+    },
+    {
+      "name": "rose-pine-text",
+      "code": "plain\n",
+      "options": {
+        "lang": "text",
+        "theme": "rose-pine"
+      },
+      "ansi": "\u001b[38;2;224;222;244mplain\u001b[39m\n\n"
+    },
+    {
+      "name": "vitesse-dark-js",
+      "code": "const x = \"hello\"\n// comment\n",
+      "options": {
+        "lang": "js",
+        "theme": "vitesse-dark"
+      },
+      "ansi": "\u001b[38;2;203;118;118mconst\u001b[39m\u001b[38;2;102;102;102m \u001b[39m\u001b[38;2;189;151;106mx\u001b[39m\u001b[38;2;102;102;102m \u001b[39m\u001b[38;2;102;102;102m=\u001b[39m\u001b[38;2;102;102;102m \u001b[39m\u001b[38;2;204;204;204m\"\u001b[39m\u001b[38;2;201;138;125mhello\u001b[39m\u001b[38;2;204;204;204m\"\u001b[39m\n\u001b[38;2;102;102;102m// comment\u001b[39m\n\n"
+    },
+    {
+      "name": "vitesse-dark-markdown",
+      "code": "**bold** *italic* ~~strike~~",
+      "options": {
+        "lang": "markdown",
+        "theme": "vitesse-dark"
+      },
+      "ansi": "\u001b[1m\u001b[38;2;102;102;102m**\u001b[39m\u001b[22m\u001b[1m\u001b[38;2;102;102;102mbold\u001b[39m\u001b[22m\u001b[1m\u001b[38;2;102;102;102m**\u001b[39m\u001b[22m\u001b[38;2;102;102;102m \u001b[39m\u001b[3m\u001b[38;2;102;102;102m*\u001b[39m\u001b[23m\u001b[3m\u001b[38;2;102;102;102mitalic\u001b[39m\u001b[23m\u001b[3m\u001b[38;2;102;102;102m*\u001b[39m\u001b[23m\u001b[38;2;102;102;102m \u001b[39m\u001b[38;2;102;102;102m~~\u001b[39m\u001b[38;2;102;102;102mstrike\u001b[39m\u001b[38;2;102;102;102m~~\u001b[39m\n"
+    },
+    {
+      "name": "vitesse-dark-text",
+      "code": "plain\n",
+      "options": {
+        "lang": "text",
+        "theme": "vitesse-dark"
+      },
+      "ansi": "\u001b[38;2;102;102;102mplain\u001b[39m\n\n"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+.cache/
+tools/reference/node_modules/
+*.exe
+coverage.out
+bin/

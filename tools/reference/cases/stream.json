@@ -1,0 +1,280 @@
+{
+  "kind": "stream",
+  "highlighter": {
+    "langs": [
+      "js",
+      "markdown"
+    ],
+    "themes": [
+      "github-dark",
+      "github-light"
+    ]
+  },
+  "cases": [
+    {
+      "name": "stream-0",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark"
+      },
+      "chunks": [
+        "c",
+        "o",
+        "n",
+        "s",
+        "t",
+        " ",
+        "x",
+        " ",
+        "=",
+        " ",
+        "`",
+        "h",
+        "e",
+        "l",
+        "l",
+        "o",
+        " ",
+        "😀",
+        "\n",
+        "$",
+        "{",
+        "4",
+        "2",
+        "}",
+        "`",
+        "\n",
+        "/",
+        "*",
+        " ",
+        "c",
+        "o",
+        "m",
+        "m",
+        "e",
+        "n",
+        "t",
+        "\n",
+        "c",
+        "o",
+        "n",
+        "t",
+        "i",
+        "n",
+        "u",
+        "e",
+        "d",
+        " ",
+        "*",
+        "/"
+      ]
+    },
+    {
+      "name": "stream-1",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark"
+      },
+      "chunks": [
+        "const",
+        " x = `hello 😀\n${42}`\n/* comment\ncontinued */"
+      ]
+    },
+    {
+      "name": "stream-2",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark"
+      },
+      "chunks": [
+        "",
+        "const x = `hello 😀\n${42}`\n/* comment\ncontinued */",
+        ""
+      ]
+    },
+    {
+      "name": "stream-3",
+      "options": {
+        "lang": "markdown",
+        "theme": "github-dark"
+      },
+      "chunks": [
+        "*",
+        "*",
+        "b",
+        "o",
+        "l",
+        "d",
+        "*",
+        "*",
+        " ",
+        "a",
+        "n",
+        "d",
+        " ",
+        "`",
+        "c",
+        "o",
+        "d",
+        "e",
+        "`",
+        "\n",
+        "\n",
+        "~",
+        "~",
+        "~",
+        "j",
+        "s",
+        "\n",
+        "c",
+        "o",
+        "n",
+        "s",
+        "t",
+        " ",
+        "x",
+        " ",
+        "=",
+        " ",
+        "1",
+        "\n",
+        "~",
+        "~",
+        "~"
+      ]
+    },
+    {
+      "name": "stream-4",
+      "options": {
+        "lang": "markdown",
+        "theme": "github-dark"
+      },
+      "chunks": [
+        "**bol",
+        "d** and `code`\n\n~~~js\nconst x = 1\n~~~"
+      ]
+    },
+    {
+      "name": "stream-5",
+      "options": {
+        "lang": "markdown",
+        "theme": "github-dark"
+      },
+      "chunks": [
+        "",
+        "**bold** and `code`\n\n~~~js\nconst x = 1\n~~~",
+        ""
+      ]
+    },
+    {
+      "name": "stream-6",
+      "options": {
+        "lang": "js",
+        "themes": {
+          "light": "github-light",
+          "dark": "github-dark"
+        }
+      },
+      "chunks": [
+        "c",
+        "o",
+        "n",
+        "s",
+        "t",
+        " ",
+        "x",
+        " ",
+        "=",
+        " ",
+        "1",
+        "\r",
+        "\n",
+        "/",
+        "/",
+        " ",
+        "c",
+        "o",
+        "m",
+        "m",
+        "e",
+        "n",
+        "t",
+        "\n"
+      ]
+    },
+    {
+      "name": "stream-7",
+      "options": {
+        "lang": "js",
+        "themes": {
+          "light": "github-light",
+          "dark": "github-dark"
+        }
+      },
+      "chunks": [
+        "const",
+        " x = 1\r\n// comment\n"
+      ]
+    },
+    {
+      "name": "stream-8",
+      "options": {
+        "lang": "js",
+        "themes": {
+          "light": "github-light",
+          "dark": "github-dark"
+        }
+      },
+      "chunks": [
+        "",
+        "const x = 1\r\n// comment\n",
+        ""
+      ]
+    },
+    {
+      "name": "stream-9",
+      "options": {
+        "lang": "text",
+        "theme": "github-dark"
+      },
+      "chunks": [
+        "p",
+        "l",
+        "a",
+        "i",
+        "n",
+        " ",
+        "😀",
+        "\n",
+        "\n",
+        "t",
+        "e",
+        "x",
+        "t"
+      ]
+    },
+    {
+      "name": "stream-10",
+      "options": {
+        "lang": "text",
+        "theme": "github-dark"
+      },
+      "chunks": [
+        "plain",
+        " 😀\n\ntext"
+      ]
+    },
+    {
+      "name": "stream-11",
+      "options": {
+        "lang": "text",
+        "theme": "github-dark"
+      },
+      "chunks": [
+        "",
+        "plain 😀\n\ntext",
+        ""
+      ]
+    }
+  ]
+}

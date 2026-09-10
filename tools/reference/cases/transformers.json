@@ -1,0 +1,415 @@
+{
+  "kind": "transformers",
+  "highlighter": {
+    "langs": [
+      "js",
+      "ts",
+      "tsx",
+      "python",
+      "html",
+      "md",
+      "jinja",
+      "liquid"
+    ],
+    "themes": [
+      "github-dark",
+      "github-light",
+      "rose-pine"
+    ]
+  },
+  "cases": [
+    {
+      "name": "notationDiff-0",
+      "transformer": "notationDiff",
+      "code": "const x = 1 // [!code ++]\nconst y = 2 // [!code --]",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "notationHighlight-1",
+      "transformer": "notationHighlight",
+      "code": "// [!code highlight:2]\nconst x = 1\nconst y = 2\nconst z = 3",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "notationHighlight-2",
+      "transformer": "notationHighlight",
+      "code": "const x = 1 // [!code hl]\nconst y = 2",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "notationFocus-3",
+      "transformer": "notationFocus",
+      "code": "const x = 1 // [!code focus]\nconst y = 2",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "notationErrorLevel-4",
+      "transformer": "notationErrorLevel",
+      "code": "const x = 1 // [!code error]\nconst y = 2 // [!code warning]\nconst z = 3 // [!code info]",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "notationWordHighlight-5",
+      "transformer": "notationWordHighlight",
+      "code": "// [!code word:hello]\nconst hello = \"hello\";\nhello()",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "notationWordHighlight-6",
+      "transformer": "notationWordHighlight",
+      "code": "const x = \"hello\" // [!code word:hello:2]\nhello()",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "metaHighlight-7",
+      "transformer": "metaHighlight",
+      "code": "const x = 1\nconst y = 2\nconst z = 3",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark",
+        "meta": {
+          "__raw": "{1,3}"
+        }
+      }
+    },
+    {
+      "name": "metaWordHighlight-8",
+      "transformer": "metaWordHighlight",
+      "code": "const hello = \"hello\";\nhello()",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark",
+        "meta": {
+          "__raw": "/hello/"
+        }
+      }
+    },
+    {
+      "name": "removeComments-9",
+      "transformer": "removeComments",
+      "code": "// comment\nconst x = 1 // comment\n/* block */\nconst s = \"// text\"",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark",
+        "includeExplanation": "scopeName"
+      }
+    },
+    {
+      "name": "removeLineBreak-10",
+      "transformer": "removeLineBreak",
+      "code": "const x = 1\nconst y = 2",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "removeNotationEscape-11",
+      "transformer": "removeNotationEscape",
+      "code": "const x = 1 // [\\!code highlight]",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "renderWhitespace-12",
+      "transformer": "renderWhitespace",
+      "code": "  const x = 1\n\tconst y = 2  ",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "renderIndentGuides-13",
+      "transformer": "renderIndentGuides",
+      "code": "function f() {\n  if (x) {\n\n    x()\n  }\n}",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "styleToClass-14",
+      "transformer": "styleToClass",
+      "code": "const x = 1\nconst y = true",
+      "options": {
+        "lang": "js",
+        "themes": {
+          "light": "github-light",
+          "dark": "github-dark"
+        }
+      }
+    },
+    {
+      "name": "styleToClass-15",
+      "transformer": "styleToClass",
+      "code": "const x = 1",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "compactLineOptions-16",
+      "transformer": "compactLineOptions",
+      "config": [
+        {
+          "line": 2,
+          "classes": [
+            "active",
+            "test"
+          ]
+        }
+      ],
+      "code": "const x = 1\nconst y = 2",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "notationDiff-17",
+      "transformer": "notationDiff",
+      "code": "const x = 1 // [!code ++]\nconst y = 2 // [!code --]",
+      "options": {
+        "lang": "js",
+        "theme": "rose-pine"
+      }
+    },
+    {
+      "name": "notationDiff-18",
+      "transformer": "notationDiff",
+      "code": "<div>{/* [!code ++] */}</div>\n<div>hello</div>",
+      "options": {
+        "lang": "tsx",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "notationDiff-19",
+      "transformer": "notationDiff",
+      "config": {
+        "matchAlgorithm": "v1"
+      },
+      "code": "// [!code ++]\nconst x = 1\nconst y = 2",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "notationHighlight-20",
+      "transformer": "notationHighlight",
+      "code": "const x = 1 // note // [!code highlight]\nconst y = 2",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "renderWhitespace-21",
+      "transformer": "renderWhitespace",
+      "config": {
+        "position": "boundary"
+      },
+      "code": "  const x = 1\t  \n  const y = 2  ",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "renderWhitespace-22",
+      "transformer": "renderWhitespace",
+      "config": {
+        "position": "leading"
+      },
+      "code": "  const x = 1\t  \n  const y = 2  ",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "renderWhitespace-23",
+      "transformer": "renderWhitespace",
+      "config": {
+        "position": "trailing"
+      },
+      "code": "  const x = 1\t  \n  const y = 2  ",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "colorizedBrackets-24",
+      "transformer": "colorizedBrackets",
+      "code": "const x = [({ a: [1, 2] })];\nconst s = \"[(ignore)]\"; // (ignore)",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "colorizedBrackets-25",
+      "transformer": "colorizedBrackets",
+      "code": "function f<T>(x: Array<T>) { return [x, `value ${f(1)}`] }",
+      "options": {
+        "lang": "ts",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "colorizedBrackets-26",
+      "transformer": "colorizedBrackets",
+      "code": "([{)]\nconst x = {",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "colorizedBrackets-27",
+      "transformer": "colorizedBrackets",
+      "code": "  const x = [1, [2]];  ",
+      "options": {
+        "lang": "js",
+        "themes": {
+          "light": "github-light",
+          "dark": "github-dark"
+        }
+      }
+    },
+    {
+      "name": "colorizedBrackets-28",
+      "transformer": "colorizedBrackets",
+      "code": "const x = [1, [2]]",
+      "options": {
+        "lang": "js",
+        "themes": {
+          "light": "github-light",
+          "dark": "github-dark"
+        },
+        "defaultColor": "light-dark()"
+      }
+    },
+    {
+      "name": "colorizedBrackets-29",
+      "transformer": "colorizedBrackets",
+      "code": "{{ fn([1, 2]) }} {% if x %}{{ x }}{% endif %}",
+      "options": {
+        "lang": "jinja",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "colorizedBrackets-30",
+      "transformer": "colorizedBrackets",
+      "code": "<div>{{ product.price }}</div>",
+      "options": {
+        "lang": "liquid",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "colorizedBrackets-31",
+      "transformer": "colorizedBrackets",
+      "code": "<div title=\"x\">(hello)</div><script>f([1])</script>",
+      "options": {
+        "lang": "html",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "colorizedBrackets-32",
+      "transformer": "colorizedBrackets",
+      "config": {
+        "themes": {
+          "github-dark": [
+            "red",
+            "blue",
+            "orange"
+          ]
+        }
+      },
+      "code": "f([1])",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "colorizedBrackets-33",
+      "transformer": "colorizedBrackets",
+      "config": {
+        "explicitTrigger": true
+      },
+      "code": "f([1])",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "colorizedBrackets-34",
+      "transformer": "colorizedBrackets",
+      "config": {
+        "explicitTrigger": true
+      },
+      "code": "f([1])",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark",
+        "meta": {
+          "__raw": "colorize-brackets"
+        }
+      }
+    },
+    {
+      "name": "colorizedBrackets-35",
+      "transformer": "colorizedBrackets",
+      "config": {
+        "bracketPairs": []
+      },
+      "code": "f([1])",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark"
+      }
+    },
+    {
+      "name": "removeLineBreak-36",
+      "transformer": "removeLineBreak",
+      "code": "const x = 1\nconst y = 2",
+      "options": {
+        "lang": "js",
+        "theme": "github-dark",
+        "structure": "inline"
+      }
+    }
+  ]
+}

@@ -1,0 +1,435 @@
+{
+  "kind": "highlight",
+  "highlighter": {
+    "langs": [
+      "vue",
+      "angular-html",
+      "angular-ts",
+      "astro",
+      "svelte",
+      "cpp",
+      "csharp",
+      "java",
+      "kotlin",
+      "swift",
+      "php",
+      "perl",
+      "lua",
+      "r",
+      "elixir",
+      "haskell",
+      "latex",
+      "markdown",
+      "shellscript",
+      "ansi",
+      "python",
+      "yaml"
+    ],
+    "themes": [
+      "github-dark",
+      "vitesse-dark"
+    ]
+  },
+  "cases": [
+    {
+      "name": "vue-github-dark",
+      "code": "<script setup lang=\"ts\">\nimport { ref } from 'vue'\nconst count = ref<number>(0)\n</script>\n<template>\n  <h1 v-if=\"count == 1 ? true : 'str'.toUpperCase()\">{{ count * 2 }}</h1>\n</template>\n<style scoped>.title { color: v-bind(color); }</style>",
+      "options": {
+        "lang": "vue",
+        "theme": "github-dark",
+        "includeExplanation": "scopeName",
+        "tokenizeTimeLimit": 0
+      }
+    },
+    {
+      "name": "vue-vitesse-dark",
+      "code": "<script setup lang=\"ts\">\nimport { ref } from 'vue'\nconst count = ref<number>(0)\n</script>\n<template>\n  <h1 v-if=\"count == 1 ? true : 'str'.toUpperCase()\">{{ count * 2 }}</h1>\n</template>\n<style scoped>.title { color: v-bind(color); }</style>",
+      "options": {
+        "lang": "vue",
+        "theme": "vitesse-dark",
+        "includeExplanation": "scopeName",
+        "tokenizeTimeLimit": 0
+      }
+    },
+    {
+      "name": "angular-html-github-dark",
+      "code": "<h2>Hero List</h2>\n@if (heroes.length > 0) {\n  <ul><li *ngFor=\"let hero of heroes\">\n    @let isSelected = hero === selectedHero;\n    <button (click)=\"selectHero(hero)\" [class.selected]=\"isSelected\">{{hero.name}}</button>\n  </li></ul>\n}\n<app-hero-detail *ngIf=\"selectedHero\" [hero]=\"selectedHero\"></app-hero-detail>",
+      "options": {
+        "lang": "angular-html",
+        "theme": "github-dark",
+        "includeExplanation": "scopeName",
+        "tokenizeTimeLimit": 0
+      }
+    },
+    {
+      "name": "angular-html-vitesse-dark",
+      "code": "<h2>Hero List</h2>\n@if (heroes.length > 0) {\n  <ul><li *ngFor=\"let hero of heroes\">\n    @let isSelected = hero === selectedHero;\n    <button (click)=\"selectHero(hero)\" [class.selected]=\"isSelected\">{{hero.name}}</button>\n  </li></ul>\n}\n<app-hero-detail *ngIf=\"selectedHero\" [hero]=\"selectedHero\"></app-hero-detail>",
+      "options": {
+        "lang": "angular-html",
+        "theme": "vitesse-dark",
+        "includeExplanation": "scopeName",
+        "tokenizeTimeLimit": 0
+      }
+    },
+    {
+      "name": "angular-ts-github-dark",
+      "code": "import { Component } from '@angular/core';\n@Component({ selector: 'app', template: `<h1 [class.active]=\"yes\">{{ value }}</h1>`, styles: [`h1 { color: red; }`] })\nexport class App { value = 1; yes = true; }",
+      "options": {
+        "lang": "angular-ts",
+        "theme": "github-dark",
+        "includeExplanation": "scopeName",
+        "tokenizeTimeLimit": 0
+      }
+    },
+    {
+      "name": "angular-ts-vitesse-dark",
+      "code": "import { Component } from '@angular/core';\n@Component({ selector: 'app', template: `<h1 [class.active]=\"yes\">{{ value }}</h1>`, styles: [`h1 { color: red; }`] })\nexport class App { value = 1; yes = true; }",
+      "options": {
+        "lang": "angular-ts",
+        "theme": "vitesse-dark",
+        "includeExplanation": "scopeName",
+        "tokenizeTimeLimit": 0
+      }
+    },
+    {
+      "name": "astro-github-dark",
+      "code": "---\nimport Card from './Card.astro';\nconst title = \"Astro\";\n---\n<p>{title}</p>\n{[1, 2].map(x => <Card value={x} />)}\n<script>console.log('hello')</script>",
+      "options": {
+        "lang": "astro",
+        "theme": "github-dark",
+        "includeExplanation": "scopeName",
+        "tokenizeTimeLimit": 0
+      }
+    },
+    {
+      "name": "astro-vitesse-dark",
+      "code": "---\nimport Card from './Card.astro';\nconst title = \"Astro\";\n---\n<p>{title}</p>\n{[1, 2].map(x => <Card value={x} />)}\n<script>console.log('hello')</script>",
+      "options": {
+        "lang": "astro",
+        "theme": "vitesse-dark",
+        "includeExplanation": "scopeName",
+        "tokenizeTimeLimit": 0
+      }
+    },
+    {
+      "name": "svelte-github-dark",
+      "code": "<script lang=\"ts\">\nlet count: number = $state(0);\n</script>\n{#if count > 0}<p class:active={count > 1}>{count}</p>{:else}<p>zero</p>{/if}\n<button onclick={() => count++}>increment</button>\n<style>p { color: red }</style>",
+      "options": {
+        "lang": "svelte",
+        "theme": "github-dark",
+        "includeExplanation": "scopeName",
+        "tokenizeTimeLimit": 0
+      }
+    },
+    {
+      "name": "svelte-vitesse-dark",
+      "code": "<script lang=\"ts\">\nlet count: number = $state(0);\n</script>\n{#if count > 0}<p class:active={count > 1}>{count}</p>{:else}<p>zero</p>{/if}\n<button onclick={() => count++}>increment</button>\n<style>p { color: red }</style>",
+      "options": {
+        "lang": "svelte",
+        "theme": "vitesse-dark",
+        "includeExplanation": "scopeName",
+        "tokenizeTimeLimit": 0
+      }
+    },
+    {
+      "name": "cpp-github-dark",
+      "code": "#include <vector>\ntemplate<typename T> concept Numeric = requires(T t) { t + t; };\nnamespace demo {\n  auto f = []<class T>(T&& value) -> decltype(auto) { return value; };\n  const char* text = R\"tag(line one\nline \"two\")tag\";\n  std::vector<int> values{1, 2, 3}; // comment\n}",
+      "options": {
+        "lang": "cpp",
+        "theme": "github-dark",
+        "includeExplanation": "scopeName",
+        "tokenizeTimeLimit": 0
+      }
+    },
+    {
+      "name": "cpp-vitesse-dark",
+      "code": "#include <vector>\ntemplate<typename T> concept Numeric = requires(T t) { t + t; };\nnamespace demo {\n  auto f = []<class T>(T&& value) -> decltype(auto) { return value; };\n  const char* text = R\"tag(line one\nline \"two\")tag\";\n  std::vector<int> values{1, 2, 3}; // comment\n}",
+      "options": {
+        "lang": "cpp",
+        "theme": "vitesse-dark",
+        "includeExplanation": "scopeName",
+        "tokenizeTimeLimit": 0
+      }
+    },
+    {
+      "name": "csharp-github-dark",
+      "code": "using System;\nnamespace Demo;\npublic record User(string Name, int Age);\nvar user = new User(\"Ada\", 42);\nConsole.WriteLine($\"Hello {user.Name.ToUpper()}, {user.Age:N2}!\");\nvar raw = \"\"\"\n  { \"hello\": true }\n  \"\"\";",
+      "options": {
+        "lang": "csharp",
+        "theme": "github-dark",
+        "includeExplanation": "scopeName",
+        "tokenizeTimeLimit": 0
+      }
+    },
+    {
+      "name": "csharp-vitesse-dark",
+      "code": "using System;\nnamespace Demo;\npublic record User(string Name, int Age);\nvar user = new User(\"Ada\", 42);\nConsole.WriteLine($\"Hello {user.Name.ToUpper()}, {user.Age:N2}!\");\nvar raw = \"\"\"\n  { \"hello\": true }\n  \"\"\";",
+      "options": {
+        "lang": "csharp",
+        "theme": "vitesse-dark",
+        "includeExplanation": "scopeName",
+        "tokenizeTimeLimit": 0
+      }
+    },
+    {
+      "name": "java-github-dark",
+      "code": "import java.util.List;\n@Deprecated\npublic record User(String name) {\n  public static void main(String[] args) {\n    var value = switch (args.length) { case 0 -> \"none\"; default -> \"many\"; };\n    List.of(1, 2).stream().map(x -> x * 2).forEach(System.out::println);\n  }\n}",
+      "options": {
+        "lang": "java",
+        "theme": "github-dark",
+        "includeExplanation": "scopeName",
+        "tokenizeTimeLimit": 0
+      }
+    },
+    {
+      "name": "java-vitesse-dark",
+      "code": "import java.util.List;\n@Deprecated\npublic record User(String name) {\n  public static void main(String[] args) {\n    var value = switch (args.length) { case 0 -> \"none\"; default -> \"many\"; };\n    List.of(1, 2).stream().map(x -> x * 2).forEach(System.out::println);\n  }\n}",
+      "options": {
+        "lang": "java",
+        "theme": "vitesse-dark",
+        "includeExplanation": "scopeName",
+        "tokenizeTimeLimit": 0
+      }
+    },
+    {
+      "name": "kotlin-github-dark",
+      "code": "data class User(val name: String)\nfun main() {\n  val text = \"value: ${listOf(1, 2).map { it * 2 }}\"\n  /* outer /* inner */ comment */\n  println(text)\n}",
+      "options": {
+        "lang": "kotlin",
+        "theme": "github-dark",
+        "includeExplanation": "scopeName",
+        "tokenizeTimeLimit": 0
+      }
+    },
+    {
+      "name": "kotlin-vitesse-dark",
+      "code": "data class User(val name: String)\nfun main() {\n  val text = \"value: ${listOf(1, 2).map { it * 2 }}\"\n  /* outer /* inner */ comment */\n  println(text)\n}",
+      "options": {
+        "lang": "kotlin",
+        "theme": "vitesse-dark",
+        "includeExplanation": "scopeName",
+        "tokenizeTimeLimit": 0
+      }
+    },
+    {
+      "name": "swift-github-dark",
+      "code": "struct User: Codable { var name: String }\nlet value = [1, 2, 3].map { $0 * 2 }\nlet text = \"hello \\(value.count)\"\n/* outer /* inner */ comment */\nif let first = value.first { print(first) }",
+      "options": {
+        "lang": "swift",
+        "theme": "github-dark",
+        "includeExplanation": "scopeName",
+        "tokenizeTimeLimit": 0
+      }
+    },
+    {
+      "name": "swift-vitesse-dark",
+      "code": "struct User: Codable { var name: String }\nlet value = [1, 2, 3].map { $0 * 2 }\nlet text = \"hello \\(value.count)\"\n/* outer /* inner */ comment */\nif let first = value.first { print(first) }",
+      "options": {
+        "lang": "swift",
+        "theme": "vitesse-dark",
+        "includeExplanation": "scopeName",
+        "tokenizeTimeLimit": 0
+      }
+    },
+    {
+      "name": "php-github-dark",
+      "code": "<?php\n#[Route('/hello')]\nfunction hello(string $name): string {\n  return <<<HTML\n<div class=\"hello\">Hello {$name}!</div>\nHTML;\n}\n$value = match (true) { $x > 0 => 'positive', default => 'other' };\n?>",
+      "options": {
+        "lang": "php",
+        "theme": "github-dark",
+        "includeExplanation": "scopeName",
+        "tokenizeTimeLimit": 0
+      }
+    },
+    {
+      "name": "php-vitesse-dark",
+      "code": "<?php\n#[Route('/hello')]\nfunction hello(string $name): string {\n  return <<<HTML\n<div class=\"hello\">Hello {$name}!</div>\nHTML;\n}\n$value = match (true) { $x > 0 => 'positive', default => 'other' };\n?>",
+      "options": {
+        "lang": "php",
+        "theme": "vitesse-dark",
+        "includeExplanation": "scopeName",
+        "tokenizeTimeLimit": 0
+      }
+    },
+    {
+      "name": "perl-github-dark",
+      "code": "use strict;\nmy $text = qq{hello $name};\nif ($text =~ /(?<word>\\w+)/g) { print \"$+{word}\\n\"; }\n$text =~ s/hello/world/g;\nmy $doc = <<'END';\nliteral text\nEND",
+      "options": {
+        "lang": "perl",
+        "theme": "github-dark",
+        "includeExplanation": "scopeName",
+        "tokenizeTimeLimit": 0
+      }
+    },
+    {
+      "name": "perl-vitesse-dark",
+      "code": "use strict;\nmy $text = qq{hello $name};\nif ($text =~ /(?<word>\\w+)/g) { print \"$+{word}\\n\"; }\n$text =~ s/hello/world/g;\nmy $doc = <<'END';\nliteral text\nEND",
+      "options": {
+        "lang": "perl",
+        "theme": "vitesse-dark",
+        "includeExplanation": "scopeName",
+        "tokenizeTimeLimit": 0
+      }
+    },
+    {
+      "name": "lua-github-dark",
+      "code": "local text = [==[\nhello [[nested]]\n]==]\n--[=[ block comment ]=]\nlocal function map(xs, f)\n  for i, x in ipairs(xs) do xs[i] = f(x) end\n  return xs\nend",
+      "options": {
+        "lang": "lua",
+        "theme": "github-dark",
+        "includeExplanation": "scopeName",
+        "tokenizeTimeLimit": 0
+      }
+    },
+    {
+      "name": "lua-vitesse-dark",
+      "code": "local text = [==[\nhello [[nested]]\n]==]\n--[=[ block comment ]=]\nlocal function map(xs, f)\n  for i, x in ipairs(xs) do xs[i] = f(x) end\n  return xs\nend",
+      "options": {
+        "lang": "lua",
+        "theme": "vitesse-dark",
+        "includeExplanation": "scopeName",
+        "tokenizeTimeLimit": 0
+      }
+    },
+    {
+      "name": "r-github-dark",
+      "code": "library(dplyr)\nresult <- data.frame(x = c(1, 2, NA)) |>\n  mutate(y = ifelse(is.na(x), 0, x^2))\nf <- function(x, ...) { paste0(\"value: \", x) }\n# Unicode: café 世界 😀",
+      "options": {
+        "lang": "r",
+        "theme": "github-dark",
+        "includeExplanation": "scopeName",
+        "tokenizeTimeLimit": 0
+      }
+    },
+    {
+      "name": "r-vitesse-dark",
+      "code": "library(dplyr)\nresult <- data.frame(x = c(1, 2, NA)) |>\n  mutate(y = ifelse(is.na(x), 0, x^2))\nf <- function(x, ...) { paste0(\"value: \", x) }\n# Unicode: café 世界 😀",
+      "options": {
+        "lang": "r",
+        "theme": "vitesse-dark",
+        "includeExplanation": "scopeName",
+        "tokenizeTimeLimit": 0
+      }
+    },
+    {
+      "name": "elixir-github-dark",
+      "code": "defmodule Demo do\n  @doc \"\"\"\n  Greets a user.\n  \"\"\"\n  def greet(%{name: name}) do\n    ~s(Hello #{String.upcase(name)}!)\n  end\nend",
+      "options": {
+        "lang": "elixir",
+        "theme": "github-dark",
+        "includeExplanation": "scopeName",
+        "tokenizeTimeLimit": 0
+      }
+    },
+    {
+      "name": "elixir-vitesse-dark",
+      "code": "defmodule Demo do\n  @doc \"\"\"\n  Greets a user.\n  \"\"\"\n  def greet(%{name: name}) do\n    ~s(Hello #{String.upcase(name)}!)\n  end\nend",
+      "options": {
+        "lang": "elixir",
+        "theme": "vitesse-dark",
+        "includeExplanation": "scopeName",
+        "tokenizeTimeLimit": 0
+      }
+    },
+    {
+      "name": "haskell-github-dark",
+      "code": "{-# LANGUAGE OverloadedStrings #-}\nmodule Demo where\nimport qualified Data.Text as T\ndata Tree a = Leaf a | Branch (Tree a) (Tree a) deriving (Show)\ngreet :: T.Text -> T.Text\ngreet name = \"Hello \" <> name\n{- outer {- nested -} comment -}",
+      "options": {
+        "lang": "haskell",
+        "theme": "github-dark",
+        "includeExplanation": "scopeName",
+        "tokenizeTimeLimit": 0
+      }
+    },
+    {
+      "name": "haskell-vitesse-dark",
+      "code": "{-# LANGUAGE OverloadedStrings #-}\nmodule Demo where\nimport qualified Data.Text as T\ndata Tree a = Leaf a | Branch (Tree a) (Tree a) deriving (Show)\ngreet :: T.Text -> T.Text\ngreet name = \"Hello \" <> name\n{- outer {- nested -} comment -}",
+      "options": {
+        "lang": "haskell",
+        "theme": "vitesse-dark",
+        "includeExplanation": "scopeName",
+        "tokenizeTimeLimit": 0
+      }
+    },
+    {
+      "name": "latex-github-dark",
+      "code": "\\documentclass{article}\n\\usepackage{amsmath}\n\\begin{document}\n\\section{Hello}\nInline $x^2 + y^2 = z^2$ and \\textbf{bold}.\n\\begin{align}\n  f(x) &= \\int_0^1 x^2 \\, dx \\\\\n       &= \\frac{1}{3}\n\\end{align}\n\\end{document}",
+      "options": {
+        "lang": "latex",
+        "theme": "github-dark",
+        "includeExplanation": "scopeName",
+        "tokenizeTimeLimit": 0
+      }
+    },
+    {
+      "name": "latex-vitesse-dark",
+      "code": "\\documentclass{article}\n\\usepackage{amsmath}\n\\begin{document}\n\\section{Hello}\nInline $x^2 + y^2 = z^2$ and \\textbf{bold}.\n\\begin{align}\n  f(x) &= \\int_0^1 x^2 \\, dx \\\\\n       &= \\frac{1}{3}\n\\end{align}\n\\end{document}",
+      "options": {
+        "lang": "latex",
+        "theme": "vitesse-dark",
+        "includeExplanation": "scopeName",
+        "tokenizeTimeLimit": 0
+      }
+    },
+    {
+      "name": "markdown-github-dark",
+      "code": "---\ntitle: Example\n---\n# Title with **bold** and *italic*\n\n> Quote\n> with nested **style**\n\n- [x] task\n- \\*escaped*\n\n~~~python\ndef f(x):\n    return f\"value {x!r}\"\n~~~\n\n<div style=\"color: red\">HTML &amp; text</div>\n\n| name | value |\n| --- | --- |\n| \\| escaped | `code` |",
+      "options": {
+        "lang": "markdown",
+        "theme": "github-dark",
+        "includeExplanation": "scopeName",
+        "tokenizeTimeLimit": 0
+      }
+    },
+    {
+      "name": "markdown-vitesse-dark",
+      "code": "---\ntitle: Example\n---\n# Title with **bold** and *italic*\n\n> Quote\n> with nested **style**\n\n- [x] task\n- \\*escaped*\n\n~~~python\ndef f(x):\n    return f\"value {x!r}\"\n~~~\n\n<div style=\"color: red\">HTML &amp; text</div>\n\n| name | value |\n| --- | --- |\n| \\| escaped | `code` |",
+      "options": {
+        "lang": "markdown",
+        "theme": "vitesse-dark",
+        "includeExplanation": "scopeName",
+        "tokenizeTimeLimit": 0
+      }
+    },
+    {
+      "name": "shellscript-github-dark",
+      "code": "#!/usr/bin/env bash\nset -euo pipefail\nfor file in *.txt; do\n  printf '%s\\n' \"${file%.txt}\"\ndone\ncat <<EOF\nHello $USER $(date +%F)\nEOF\ncat <<'LITERAL'\n$not_interpolated\nLITERAL",
+      "options": {
+        "lang": "shellscript",
+        "theme": "github-dark",
+        "includeExplanation": "scopeName",
+        "tokenizeTimeLimit": 0
+      }
+    },
+    {
+      "name": "shellscript-vitesse-dark",
+      "code": "#!/usr/bin/env bash\nset -euo pipefail\nfor file in *.txt; do\n  printf '%s\\n' \"${file%.txt}\"\ndone\ncat <<EOF\nHello $USER $(date +%F)\nEOF\ncat <<'LITERAL'\n$not_interpolated\nLITERAL",
+      "options": {
+        "lang": "shellscript",
+        "theme": "vitesse-dark",
+        "includeExplanation": "scopeName",
+        "tokenizeTimeLimit": 0
+      }
+    },
+    {
+      "name": "ansi-github-dark",
+      "code": "\u001b[1;2;3;4;9mstyles\u001b[22m normal weight\u001b[23;24;29m reset styles\n\u001b[7mreverse\u001b[27m plain\u001b[48;5;196m bg\u001b[49m\n\u001b[38;5;244mgray\u001b[38;5;16mblack\u001b[38;5;231mwhite\u001b[0m\u001b]8;;https://example.com\u0007link\u001b]8;;\u0007",
+      "options": {
+        "lang": "ansi",
+        "theme": "github-dark",
+        "includeExplanation": "scopeName",
+        "tokenizeTimeLimit": 0
+      }
+    },
+    {
+      "name": "ansi-vitesse-dark",
+      "code": "\u001b[1;2;3;4;9mstyles\u001b[22m normal weight\u001b[23;24;29m reset styles\n\u001b[7mreverse\u001b[27m plain\u001b[48;5;196m bg\u001b[49m\n\u001b[38;5;244mgray\u001b[38;5;16mblack\u001b[38;5;231mwhite\u001b[0m\u001b]8;;https://example.com\u0007link\u001b]8;;\u0007",
+      "options": {
+        "lang": "ansi",
+        "theme": "vitesse-dark",
+        "includeExplanation": "scopeName",
+        "tokenizeTimeLimit": 0
+      }
+    }
+  ]
+}

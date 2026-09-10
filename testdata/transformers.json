@@ -1,0 +1,434 @@
+[
+  {
+    "name": "notationDiff-0",
+    "transformer": "notationDiff",
+    "code": "const x = 1 // [!code ++]\nconst y = 2 // [!code --]",
+    "options": {
+      "lang": "js",
+      "theme": "github-dark"
+    },
+    "html": "<pre class=\"shiki github-dark has-diff\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line diff add\"><span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> x</span><span style=\"color:#F97583\"> =</span><span style=\"color:#79B8FF\"> 1</span></span>\n<span class=\"line diff remove\"><span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> y</span><span style=\"color:#F97583\"> =</span><span style=\"color:#79B8FF\"> 2</span></span></code></pre>"
+  },
+  {
+    "name": "notationHighlight-1",
+    "transformer": "notationHighlight",
+    "code": "// [!code highlight:2]\nconst x = 1\nconst y = 2\nconst z = 3",
+    "options": {
+      "lang": "js",
+      "theme": "github-dark"
+    },
+    "html": "<pre class=\"shiki github-dark has-highlighted\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line highlighted\"><span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> x</span><span style=\"color:#F97583\"> =</span><span style=\"color:#79B8FF\"> 1</span></span>\n<span class=\"line highlighted\"><span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> y</span><span style=\"color:#F97583\"> =</span><span style=\"color:#79B8FF\"> 2</span></span>\n<span class=\"line\"><span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> z</span><span style=\"color:#F97583\"> =</span><span style=\"color:#79B8FF\"> 3</span></span></code></pre>"
+  },
+  {
+    "name": "notationHighlight-2",
+    "transformer": "notationHighlight",
+    "code": "const x = 1 // [!code hl]\nconst y = 2",
+    "options": {
+      "lang": "js",
+      "theme": "github-dark"
+    },
+    "html": "<pre class=\"shiki github-dark has-highlighted\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line highlighted\"><span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> x</span><span style=\"color:#F97583\"> =</span><span style=\"color:#79B8FF\"> 1</span></span>\n<span class=\"line\"><span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> y</span><span style=\"color:#F97583\"> =</span><span style=\"color:#79B8FF\"> 2</span></span></code></pre>"
+  },
+  {
+    "name": "notationFocus-3",
+    "transformer": "notationFocus",
+    "code": "const x = 1 // [!code focus]\nconst y = 2",
+    "options": {
+      "lang": "js",
+      "theme": "github-dark"
+    },
+    "html": "<pre class=\"shiki github-dark has-focused\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line focused\"><span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> x</span><span style=\"color:#F97583\"> =</span><span style=\"color:#79B8FF\"> 1</span></span>\n<span class=\"line\"><span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> y</span><span style=\"color:#F97583\"> =</span><span style=\"color:#79B8FF\"> 2</span></span></code></pre>"
+  },
+  {
+    "name": "notationErrorLevel-4",
+    "transformer": "notationErrorLevel",
+    "code": "const x = 1 // [!code error]\nconst y = 2 // [!code warning]\nconst z = 3 // [!code info]",
+    "options": {
+      "lang": "js",
+      "theme": "github-dark"
+    },
+    "html": "<pre class=\"shiki github-dark has-highlighted\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line highlighted error\"><span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> x</span><span style=\"color:#F97583\"> =</span><span style=\"color:#79B8FF\"> 1</span></span>\n<span class=\"line highlighted warning\"><span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> y</span><span style=\"color:#F97583\"> =</span><span style=\"color:#79B8FF\"> 2</span></span>\n<span class=\"line highlighted info\"><span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> z</span><span style=\"color:#F97583\"> =</span><span style=\"color:#79B8FF\"> 3</span></span></code></pre>"
+  },
+  {
+    "name": "notationWordHighlight-5",
+    "transformer": "notationWordHighlight",
+    "code": "// [!code word:hello]\nconst hello = \"hello\";\nhello()",
+    "options": {
+      "lang": "js",
+      "theme": "github-dark"
+    },
+    "html": "<pre class=\"shiki github-dark\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> </span><span style=\"color:#79B8FF\" class=\"highlighted-word\">hello</span><span style=\"color:#F97583\"> =</span><span style=\"color:#9ECBFF\"> \"</span><span style=\"color:#9ECBFF\" class=\"highlighted-word\">hello</span><span style=\"color:#9ECBFF\">\"</span><span style=\"color:#E1E4E8\">;</span></span>\n<span class=\"line\"><span style=\"color:#B392F0\" class=\"highlighted-word\">hello</span><span style=\"color:#E1E4E8\">()</span></span></code></pre>"
+  },
+  {
+    "name": "notationWordHighlight-6",
+    "transformer": "notationWordHighlight",
+    "code": "const x = \"hello\" // [!code word:hello:2]\nhello()",
+    "options": {
+      "lang": "js",
+      "theme": "github-dark"
+    },
+    "html": "<pre class=\"shiki github-dark\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> x</span><span style=\"color:#F97583\"> =</span><span style=\"color:#9ECBFF\"> \"</span><span style=\"color:#9ECBFF\" class=\"highlighted-word\">hello</span><span style=\"color:#9ECBFF\">\"</span></span>\n<span class=\"line\"><span style=\"color:#B392F0\" class=\"highlighted-word\">hello</span><span style=\"color:#E1E4E8\">()</span></span></code></pre>"
+  },
+  {
+    "name": "metaHighlight-7",
+    "transformer": "metaHighlight",
+    "code": "const x = 1\nconst y = 2\nconst z = 3",
+    "options": {
+      "lang": "js",
+      "theme": "github-dark",
+      "meta": {
+        "__raw": "{1,3}"
+      }
+    },
+    "html": "<pre class=\"shiki github-dark\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line highlighted\"><span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> x</span><span style=\"color:#F97583\"> =</span><span style=\"color:#79B8FF\"> 1</span></span>\n<span class=\"line\"><span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> y</span><span style=\"color:#F97583\"> =</span><span style=\"color:#79B8FF\"> 2</span></span>\n<span class=\"line highlighted\"><span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> z</span><span style=\"color:#F97583\"> =</span><span style=\"color:#79B8FF\"> 3</span></span></code></pre>"
+  },
+  {
+    "name": "metaWordHighlight-8",
+    "transformer": "metaWordHighlight",
+    "code": "const hello = \"hello\";\nhello()",
+    "options": {
+      "lang": "js",
+      "theme": "github-dark",
+      "meta": {
+        "__raw": "/hello/"
+      }
+    },
+    "html": "<pre class=\"shiki github-dark\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> </span><span style=\"color:#79B8FF\" class=\"highlighted-word\">hello</span><span style=\"color:#F97583\"> =</span><span style=\"color:#9ECBFF\"> \"</span><span style=\"color:#9ECBFF\" class=\"highlighted-word\">hello</span><span style=\"color:#9ECBFF\">\"</span><span style=\"color:#E1E4E8\">;</span></span>\n<span class=\"line\"><span style=\"color:#B392F0\" class=\"highlighted-word\">hello</span><span style=\"color:#E1E4E8\">()</span></span></code></pre>"
+  },
+  {
+    "name": "removeComments-9",
+    "transformer": "removeComments",
+    "code": "// comment\nconst x = 1 // comment\n/* block */\nconst s = \"// text\"",
+    "options": {
+      "lang": "js",
+      "theme": "github-dark",
+      "includeExplanation": "scopeName"
+    },
+    "html": "<pre class=\"shiki github-dark\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> x</span><span style=\"color:#F97583\"> =</span><span style=\"color:#79B8FF\"> 1</span></span>\n<span class=\"line\"><span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> s</span><span style=\"color:#F97583\"> =</span><span style=\"color:#9ECBFF\"> \"// text\"</span></span></code></pre>"
+  },
+  {
+    "name": "removeLineBreak-10",
+    "transformer": "removeLineBreak",
+    "code": "const x = 1\nconst y = 2",
+    "options": {
+      "lang": "js",
+      "theme": "github-dark"
+    },
+    "html": "<pre class=\"shiki github-dark\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> x</span><span style=\"color:#F97583\"> =</span><span style=\"color:#79B8FF\"> 1</span></span><span class=\"line\"><span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> y</span><span style=\"color:#F97583\"> =</span><span style=\"color:#79B8FF\"> 2</span></span></code></pre>"
+  },
+  {
+    "name": "removeNotationEscape-11",
+    "transformer": "removeNotationEscape",
+    "code": "const x = 1 // [\\!code highlight]",
+    "options": {
+      "lang": "js",
+      "theme": "github-dark"
+    },
+    "html": "<pre class=\"shiki github-dark\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> x</span><span style=\"color:#F97583\"> =</span><span style=\"color:#79B8FF\"> 1</span><span style=\"color:#6A737D\"> // [!code highlight]</span></span></code></pre>"
+  },
+  {
+    "name": "renderWhitespace-12",
+    "transformer": "renderWhitespace",
+    "code": "  const x = 1\n\tconst y = 2  ",
+    "options": {
+      "lang": "js",
+      "theme": "github-dark"
+    },
+    "html": "<pre class=\"shiki github-dark\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span class=\"space\"> </span><span class=\"space\"> </span><span style=\"color:#F97583\">const</span><span class=\"space\"> </span><span style=\"color:#79B8FF\">x</span><span class=\"space\"> </span><span style=\"color:#F97583\">=</span><span class=\"space\"> </span><span style=\"color:#79B8FF\">1</span></span>\n<span class=\"line\"><span class=\"tab\">\t</span><span style=\"color:#F97583\">const</span><span class=\"space\"> </span><span style=\"color:#79B8FF\">y</span><span class=\"space\"> </span><span style=\"color:#F97583\">=</span><span class=\"space\"> </span><span style=\"color:#79B8FF\">2</span><span class=\"space\"> </span><span class=\"space\"> </span></span></code></pre>"
+  },
+  {
+    "name": "renderIndentGuides-13",
+    "transformer": "renderIndentGuides",
+    "code": "function f() {\n  if (x) {\n\n    x()\n  }\n}",
+    "options": {
+      "lang": "js",
+      "theme": "github-dark"
+    },
+    "html": "<pre class=\"shiki github-dark\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#F97583\">function</span><span style=\"color:#B392F0\"> f</span><span style=\"color:#E1E4E8\">() {</span></span>\n<span class=\"line\"><span class=\"indent\">  </span><span style=\"color:#F97583\">if</span><span style=\"color:#E1E4E8\"> (x) {</span></span>\n<span class=\"line\"><span class=\"indent\" style=\"--indent-offset: 0ch;\"></span><span class=\"indent\" style=\"--indent-offset: 2ch;\"></span></span>\n<span class=\"line\"><span class=\"indent\">  </span><span class=\"indent\">  </span><span style=\"color:#B392F0\">x</span><span style=\"color:#E1E4E8\">()</span></span>\n<span class=\"line\"><span class=\"indent\">  </span><span style=\"color:#E1E4E8\">}</span></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\">}</span></span></code></pre>"
+  },
+  {
+    "name": "styleToClass-14",
+    "transformer": "styleToClass",
+    "code": "const x = 1\nconst y = true",
+    "options": {
+      "lang": "js",
+      "themes": {
+        "light": "github-light",
+        "dark": "github-dark"
+      }
+    },
+    "html": "<pre class=\"shiki shiki-themes github-light github-dark __shiki_18d7xz\" tabindex=\"0\"><code><span class=\"line\"><span class=\"__shiki_2zefwf\">const</span><span class=\"__shiki_18al46\"> x</span><span class=\"__shiki_2zefwf\"> =</span><span class=\"__shiki_18al46\"> 1</span></span>\n<span class=\"line\"><span class=\"__shiki_2zefwf\">const</span><span class=\"__shiki_18al46\"> y</span><span class=\"__shiki_2zefwf\"> =</span><span class=\"__shiki_18al46\"> true</span></span></code></pre>",
+    "css": ".__shiki_2zefwf{color:#D73A49;--shiki-dark:#F97583}.__shiki_18al46{color:#005CC5;--shiki-dark:#79B8FF}.__shiki_18d7xz{background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8}"
+  },
+  {
+    "name": "styleToClass-15",
+    "transformer": "styleToClass",
+    "code": "const x = 1",
+    "options": {
+      "lang": "js",
+      "theme": "github-dark"
+    },
+    "html": "<pre class=\"shiki github-dark __shiki_1wf9g5\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> x</span><span style=\"color:#F97583\"> =</span><span style=\"color:#79B8FF\"> 1</span></span></code></pre>",
+    "css": ".__shiki_1wf9g5{background-color:#24292e;color:#e1e4e8}"
+  },
+  {
+    "name": "compactLineOptions-16",
+    "transformer": "compactLineOptions",
+    "config": [
+      {
+        "line": 2,
+        "classes": [
+          "active",
+          "test"
+        ]
+      }
+    ],
+    "code": "const x = 1\nconst y = 2",
+    "options": {
+      "lang": "js",
+      "theme": "github-dark"
+    },
+    "html": "<pre class=\"shiki github-dark\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> x</span><span style=\"color:#F97583\"> =</span><span style=\"color:#79B8FF\"> 1</span></span>\n<span class=\"line active test\"><span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> y</span><span style=\"color:#F97583\"> =</span><span style=\"color:#79B8FF\"> 2</span></span></code></pre>"
+  },
+  {
+    "name": "notationDiff-17",
+    "transformer": "notationDiff",
+    "code": "const x = 1 // [!code ++]\nconst y = 2 // [!code --]",
+    "options": {
+      "lang": "js",
+      "theme": "rose-pine"
+    },
+    "html": "<pre class=\"shiki rose-pine has-diff\" style=\"background-color:#191724;color:#e0def4\" tabindex=\"0\"><code><span class=\"line diff add\"><span style=\"color:#31748F\">const</span><span style=\"color:#E0DEF4;font-style:italic\"> x</span><span style=\"color:#31748F\"> =</span><span style=\"color:#EBBCBA\"> 1</span></span>\n<span class=\"line diff remove\"><span style=\"color:#31748F\">const</span><span style=\"color:#E0DEF4;font-style:italic\"> y</span><span style=\"color:#31748F\"> =</span><span style=\"color:#EBBCBA\"> 2</span></span></code></pre>"
+  },
+  {
+    "name": "notationDiff-18",
+    "transformer": "notationDiff",
+    "code": "<div>{/* [!code ++] */}</div>\n<div>hello</div>",
+    "options": {
+      "lang": "tsx",
+      "theme": "github-dark"
+    },
+    "html": "<pre class=\"shiki github-dark\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#E1E4E8\">&#x3C;</span><span style=\"color:#85E89D\">div</span><span style=\"color:#E1E4E8\">>{</span><span style=\"color:#6A737D\">/* [!code ++] */</span><span style=\"color:#E1E4E8\">}&#x3C;/</span><span style=\"color:#85E89D\">div</span><span style=\"color:#E1E4E8\">></span></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\">&#x3C;</span><span style=\"color:#85E89D\">div</span><span style=\"color:#E1E4E8\">>hello&#x3C;/</span><span style=\"color:#85E89D\">div</span><span style=\"color:#E1E4E8\">></span></span></code></pre>"
+  },
+  {
+    "name": "notationDiff-19",
+    "transformer": "notationDiff",
+    "config": {
+      "matchAlgorithm": "v1"
+    },
+    "code": "// [!code ++]\nconst x = 1\nconst y = 2",
+    "options": {
+      "lang": "js",
+      "theme": "github-dark"
+    },
+    "html": "<pre class=\"shiki github-dark has-diff\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> x</span><span style=\"color:#F97583\"> =</span><span style=\"color:#79B8FF\"> 1</span></span>\n<span class=\"line\"><span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> y</span><span style=\"color:#F97583\"> =</span><span style=\"color:#79B8FF\"> 2</span></span></code></pre>"
+  },
+  {
+    "name": "notationHighlight-20",
+    "transformer": "notationHighlight",
+    "code": "const x = 1 // note // [!code highlight]\nconst y = 2",
+    "options": {
+      "lang": "js",
+      "theme": "github-dark"
+    },
+    "html": "<pre class=\"shiki github-dark has-highlighted\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line highlighted\"><span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> x</span><span style=\"color:#F97583\"> =</span><span style=\"color:#79B8FF\"> 1</span><span style=\"color:#6A737D\"> // note</span></span>\n<span class=\"line\"><span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> y</span><span style=\"color:#F97583\"> =</span><span style=\"color:#79B8FF\"> 2</span></span></code></pre>"
+  },
+  {
+    "name": "renderWhitespace-21",
+    "transformer": "renderWhitespace",
+    "config": {
+      "position": "boundary"
+    },
+    "code": "  const x = 1\t  \n  const y = 2  ",
+    "options": {
+      "lang": "js",
+      "theme": "github-dark"
+    },
+    "html": "<pre class=\"shiki github-dark\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span class=\"space\"> </span><span class=\"space\"> </span><span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> x</span><span style=\"color:#F97583\"> =</span><span style=\"color:#79B8FF\"> 1</span><span class=\"tab\">\t</span><span class=\"space\"> </span><span class=\"space\"> </span></span>\n<span class=\"line\"><span class=\"space\"> </span><span class=\"space\"> </span><span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> y</span><span style=\"color:#F97583\"> =</span><span style=\"color:#79B8FF\"> 2</span><span class=\"space\"> </span><span class=\"space\"> </span></span></code></pre>"
+  },
+  {
+    "name": "renderWhitespace-22",
+    "transformer": "renderWhitespace",
+    "config": {
+      "position": "leading"
+    },
+    "code": "  const x = 1\t  \n  const y = 2  ",
+    "options": {
+      "lang": "js",
+      "theme": "github-dark"
+    },
+    "html": "<pre class=\"shiki github-dark\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span class=\"space\"> </span><span class=\"space\"> </span><span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> x</span><span style=\"color:#F97583\"> =</span><span style=\"color:#79B8FF\"> 1</span><span style=\"color:#E1E4E8\">\t  </span></span>\n<span class=\"line\"><span class=\"space\"> </span><span class=\"space\"> </span><span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> y</span><span style=\"color:#F97583\"> =</span><span style=\"color:#79B8FF\"> 2</span><span style=\"color:#E1E4E8\">  </span></span></code></pre>"
+  },
+  {
+    "name": "renderWhitespace-23",
+    "transformer": "renderWhitespace",
+    "config": {
+      "position": "trailing"
+    },
+    "code": "  const x = 1\t  \n  const y = 2  ",
+    "options": {
+      "lang": "js",
+      "theme": "github-dark"
+    },
+    "html": "<pre class=\"shiki github-dark\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#F97583\">  const</span><span style=\"color:#79B8FF\"> x</span><span style=\"color:#F97583\"> =</span><span style=\"color:#79B8FF\"> 1</span><span style=\"color:#E1E4E8\"></span><span class=\"tab\">\t</span><span class=\"space\"> </span><span class=\"space\"> </span></span>\n<span class=\"line\"><span style=\"color:#F97583\">  const</span><span style=\"color:#79B8FF\"> y</span><span style=\"color:#F97583\"> =</span><span style=\"color:#79B8FF\"> 2</span><span style=\"color:#E1E4E8\"></span><span class=\"space\"> </span><span class=\"space\"> </span></span></code></pre>"
+  },
+  {
+    "name": "colorizedBrackets-24",
+    "transformer": "colorizedBrackets",
+    "code": "const x = [({ a: [1, 2] })];\nconst s = \"[(ignore)]\"; // (ignore)",
+    "options": {
+      "lang": "js",
+      "theme": "github-dark"
+    },
+    "html": "<pre class=\"shiki github-dark\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> x</span><span style=\"color:#F97583\"> =</span><span style=\"color:#E1E4E8\"> </span><span style=\"color:#79b8ff\">[</span><span style=\"color:#ffab70\">(</span><span style=\"color:#b392f0\">{</span><span style=\"color:#E1E4E8\"> a: </span><span style=\"color:#79b8ff\">[</span><span style=\"color:#79B8FF\">1</span><span style=\"color:#E1E4E8\">, </span><span style=\"color:#79B8FF\">2</span><span style=\"color:#79b8ff\">]</span><span style=\"color:#E1E4E8\"> </span><span style=\"color:#b392f0\">}</span><span style=\"color:#ffab70\">)</span><span style=\"color:#79b8ff\">]</span><span style=\"color:#E1E4E8\">;</span></span>\n<span class=\"line\"><span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> s</span><span style=\"color:#F97583\"> =</span><span style=\"color:#9ECBFF\"> \"[(ignore)]\"</span><span style=\"color:#E1E4E8\">; </span><span style=\"color:#6A737D\">// (ignore)</span></span></code></pre>"
+  },
+  {
+    "name": "colorizedBrackets-25",
+    "transformer": "colorizedBrackets",
+    "code": "function f<T>(x: Array<T>) { return [x, `value ${f(1)}`] }",
+    "options": {
+      "lang": "ts",
+      "theme": "github-dark"
+    },
+    "html": "<pre class=\"shiki github-dark\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#F97583\">function</span><span style=\"color:#B392F0\"> f</span><span style=\"color:#79b8ff\">&#x3C;</span><span style=\"color:#B392F0\">T</span><span style=\"color:#79b8ff\">></span><span style=\"color:#79b8ff\">(</span><span style=\"color:#FFAB70\">x</span><span style=\"color:#F97583\">:</span><span style=\"color:#B392F0\"> Array</span><span style=\"color:#ffab70\">&#x3C;</span><span style=\"color:#B392F0\">T</span><span style=\"color:#ffab70\">></span><span style=\"color:#79b8ff\">)</span><span style=\"color:#E1E4E8\"> </span><span style=\"color:#79b8ff\">{</span><span style=\"color:#E1E4E8\"> </span><span style=\"color:#F97583\">return</span><span style=\"color:#E1E4E8\"> </span><span style=\"color:#ffab70\">[</span><span style=\"color:#E1E4E8\">x, </span><span style=\"color:#9ECBFF\">`value ${</span><span style=\"color:#B392F0\">f</span><span style=\"color:#b392f0\">(</span><span style=\"color:#79B8FF\">1</span><span style=\"color:#b392f0\">)</span><span style=\"color:#9ECBFF\">}`</span><span style=\"color:#ffab70\">]</span><span style=\"color:#E1E4E8\"> </span><span style=\"color:#79b8ff\">}</span></span></code></pre>"
+  },
+  {
+    "name": "colorizedBrackets-26",
+    "transformer": "colorizedBrackets",
+    "code": "([{)]\nconst x = {",
+    "options": {
+      "lang": "js",
+      "theme": "github-dark"
+    },
+    "html": "<pre class=\"shiki github-dark\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#79b8ff\">(</span><span style=\"color:rgba(255, 18, 18, 0.8)\">[</span><span style=\"color:rgba(255, 18, 18, 0.8)\">{</span><span style=\"color:#79b8ff\">)</span><span style=\"color:rgba(255, 18, 18, 0.8)\">]</span></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\">const x </span><span style=\"color:#F97583\">=</span><span style=\"color:#E1E4E8\"> </span><span style=\"color:rgba(255, 18, 18, 0.8)\">{</span></span></code></pre>"
+  },
+  {
+    "name": "colorizedBrackets-27",
+    "transformer": "colorizedBrackets",
+    "code": "  const x = [1, [2]];  ",
+    "options": {
+      "lang": "js",
+      "themes": {
+        "light": "github-light",
+        "dark": "github-dark"
+      }
+    },
+    "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#D73A49;--shiki-dark:#F97583\">  const</span><span style=\"color:#005CC5;--shiki-dark:#79B8FF\"> x</span><span style=\"color:#D73A49;--shiki-dark:#F97583\"> =</span><span style=\"color:#24292E;--shiki-dark:#E1E4E8\"> </span><span style=\"color:#005cc5;--shiki-dark:#79b8ff\">[</span><span style=\"color:#005CC5;--shiki-dark:#79B8FF\">1</span><span style=\"color:#24292E;--shiki-dark:#E1E4E8\">, </span><span style=\"color:#e36209;--shiki-dark:#ffab70\">[</span><span style=\"color:#005CC5;--shiki-dark:#79B8FF\">2</span><span style=\"color:#e36209;--shiki-dark:#ffab70\">]</span><span style=\"color:#005cc5;--shiki-dark:#79b8ff\">]</span><span style=\"color:#24292E;--shiki-dark:#E1E4E8\">;  </span></span></code></pre>"
+  },
+  {
+    "name": "colorizedBrackets-28",
+    "transformer": "colorizedBrackets",
+    "code": "const x = [1, [2]]",
+    "options": {
+      "lang": "js",
+      "themes": {
+        "light": "github-light",
+        "dark": "github-dark"
+      },
+      "defaultColor": "light-dark()"
+    },
+    "html": "<pre class=\"shiki shiki-themes github-light github-dark\" style=\"background-color:light-dark(#fff, #24292e);--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;color:light-dark(#24292e, #e1e4e8);--shiki-light:#24292e;--shiki-dark:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\">const</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\"> x</span><span style=\"color:light-dark(#D73A49, #F97583);--shiki-light:#D73A49;--shiki-dark:#F97583\"> =</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\"> </span><span style=\"color:light-dark(#005cc5,#79b8ff);--shiki-light:#005cc5;--shiki-dark:#79b8ff\">[</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">1</span><span style=\"color:light-dark(#24292E, #E1E4E8);--shiki-light:#24292E;--shiki-dark:#E1E4E8\">, </span><span style=\"color:light-dark(#e36209,#ffab70);--shiki-light:#e36209;--shiki-dark:#ffab70\">[</span><span style=\"color:light-dark(#005CC5, #79B8FF);--shiki-light:#005CC5;--shiki-dark:#79B8FF\">2</span><span style=\"color:light-dark(#e36209,#ffab70);--shiki-light:#e36209;--shiki-dark:#ffab70\">]</span><span style=\"color:light-dark(#005cc5,#79b8ff);--shiki-light:#005cc5;--shiki-dark:#79b8ff\">]</span></span></code></pre>"
+  },
+  {
+    "name": "colorizedBrackets-29",
+    "transformer": "colorizedBrackets",
+    "code": "{{ fn([1, 2]) }} {% if x %}{{ x }}{% endif %}",
+    "options": {
+      "lang": "jinja",
+      "theme": "github-dark"
+    },
+    "html": "<pre class=\"shiki github-dark\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#79b8ff\">{{</span><span style=\"color:#FFAB70\"> </span><span style=\"color:#E1E4E8\">fn</span><span style=\"color:#ffab70\">(</span><span style=\"color:#b392f0\">[</span><span style=\"color:#FFAB70\">1, 2</span><span style=\"color:#b392f0\">]</span><span style=\"color:#ffab70\">)</span><span style=\"color:#FFAB70\"> </span><span style=\"color:#79b8ff\">}}</span><span style=\"color:#B392F0\"> </span><span style=\"color:#79b8ff\">{%</span><span style=\"color:#F97583\"> if</span><span style=\"color:#E1E4E8\"> x </span><span style=\"color:#79b8ff\">%}</span><span style=\"color:#79b8ff\">{{</span><span style=\"color:#FFAB70\"> </span><span style=\"color:#E1E4E8\">x</span><span style=\"color:#FFAB70\"> </span><span style=\"color:#79b8ff\">}}</span><span style=\"color:#79b8ff\">{%</span><span style=\"color:#F97583\"> endif</span><span style=\"color:#B392F0\"> </span><span style=\"color:#79b8ff\">%}</span></span></code></pre>"
+  },
+  {
+    "name": "colorizedBrackets-30",
+    "transformer": "colorizedBrackets",
+    "code": "<div>{{ product.price }}</div>",
+    "options": {
+      "lang": "liquid",
+      "theme": "github-dark"
+    },
+    "html": "<pre class=\"shiki github-dark\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#E1E4E8\">&#x3C;</span><span style=\"color:#85E89D\">div</span><span style=\"color:#E1E4E8\">></span><span style=\"color:#79b8ff\">{{</span><span style=\"color:#E1E4E8\"> </span><span style=\"color:#79B8FF\">product</span><span style=\"color:#E1E4E8\">.price </span><span style=\"color:#79b8ff\">}}</span><span style=\"color:#E1E4E8\">&#x3C;/</span><span style=\"color:#85E89D\">div</span><span style=\"color:#E1E4E8\">></span></span></code></pre>"
+  },
+  {
+    "name": "colorizedBrackets-31",
+    "transformer": "colorizedBrackets",
+    "code": "<div title=\"x\">(hello)</div><script>f([1])</script>",
+    "options": {
+      "lang": "html",
+      "theme": "github-dark"
+    },
+    "html": "<pre class=\"shiki github-dark\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#E1E4E8\">&#x3C;</span><span style=\"color:#85E89D\">div</span><span style=\"color:#B392F0\"> title</span><span style=\"color:#E1E4E8\">=</span><span style=\"color:#9ECBFF\">\"x\"</span><span style=\"color:#E1E4E8\">>(hello)&#x3C;/</span><span style=\"color:#85E89D\">div</span><span style=\"color:#E1E4E8\">>&#x3C;</span><span style=\"color:#85E89D\">script</span><span style=\"color:#E1E4E8\">></span><span style=\"color:#B392F0\">f</span><span style=\"color:#79b8ff\">(</span><span style=\"color:#ffab70\">[</span><span style=\"color:#79B8FF\">1</span><span style=\"color:#ffab70\">]</span><span style=\"color:#79b8ff\">)</span><span style=\"color:#E1E4E8\">&#x3C;</span><span style=\"color:#E1E4E8\">/</span><span style=\"color:#85E89D\">script</span><span style=\"color:#E1E4E8\">></span></span></code></pre>"
+  },
+  {
+    "name": "colorizedBrackets-32",
+    "transformer": "colorizedBrackets",
+    "config": {
+      "themes": {
+        "github-dark": [
+          "red",
+          "blue",
+          "orange"
+        ]
+      }
+    },
+    "code": "f([1])",
+    "options": {
+      "lang": "js",
+      "theme": "github-dark"
+    },
+    "html": "<pre class=\"shiki github-dark\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#B392F0\">f</span><span style=\"color:red\">(</span><span style=\"color:blue\">[</span><span style=\"color:#79B8FF\">1</span><span style=\"color:blue\">]</span><span style=\"color:red\">)</span></span></code></pre>"
+  },
+  {
+    "name": "colorizedBrackets-33",
+    "transformer": "colorizedBrackets",
+    "config": {
+      "explicitTrigger": true
+    },
+    "code": "f([1])",
+    "options": {
+      "lang": "js",
+      "theme": "github-dark"
+    },
+    "html": "<pre class=\"shiki github-dark\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#B392F0\">f</span><span style=\"color:#E1E4E8\">([</span><span style=\"color:#79B8FF\">1</span><span style=\"color:#E1E4E8\">])</span></span></code></pre>"
+  },
+  {
+    "name": "colorizedBrackets-34",
+    "transformer": "colorizedBrackets",
+    "config": {
+      "explicitTrigger": true
+    },
+    "code": "f([1])",
+    "options": {
+      "lang": "js",
+      "theme": "github-dark",
+      "meta": {
+        "__raw": "colorize-brackets"
+      }
+    },
+    "html": "<pre class=\"shiki github-dark\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#B392F0\">f</span><span style=\"color:#79b8ff\">(</span><span style=\"color:#ffab70\">[</span><span style=\"color:#79B8FF\">1</span><span style=\"color:#ffab70\">]</span><span style=\"color:#79b8ff\">)</span></span></code></pre>"
+  },
+  {
+    "name": "colorizedBrackets-35",
+    "transformer": "colorizedBrackets",
+    "config": {
+      "bracketPairs": []
+    },
+    "code": "f([1])",
+    "options": {
+      "lang": "js",
+      "theme": "github-dark"
+    },
+    "html": "<pre class=\"shiki github-dark\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#B392F0\">f</span><span style=\"color:#E1E4E8\">([</span><span style=\"color:#79B8FF\">1</span><span style=\"color:#E1E4E8\">])</span></span></code></pre>"
+  },
+  {
+    "name": "removeLineBreak-36",
+    "transformer": "removeLineBreak",
+    "code": "const x = 1\nconst y = 2",
+    "options": {
+      "lang": "js",
+      "theme": "github-dark",
+      "structure": "inline"
+    },
+    "html": "<span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> x</span><span style=\"color:#F97583\"> =</span><span style=\"color:#79B8FF\"> 1</span><br><span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> y</span><span style=\"color:#F97583\"> =</span><span style=\"color:#79B8FF\"> 2</span>"
+  }
+]

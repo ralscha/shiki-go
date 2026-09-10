@@ -1,0 +1,16 @@
+{
+  "name": "shiki-go-reference",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "shiki": "4.4.3",
+    "tm-grammars": "1.32.17",
+    "tm-themes": "1.12.11",
+    "vscode-oniguruma": "1.7.0",
+    "@shikijs/cli": "4.4.3",
+    "@shikijs/colorized-brackets": "4.4.3",
+    "@shikijs/stream": "4.4.3",
+    "@shikijs/transformers": "4.4.3",
+    "@shikijs/vscode-textmate": "10.0.2"
+  }
+}
