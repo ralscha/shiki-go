@@ -1,0 +1,6 @@
+# These files are checksummed byte-for-byte in assets/manifest.json.
+# Keep their line endings stable on Windows checkouts.
+.gitattributes text eol=lf
+assets/catalog.json text eol=lf
+assets/hast-properties.json text eol=lf
+assets/manifest.json text eol=lf
