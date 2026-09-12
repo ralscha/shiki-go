@@ -142,6 +142,9 @@ func NotationWordHighlight(options ...NotationOptions) shiki.Transformer {
 		if o.ClassActivePre != "" {
 			shiki.AddClassToHAST(ctx.Pre, o.ClassActivePre)
 		}
+		if o.ClassActiveCode != "" {
+			shiki.AddClassToHAST(ctx.Code, o.ClassActiveCode)
+		}
 		return true
 	}, o.MatchAlgorithm)
 }

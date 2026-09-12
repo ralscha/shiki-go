@@ -121,9 +121,10 @@ html, err := h.CodeToHTML(code, shiki.Options{
 
 The `transformers` package includes notation diff/highlight/focus/error/word
 markers, metadata highlights, comment and newline removal, whitespace and
-indent guides, compact line options, style-to-class conversion, and bracket
-coloring. `Transformer` exposes preprocess, tokens, span, line, code, pre,
-root, and postprocess hooks. Hook errors propagate to the caller.
+indent guides, rendered line numbers, compact line options, style-to-class
+conversion, and bracket coloring. `Transformer` exposes preprocess, tokens,
+span, line, code, pre, root, and postprocess hooks. Hook errors propagate to
+the caller.
 
 Decorations accept absolute offsets or `Position{Line, Character}` coordinates.
 Line and character positions are zero-based. Token offsets, columns, ranges,

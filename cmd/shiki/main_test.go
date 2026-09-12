@@ -5,6 +5,8 @@ import (
 	"errors"
 	"net/http"
 	"net/http/httptest"
+	"os"
+	"path/filepath"
 	"strings"
 	"testing"
 )
@@ -37,8 +39,26 @@ func TestCLI(t *testing.T) {
 	if !strings.Contains(output.String(), "<pre") {
 		t.Fatal(output.String())
 	}
+	output.Reset()
+	if err := run([]string{server.URL + "/Dockerfile", "--format", "html"}, strings.NewReader(""), &output, &output); err != nil {
+		t.Fatal(err)
+	}
+	if !strings.Contains(output.String(), "const answer = 42") {
+		t.Fatal(output.String())
+	}
 	if err := run([]string{server.URL + "/missing"}, strings.NewReader(""), &output, &output); err == nil {
 		t.Fatal("HTTP error was ignored")
+	}
+	makefile := filepath.Join(t.TempDir(), "Makefile")
+	if err := os.WriteFile(makefile, []byte("all:\n\techo Hello"), 0644); err != nil {
+		t.Fatal(err)
+	}
+	output.Reset()
+	if err := run([]string{makefile, "--format", "html"}, strings.NewReader(""), &output, &output); err != nil {
+		t.Fatal(err)
+	}
+	if !strings.Contains(output.String(), "echo Hello") {
+		t.Fatal(output.String())
 	}
 	if err := run([]string{"--format", "invalid"}, strings.NewReader(""), &output, &output); err == nil {
 		t.Fatal("invalid format accepted")

@@ -73,6 +73,10 @@ func TestReferenceParity(t *testing.T) {
 				tr = RenderWhitespace(o)
 			case "renderIndentGuides":
 				tr = RenderIndentGuides()
+			case "renderLineNumber":
+				var o RenderLineNumberOptions
+				_ = json.Unmarshal(tc.Config, &o)
+				tr = RenderLineNumber(o)
 			case "styleToClass":
 				registry = StyleToClass()
 				tr = registry.Transformer

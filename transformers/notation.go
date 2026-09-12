@@ -171,6 +171,7 @@ func removeNode(nodes []*shiki.Node, n *shiki.Node) []*shiki.Node {
 
 var clearEndV1 = regexp.MustCompile(`(?://|["'#]|;{1,2}|%{1,2}|--)\s*$`)
 var clearEndV3 = regexp.MustCompile(`(?://|#|;{1,2}|%{1,2}|--)\s*$`)
+var notationDirective = regexp.MustCompile(`(?i)#?\s*\[!code\b(?:\\.|[^\]])*\]`)
 
 type CommentMatchFunc func(*shiki.TransformerContext, []string, *shiki.Node, *shiki.Node, []*shiki.Node, int) bool
 
@@ -196,7 +197,10 @@ func CreateCommentNotationTransformer(name string, re *regexp.Regexp, onMatch Co
 				continue
 			}
 			index := indexNode(lines, c.line)
-			if c.only && algorithm != "v1" {
+			remaining := notationDirective.ReplaceAllString(c.content, "")
+			remaining = re.ReplaceAllString(remaining, "")
+			standalone := strings.TrimSpace(remaining) == ""
+			if c.only && standalone && algorithm != "v1" {
 				index++
 			}
 			replaced := false
