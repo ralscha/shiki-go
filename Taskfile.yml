@@ -1,0 +1,126 @@
+version: '3'
+
+tasks:
+  default:
+    desc: List all available tasks
+    silent: true
+    cmds:
+      - task --list
+
+  format:
+    desc: Format and modernize all Go source files
+    cmds:
+      - go fix ./...
+      - go fmt ./...
+
+  test:
+    desc: Run all tests
+    cmds:
+      - go run ./tools test ./...
+
+  lint:
+    desc: Run golangci-lint in a Docker container
+    cmds:
+      - golangci-lint run -v --timeout 5m
+
+  vet:
+    desc: Run go vet
+    cmds:
+      - go run ./tools vet ./...
+
+  check:
+    desc: Verify assets and module files, run tests, and run vet
+    cmds:
+      - go run ./tools check
+
+  build:
+    desc: Build the CLI and development tool for the current platform
+    cmds:
+      - go run ./tools build --tool all
+
+  build:all:
+    desc: Build the CLI and development tool for all supported platforms
+    cmds:
+      - go run ./tools build --tool all --all
+
+  manifest:check:
+    desc: Verify all embedded asset checksums
+    cmds:
+      - go run ./tools manifest --check
+
+  generate:
+    desc: Refresh all pinned upstream assets, fixtures, notices, and checksums
+    cmds:
+      - go run ./tools generate
+
+  generate:assets:
+    desc: Refresh pinned grammars, themes, WASM, and HAST metadata
+    cmds:
+      - go run ./tools generate assets
+
+  generate:fixtures:
+    desc: Refresh fixtures from the pinned upstream Shiki packages
+    cmds:
+      - go run ./tools generate fixtures
+
+  generate:notices:
+    desc: Refresh third-party license notices
+    cmds:
+      - go run ./tools generate notices
+
+  release:check:
+    desc: Run all checks and build all release binaries
+    cmds:
+      - task: check
+      - task: build:all
+
+  tag:
+    desc: Create an annotated local git tag for a release
+    summary: |
+      Create an annotated local release tag from a clean worktree.
+
+      Run with `task --interactive tag` to be prompted for TAG,
+      or pass it explicitly with `task tag TAG=v1.0.0`.
+    requires:
+      vars: [TAG]
+    preconditions:
+      - sh: 'case "{{.TAG}}" in v*) exit 0 ;; *) exit 1 ;; esac'
+        msg: TAG must start with v, for example v1.0.0
+      - sh: 'test -z "$(git status --porcelain)"'
+        msg: Commit or stash worktree changes before creating a release tag
+      - sh: 'if git rev-parse -q --verify "refs/tags/{{.TAG}}" >/dev/null 2>&1; then exit 1; fi; exit 0'
+        msg: Tag already exists locally
+    cmds:
+      - git tag -a "{{.TAG}}" -m "Release {{.TAG}}"
+
+  push-tag:
+    desc: Push an existing git tag to GitHub
+    requires:
+      vars: [TAG]
+    preconditions:
+      - sh: 'case "{{.TAG}}" in v*) exit 0 ;; *) exit 1 ;; esac'
+        msg: TAG must start with v, for example v1.0.0
+      - sh: 'if git rev-parse -q --verify "refs/tags/{{.TAG}}" >/dev/null 2>&1; then exit 0; else exit 1; fi'
+        msg: Tag does not exist locally. Run `task tag TAG=v1.0.0` first.
+    cmds:
+      - git push origin "{{.TAG}}"
+
+  release-tag:
+    desc: Create and push an annotated release tag to GitHub
+    summary: |
+      Create an annotated release tag from a clean worktree and push it.
+
+      Run `task release:check` first, then invoke this task with
+      `task release-tag TAG=v1.0.0`.
+    requires:
+      vars: [TAG]
+    preconditions:
+      - sh: 'case "{{.TAG}}" in v*) exit 0 ;; *) exit 1 ;; esac'
+        msg: TAG must start with v, for example v1.0.0
+      - sh: 'test -z "$(git status --porcelain)"'
+        msg: Commit or stash worktree changes before creating a release tag
+      - sh: 'if git rev-parse -q --verify "refs/tags/{{.TAG}}" >/dev/null 2>&1; then exit 1; fi; exit 0'
+        msg: Tag already exists locally
+    cmds:
+      - git tag -a "{{.TAG}}" -m "Release {{.TAG}}"
+      - git push origin "{{.TAG}}"

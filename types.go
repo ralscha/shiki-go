@@ -11,7 +11,12 @@ import (
 	"time"
 )
 
-const Version = "4.4.3"
+const (
+	// Version is the shiki-go release version.
+	Version = "1.0.0"
+	// ShikiVersion is the upstream Shiki compatibility target.
+	ShikiVersion = "4.4.3"
+)
 
 type Language = textmate.Grammar
 type Rule = textmate.Rule

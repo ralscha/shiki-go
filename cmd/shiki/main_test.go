@@ -15,7 +15,7 @@ func TestCLI(t *testing.T) {
 	for _, tc := range []struct {
 		args        []string
 		input, want string
-	}{{[]string{"--lang", "js", "--theme", "github-dark", "--format", "html"}, "const x = 1", `<span style="color:#F97583">const</span>`}, {[]string{"--list-themes"}, "", "github-dark\n"}, {[]string{"--list-langs"}, "", "typescript\n"}, {[]string{"--format", "tokens"}, "hello", `"content":"hello"`}, {[]string{"--version"}, "", "4.4.3"}} {
+	}{{[]string{"--lang", "js", "--theme", "github-dark", "--format", "html"}, "const x = 1", `<span style="color:#F97583">const</span>`}, {[]string{"--list-themes"}, "", "github-dark\n"}, {[]string{"--list-langs"}, "", "typescript\n"}, {[]string{"--format", "tokens"}, "hello", `"content":"hello"`}, {[]string{"--version"}, "", "1.0.0"}} {
 		var output, errors bytes.Buffer
 		if err := run(tc.args, strings.NewReader(tc.input), &output, &errors); err != nil {
 			t.Fatal(err)

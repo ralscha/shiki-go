@@ -4,13 +4,71 @@ A native Go library and CLI implementing Shiki's TextMate syntax highlighting.
 The compatibility target is **Shiki 4.4.3**. All 242 public languages, supporting
 grammars, 65 themes, and the Oniguruma WebAssembly binary are embedded.
 
-Building from source requires the **Go version in [go.mod](go.mod)** (currently
-1.27.1). Highlighting runs entirely in the Go process,
-using wazero for Oniguruma. No Node.js installation, cgo, external executables,
-runtime downloads, or grammar files are needed.
+Building from source requires **Go 1.27.1 or newer**. Highlighting runs
+entirely in the Go process, using
+[wazero](https://github.com/tetratelabs/wazero) for Oniguruma. No Node.js
+installation, cgo, external executables, runtime downloads, or grammar files
+are needed.
 
 See [PARITY.md](PARITY.md) for the supported surface, reference comparisons,
-and validation limits.
+and validation limits. Release history is recorded in
+[CHANGELOG.md](CHANGELOG.md).
+
+## Stability
+
+Starting with `v1.0.0`, the exported APIs in the `shiki`, `stream`, and
+`transformers` packages are stable. Releases within v1 will remain backward
+compatible; an incompatible exported API change will require a new major
+version.
+
+## Installation
+
+To use shiki-go in another Go program, run the following command from the
+directory containing its `go.mod` file:
+
+```console
+go get github.com/ralscha/shiki-go@v1.0.0
+```
+
+If the program does not have a `go.mod` file yet, create one first with
+`go mod init example.com/my-program`. The `go get` command records shiki-go and
+its dependencies in the program's `go.mod` and `go.sum` files.
+
+Then import it and highlight code:
+
+```go
+package main
+
+import (
+    "fmt"
+    "log"
+
+    shiki "github.com/ralscha/shiki-go"
+)
+
+func main() {
+    html, err := shiki.CodeToHTML("const answer = 42", shiki.Options{
+        Lang:  "javascript",
+        Theme: "github-dark",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    fmt.Println(html)
+}
+```
+
+Save the example as `main.go` and run it with `go run .`.
+
+No separate grammar, theme, WebAssembly, Node.js, or cgo installation is
+required. Go downloads the module dependencies, and shiki-go embeds its runtime
+assets in the compiled program.
+
+To install the command-line program instead, use `go install`:
+
+```console
+go install github.com/ralscha/shiki-go/cmd/shiki@v1.0.0
+```
 
 ## Library
 
@@ -74,6 +132,8 @@ Errors are returned using Go's usual `(result, error)` convention.
 `HASTToHTML` accepts `HASTOptions` for serialization controls; `SerializeHAST`
 returns an explicit error for malformed nodes. `RawStyle` preserves literal CSS
 declarations, and token JSON decoding supports both string and object styles.
+`Version` reports the shiki-go release (`1.0.0`), while `ShikiVersion` reports
+the compatible upstream Shiki release (`4.4.3`).
 
 ### Multiple themes
 
@@ -201,6 +261,10 @@ go run ./tools build --tool all --all
 go run ./tools manifest --check
 go run ./tools dump javascript
 ```
+
+With [Task](https://taskfile.dev/) installed, the corresponding shortcuts are
+available through `task --list`; common entry points are `task check`,
+`task build`, `task build:all`, and `task release:check`.
 
 `check` verifies asset checksums and tidy module files, then runs all tests and
 vet. `build` writes executables to `bin`; `--tool all --all` builds both the
