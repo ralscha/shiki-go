@@ -1,8 +1,8 @@
 {
   "shiki": "4.4.3",
   "sourceCommit": "48cd2cc695ed2e3357c3f9c370578ea843d6d9a3",
-  "grammars": "tm-grammars@1.32.18",
-  "themes": "tm-themes@1.12.11",
+  "grammars": "tm-grammars@1.32.22",
+  "themes": "tm-themes@1.12.12",
   "oniguruma": "vscode-oniguruma@1.7.0",
   "files": {
     "assets/catalog.json": "97a2ab2878e239dc7f13b2ae3c5e6a4c8cee1b7281a66953ff6205a6c1300f86",
