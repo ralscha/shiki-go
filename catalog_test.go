@@ -8,6 +8,12 @@ import (
 	"time"
 )
 
+func TestShikiVersionMatchesBundledAssets(t *testing.T) {
+	if ShikiVersion != catalog.Version {
+		t.Fatalf("ShikiVersion %s does not match bundled catalog %s", ShikiVersion, catalog.Version)
+	}
+}
+
 func TestLanguageCatalogParity(t *testing.T) {
 	data, err := os.ReadFile("testdata/catalog.json")
 	if err != nil {

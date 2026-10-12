@@ -953,6 +953,26 @@
         "lang": "text",
         "theme": "vitesse-dark"
       }
+    },
+    {
+      "name": "color-level-0",
+      "code": "**bold** *italic* ~~strike~~",
+      "options": {"lang": "markdown", "theme": "github-dark", "ansiColorLevel": 0}
+    },
+    {
+      "name": "color-level-1",
+      "code": "**bold** *italic* ~~strike~~",
+      "options": {"lang": "markdown", "theme": "github-dark", "ansiColorLevel": 1}
+    },
+    {
+      "name": "color-level-2",
+      "code": "**bold** *italic* ~~strike~~",
+      "options": {"lang": "markdown", "theme": "github-dark", "ansiColorLevel": 2}
+    },
+    {
+      "name": "color-level-3",
+      "code": "**bold** *italic* ~~strike~~",
+      "options": {"lang": "markdown", "theme": "github-dark", "ansiColorLevel": 3}
     }
   ]
 }

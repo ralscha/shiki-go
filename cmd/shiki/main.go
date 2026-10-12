@@ -124,6 +124,7 @@ func run(args []string, stdin io.Reader, stdout, stderr io.Writer) (err error) {
 				language = "text"
 			}
 		}
+		language = resolveLanguage(language)
 		if err = h.LoadLanguage(append([]string{language}, shiki.GuessEmbeddedLanguages(string(content), true)...)...); err != nil {
 			return err
 		}
@@ -156,6 +157,25 @@ func run(args []string, stdin io.Reader, stdout, stderr io.Writer) (err error) {
 		}
 	}
 	return nil
+}
+
+func resolveLanguage(language string) string {
+	language = strings.ToLower(language)
+	switch language {
+	case "text", "txt", "plain", "plaintext", "ansi":
+		return language
+	}
+	for _, info := range shiki.BundledLanguages() {
+		if info.ID == language {
+			return language
+		}
+		for _, alias := range info.Aliases {
+			if alias == language {
+				return language
+			}
+		}
+	}
+	return "text"
 }
 
 func interspersedArgs(flags *flag.FlagSet, args []string) ([]string, error) {

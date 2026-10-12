@@ -8425,20 +8425,8 @@
         ],
         [
           {
-            "content": "<",
+            "content": "<div class=\"x\"",
             "offset": 106,
-            "color": "#E1E4E8",
-            "fontStyle": 0
-          },
-          {
-            "content": "div",
-            "offset": 107,
-            "color": "#85E89D",
-            "fontStyle": 0
-          },
-          {
-            "content": " class=\"x\"",
-            "offset": 110,
             "color": "#E1E4E8",
             "fontStyle": 0
           },
@@ -8449,21 +8437,9 @@
             "fontStyle": 0
           },
           {
-            "content": "hello</",
+            "content": "hello</div>",
             "offset": 121,
             "color": "#E1E4E8",
-            "fontStyle": 0
-          },
-          {
-            "content": "div",
-            "offset": 128,
-            "color": "#85E89D",
-            "fontStyle": 0
-          },
-          {
-            "content": ">",
-            "offset": 131,
-            "color": "#F97583",
             "fontStyle": 0
           }
         ],
@@ -8479,12 +8455,11 @@
           "github-dark"
         ],
         "scopes": [
-          "meta.selector.css",
           "source.css"
         ]
       }
     },
-    "html": "<pre class=\"shiki github-dark\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#E1E4E8\">// comment</span></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\"># comment</span></span>\n<span class=\"line\"><span style=\"color:#6A737D\">/* block</span></span>\n<span class=\"line\"><span style=\"color:#6A737D\"> comment */</span></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\">const value = \"hello 😀\";</span></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\">function main(x) {</span></span>\n<span class=\"line\"><span style=\"color:#79B8FF\">  return</span><span style=\"color:#79B8FF\"> x</span><span style=\"color:#E1E4E8\"> + 42;</span></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\">}</span></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\">&#x3C;</span><span style=\"color:#85E89D\">div</span><span style=\"color:#E1E4E8\"> class=\"x\"</span><span style=\"color:#F97583\">></span><span style=\"color:#E1E4E8\">hello&#x3C;/</span><span style=\"color:#85E89D\">div</span><span style=\"color:#F97583\">></span></span>\n<span class=\"line\"></span></code></pre>"
+    "html": "<pre class=\"shiki github-dark\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#E1E4E8\">// comment</span></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\"># comment</span></span>\n<span class=\"line\"><span style=\"color:#6A737D\">/* block</span></span>\n<span class=\"line\"><span style=\"color:#6A737D\"> comment */</span></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\">const value = \"hello 😀\";</span></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\">function main(x) {</span></span>\n<span class=\"line\"><span style=\"color:#79B8FF\">  return</span><span style=\"color:#79B8FF\"> x</span><span style=\"color:#E1E4E8\"> + 42;</span></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\">}</span></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\">&#x3C;div class=\"x\"</span><span style=\"color:#F97583\">></span><span style=\"color:#E1E4E8\">hello&#x3C;/div></span></span>\n<span class=\"line\"></span></code></pre>"
   },
   {
     "name": "csv",

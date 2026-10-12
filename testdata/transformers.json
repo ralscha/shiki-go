@@ -430,5 +430,93 @@
       "structure": "inline"
     },
     "html": "<span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> x</span><span style=\"color:#F97583\"> =</span><span style=\"color:#79B8FF\"> 1</span><br><span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> y</span><span style=\"color:#F97583\"> =</span><span style=\"color:#79B8FF\"> 2</span>"
+  },
+  {
+    "name": "notationHighlight-split-hash",
+    "transformer": "notationHighlight",
+    "code": "x = 1 # [!code highlight]\ny = 2",
+    "options": {
+      "lang": "python",
+      "theme": "rose-pine"
+    },
+    "html": "<pre class=\"shiki rose-pine has-highlighted\" style=\"background-color:#191724;color:#e0def4\" tabindex=\"0\"><code><span class=\"line highlighted\"><span style=\"color:#E0DEF4\">x </span><span style=\"color:#31748F\">=</span><span style=\"color:#EBBCBA\"> 1</span></span>\n<span class=\"line\"><span style=\"color:#E0DEF4\">y </span><span style=\"color:#31748F\">=</span><span style=\"color:#EBBCBA\"> 2</span></span></code></pre>"
+  },
+  {
+    "name": "notationHighlight-split-dash",
+    "transformer": "notationHighlight",
+    "code": "SELECT 1; -- [!code highlight]\nSELECT 2;",
+    "options": {
+      "lang": "sql",
+      "theme": "rose-pine"
+    },
+    "html": "<pre class=\"shiki rose-pine has-highlighted\" style=\"background-color:#191724;color:#e0def4\" tabindex=\"0\"><code><span class=\"line highlighted\"><span style=\"color:#31748F\">SELECT</span><span style=\"color:#EBBCBA\"> 1</span><span style=\"color:#E0DEF4\">; </span></span>\n<span class=\"line\"><span style=\"color:#31748F\">SELECT</span><span style=\"color:#EBBCBA\"> 2</span><span style=\"color:#E0DEF4\">;</span></span></code></pre>"
+  },
+  {
+    "name": "notationHighlight-split-standalone",
+    "transformer": "notationHighlight",
+    "code": "# [!code highlight]\nx = 1\ny = 2",
+    "options": {
+      "lang": "python",
+      "theme": "rose-pine"
+    },
+    "html": "<pre class=\"shiki rose-pine has-highlighted\" style=\"background-color:#191724;color:#e0def4\" tabindex=\"0\"><code><span class=\"line highlighted\"><span style=\"color:#E0DEF4\">x </span><span style=\"color:#31748F\">=</span><span style=\"color:#EBBCBA\"> 1</span></span>\n<span class=\"line\"><span style=\"color:#E0DEF4\">y </span><span style=\"color:#31748F\">=</span><span style=\"color:#EBBCBA\"> 2</span></span></code></pre>"
+  },
+  {
+    "name": "notationHighlight-content-comment",
+    "transformer": "notationHighlight",
+    "code": "# visible content [!code highlight]\nx = 1",
+    "options": {
+      "lang": "python",
+      "theme": "github-dark"
+    },
+    "html": "<pre class=\"shiki github-dark has-highlighted\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line highlighted\"><span style=\"color:#6A737D\"># visible content</span></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\">x </span><span style=\"color:#F97583\">=</span><span style=\"color:#79B8FF\"> 1</span></span></code></pre>"
+  },
+  {
+    "name": "notationWordHighlight-active-code",
+    "transformer": "notationWordHighlight",
+    "config": {
+      "classActiveCode": "has-word-highlight"
+    },
+    "code": "const hello = 'world' // [!code word:hello]",
+    "options": {
+      "lang": "js",
+      "theme": "github-dark"
+    },
+    "html": "<pre class=\"shiki github-dark\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code class=\"has-word-highlight\"><span class=\"line\"><span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> </span><span style=\"color:#79B8FF\" class=\"highlighted-word\">hello</span><span style=\"color:#F97583\"> =</span><span style=\"color:#9ECBFF\"> 'world'</span></span></code></pre>"
+  },
+  {
+    "name": "renderLineNumber-default",
+    "transformer": "renderLineNumber",
+    "code": "const one = 1\nconst two = 2",
+    "options": {
+      "lang": "js",
+      "theme": "github-dark"
+    },
+    "html": "<pre class=\"shiki github-dark\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span class=\"line-number\">1</span><span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> one</span><span style=\"color:#F97583\"> =</span><span style=\"color:#79B8FF\"> 1</span></span>\n<span class=\"line\"><span class=\"line-number\">2</span><span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> two</span><span style=\"color:#F97583\"> =</span><span style=\"color:#79B8FF\"> 2</span></span></code></pre>"
+  },
+  {
+    "name": "renderLineNumber-custom",
+    "transformer": "renderLineNumber",
+    "config": {
+      "classLineNumber": "gutter",
+      "start": 0
+    },
+    "code": "const one = 1\nconst two = 2",
+    "options": {
+      "lang": "js",
+      "theme": "github-dark"
+    },
+    "html": "<pre class=\"shiki github-dark\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span class=\"gutter\">0</span><span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> one</span><span style=\"color:#F97583\"> =</span><span style=\"color:#79B8FF\"> 1</span></span>\n<span class=\"line\"><span class=\"gutter\">1</span><span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> two</span><span style=\"color:#F97583\"> =</span><span style=\"color:#79B8FF\"> 2</span></span></code></pre>"
+  },
+  {
+    "name": "renderLineNumber-inline",
+    "transformer": "renderLineNumber",
+    "code": "const one = 1\nconst two = 2",
+    "options": {
+      "lang": "js",
+      "theme": "github-dark",
+      "structure": "inline"
+    },
+    "html": "<span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> one</span><span style=\"color:#F97583\"> =</span><span style=\"color:#79B8FF\"> 1</span><br><span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> two</span><span style=\"color:#F97583\"> =</span><span style=\"color:#79B8FF\"> 2</span>"
   }
 ]

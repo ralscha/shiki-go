@@ -66,12 +66,10 @@ if (operation === 'assets') {
           add({name: `theme-${id}`, code: input.allThemes.code, options: {...input.allThemes.options, theme: id}})
         }
         if (input.kind === 'advanced') {
-          process.env.FORCE_COLOR = '3'
-          delete process.env.NO_COLOR
           const { codeToANSI } = await import('@shikijs/cli')
           const ansi = []
           for (const {name, code, options} of input.ansi)
-            ansi.push({name, code, options, ansi: await codeToANSI(code, options.lang, options.theme)})
+            ansi.push({name, code, options, ansi: await codeToANSI(code, options.lang, options.theme, {colorLevel: options.ansiColorLevel})})
           output = {grammars: input.grammars, themes: input.themes, normalized: input.themes.map(normalizeTheme), cases: output, ansi}
         }
       } else {

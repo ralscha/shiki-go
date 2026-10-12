@@ -15,7 +15,7 @@ func TestCLI(t *testing.T) {
 	for _, tc := range []struct {
 		args        []string
 		input, want string
-	}{{[]string{"--lang", "js", "--theme", "github-dark", "--format", "html"}, "const x = 1", `<span style="color:#F97583">const</span>`}, {[]string{"--list-themes"}, "", "github-dark\n"}, {[]string{"--list-langs"}, "", "typescript\n"}, {[]string{"--format", "tokens"}, "hello", `"content":"hello"`}, {[]string{"--version"}, "", "1.0.0"}} {
+	}{{[]string{"--lang", "js", "--theme", "github-dark", "--format", "html"}, "const x = 1", `<span style="color:#F97583">const</span>`}, {[]string{"--list-themes"}, "", "github-dark\n"}, {[]string{"--list-langs"}, "", "typescript\n"}, {[]string{"--format", "tokens"}, "hello", `"content":"hello"`}, {[]string{"--version"}, "", "1.0.2"}} {
 		var output, errors bytes.Buffer
 		if err := run(tc.args, strings.NewReader(tc.input), &output, &errors); err != nil {
 			t.Fatal(err)
@@ -62,6 +62,42 @@ func TestCLI(t *testing.T) {
 	}
 	if err := run([]string{"--format", "invalid"}, strings.NewReader(""), &output, &output); err == nil {
 		t.Fatal("invalid format accepted")
+	}
+}
+
+func TestCLILanguageFallback(t *testing.T) {
+	const input = "const answer = 42"
+	file := filepath.Join(t.TempDir(), "source.unknown-language")
+	if err := os.WriteFile(file, []byte(input), 0644); err != nil {
+		t.Fatal(err)
+	}
+	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		_, _ = w.Write([]byte(input))
+	}))
+	defer server.Close()
+	for _, tc := range []struct {
+		name string
+		args []string
+		want string
+	}{
+		{"stdin", []string{"--lang", "unknown-language", "--format", "html"}, input},
+		{"file", []string{file, "--format", "html"}, input},
+		{"url", []string{server.URL + "/source.unknown-language", "--format", "html"}, input},
+		{"uppercase alias", []string{"--lang", "JS", "--theme", "github-dark", "--format", "html"}, `<span style="color:#F97583">const</span>`},
+	} {
+		t.Run(tc.name, func(t *testing.T) {
+			var output, stderr bytes.Buffer
+			if err := run(tc.args, strings.NewReader(input), &output, &stderr); err != nil {
+				t.Fatal(err)
+			}
+			if !strings.Contains(output.String(), tc.want) {
+				t.Fatal(output.String())
+			}
+		})
+	}
+	var output bytes.Buffer
+	if err := run([]string{"--lang", "unknown-language", "--theme", "unknown-theme"}, strings.NewReader(input), &output, &output); err == nil {
+		t.Fatal("invalid theme was ignored during language fallback")
 	}
 }
 

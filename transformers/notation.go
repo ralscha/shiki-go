@@ -70,6 +70,7 @@ func textHead(n *shiki.Node) (string, bool) {
 }
 
 var nestedComment = regexp.MustCompile(`\s+//`)
+var lineCommentPrefix = regexp.MustCompile(`^(?://|["'#]|;{1,2}|%{1,2}|--)$`)
 
 func parseComments(lines []*shiki.Node, jsx bool, algorithm string) []*parsedComment {
 	var out []*parsedComment
@@ -130,7 +131,7 @@ func parseComments(lines []*shiki.Node, jsx bool, algorithm string) []*parsedCom
 			if !matched && i > 0 && strings.HasPrefix(strings.TrimSpace(text), "[!code") {
 				prev := elements[i-1]
 				previous, ok := textHead(prev)
-				if ok && strings.Contains(previous, "//") {
+				if ok && (strings.Contains(previous, "//") || lineCommentPrefix.MatchString(strings.TrimSpace(previous))) {
 					combined, ok := matchComment(previous+text, last)
 					if ok {
 						out = append(out, &parsedComment{line: line, token: prev, prefix: combined[0], content: combined[1], suffix: combined[2], only: len(elements) == 2 && len(prev.Children) == 1 && len(token.Children) == 1, additional: []*shiki.Node{token}})

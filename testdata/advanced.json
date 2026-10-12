@@ -5201,6 +5201,46 @@
         "theme": "vitesse-dark"
       },
       "ansi": "\u001b[38;2;102;102;102mplain\u001b[39m\n\n"
+    },
+    {
+      "name": "color-level-0",
+      "code": "**bold** *italic* ~~strike~~",
+      "options": {
+        "lang": "markdown",
+        "theme": "github-dark",
+        "ansiColorLevel": 0
+      },
+      "ansi": "**bold** *italic* ~~strike~~\n"
+    },
+    {
+      "name": "color-level-1",
+      "code": "**bold** *italic* ~~strike~~",
+      "options": {
+        "lang": "markdown",
+        "theme": "github-dark",
+        "ansiColorLevel": 1
+      },
+      "ansi": "\u001b[1m\u001b[97m**bold**\u001b[39m\u001b[22m\u001b[97m \u001b[39m\u001b[3m\u001b[97m*italic*\u001b[39m\u001b[23m\u001b[97m \u001b[39m\u001b[9m\u001b[97m~~strike~~\u001b[39m\u001b[29m\n"
+    },
+    {
+      "name": "color-level-2",
+      "code": "**bold** *italic* ~~strike~~",
+      "options": {
+        "lang": "markdown",
+        "theme": "github-dark",
+        "ansiColorLevel": 2
+      },
+      "ansi": "\u001b[1m\u001b[38;5;189m**bold**\u001b[39m\u001b[22m\u001b[38;5;189m \u001b[39m\u001b[3m\u001b[38;5;189m*italic*\u001b[39m\u001b[23m\u001b[38;5;189m \u001b[39m\u001b[9m\u001b[38;5;189m~~strike~~\u001b[39m\u001b[29m\n"
+    },
+    {
+      "name": "color-level-3",
+      "code": "**bold** *italic* ~~strike~~",
+      "options": {
+        "lang": "markdown",
+        "theme": "github-dark",
+        "ansiColorLevel": 3
+      },
+      "ansi": "\u001b[1m\u001b[38;2;225;228;232m**bold**\u001b[39m\u001b[22m\u001b[38;2;225;228;232m \u001b[39m\u001b[3m\u001b[38;2;225;228;232m*italic*\u001b[39m\u001b[23m\u001b[38;2;225;228;232m \u001b[39m\u001b[9m\u001b[38;2;225;228;232m~~strike~~\u001b[39m\u001b[29m\n"
     }
   ]
 }

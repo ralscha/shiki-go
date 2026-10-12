@@ -1432,7 +1432,7 @@
             ]
           },
           {
-            "content": ">",
+            "content": ">.title { ",
             "offset": 200,
             "color": "#E1E4E8",
             "fontStyle": 0,
@@ -1450,62 +1450,9 @@
                     "scopeName": "punctuation.definition.tag.end.html.vue"
                   }
                 ]
-              }
-            ]
-          },
-          {
-            "content": ".title",
-            "offset": 201,
-            "color": "#B392F0",
-            "fontStyle": 0,
-            "explanation": [
-              {
-                "content": ".",
-                "scopes": [
-                  {
-                    "scopeName": "text.html.vue"
-                  },
-                  {
-                    "scopeName": "source.css"
-                  },
-                  {
-                    "scopeName": "meta.selector.css"
-                  },
-                  {
-                    "scopeName": "entity.other.attribute-name.class.css"
-                  },
-                  {
-                    "scopeName": "punctuation.definition.entity.css"
-                  }
-                ]
               },
               {
-                "content": "title",
-                "scopes": [
-                  {
-                    "scopeName": "text.html.vue"
-                  },
-                  {
-                    "scopeName": "source.css"
-                  },
-                  {
-                    "scopeName": "meta.selector.css"
-                  },
-                  {
-                    "scopeName": "entity.other.attribute-name.class.css"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "content": " { ",
-            "offset": 207,
-            "color": "#E1E4E8",
-            "fontStyle": 0,
-            "explanation": [
-              {
-                "content": " ",
+                "content": ".title ",
                 "scopes": [
                   {
                     "scopeName": "text.html.vue"
@@ -1795,7 +1742,7 @@
         ]
       }
     },
-    "html": "<pre class=\"shiki github-dark\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#E1E4E8\">&#x3C;</span><span style=\"color:#85E89D\">script</span><span style=\"color:#B392F0\"> setup</span><span style=\"color:#B392F0\"> lang</span><span style=\"color:#E1E4E8\">=</span><span style=\"color:#9ECBFF\">\"ts\"</span><span style=\"color:#E1E4E8\">></span></span>\n<span class=\"line\"><span style=\"color:#F97583\">import</span><span style=\"color:#E1E4E8\"> { ref } </span><span style=\"color:#F97583\">from</span><span style=\"color:#9ECBFF\"> 'vue'</span></span>\n<span class=\"line\"><span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> count</span><span style=\"color:#F97583\"> =</span><span style=\"color:#B392F0\"> ref</span><span style=\"color:#E1E4E8\">&#x3C;</span><span style=\"color:#79B8FF\">number</span><span style=\"color:#E1E4E8\">>(</span><span style=\"color:#79B8FF\">0</span><span style=\"color:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\">&#x3C;/</span><span style=\"color:#85E89D\">script</span><span style=\"color:#E1E4E8\">></span></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\">&#x3C;</span><span style=\"color:#85E89D\">template</span><span style=\"color:#E1E4E8\">></span></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\">  &#x3C;</span><span style=\"color:#85E89D\">h1</span><span style=\"color:#B392F0\"> v-if</span><span style=\"color:#E1E4E8\">=</span><span style=\"color:#9ECBFF\">\"count == 1 ? true : 'str'.toUpperCase()\"</span><span style=\"color:#E1E4E8\">>{{ count * 2 }}&#x3C;/</span><span style=\"color:#85E89D\">h1</span><span style=\"color:#E1E4E8\">></span></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\">&#x3C;/</span><span style=\"color:#85E89D\">template</span><span style=\"color:#E1E4E8\">></span></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\">&#x3C;</span><span style=\"color:#85E89D\">style</span><span style=\"color:#B392F0\"> scoped</span><span style=\"color:#E1E4E8\">></span><span style=\"color:#B392F0\">.title</span><span style=\"color:#E1E4E8\"> { </span><span style=\"color:#79B8FF\">color</span><span style=\"color:#E1E4E8\">: v-bind(</span><span style=\"color:#79B8FF\">color</span><span style=\"color:#E1E4E8\">); }&#x3C;/</span><span style=\"color:#85E89D\">style</span><span style=\"color:#E1E4E8\">></span></span></code></pre>"
+    "html": "<pre class=\"shiki github-dark\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#E1E4E8\">&#x3C;</span><span style=\"color:#85E89D\">script</span><span style=\"color:#B392F0\"> setup</span><span style=\"color:#B392F0\"> lang</span><span style=\"color:#E1E4E8\">=</span><span style=\"color:#9ECBFF\">\"ts\"</span><span style=\"color:#E1E4E8\">></span></span>\n<span class=\"line\"><span style=\"color:#F97583\">import</span><span style=\"color:#E1E4E8\"> { ref } </span><span style=\"color:#F97583\">from</span><span style=\"color:#9ECBFF\"> 'vue'</span></span>\n<span class=\"line\"><span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> count</span><span style=\"color:#F97583\"> =</span><span style=\"color:#B392F0\"> ref</span><span style=\"color:#E1E4E8\">&#x3C;</span><span style=\"color:#79B8FF\">number</span><span style=\"color:#E1E4E8\">>(</span><span style=\"color:#79B8FF\">0</span><span style=\"color:#E1E4E8\">)</span></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\">&#x3C;/</span><span style=\"color:#85E89D\">script</span><span style=\"color:#E1E4E8\">></span></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\">&#x3C;</span><span style=\"color:#85E89D\">template</span><span style=\"color:#E1E4E8\">></span></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\">  &#x3C;</span><span style=\"color:#85E89D\">h1</span><span style=\"color:#B392F0\"> v-if</span><span style=\"color:#E1E4E8\">=</span><span style=\"color:#9ECBFF\">\"count == 1 ? true : 'str'.toUpperCase()\"</span><span style=\"color:#E1E4E8\">>{{ count * 2 }}&#x3C;/</span><span style=\"color:#85E89D\">h1</span><span style=\"color:#E1E4E8\">></span></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\">&#x3C;/</span><span style=\"color:#85E89D\">template</span><span style=\"color:#E1E4E8\">></span></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\">&#x3C;</span><span style=\"color:#85E89D\">style</span><span style=\"color:#B392F0\"> scoped</span><span style=\"color:#E1E4E8\">>.title { </span><span style=\"color:#79B8FF\">color</span><span style=\"color:#E1E4E8\">: v-bind(</span><span style=\"color:#79B8FF\">color</span><span style=\"color:#E1E4E8\">); }&#x3C;/</span><span style=\"color:#85E89D\">style</span><span style=\"color:#E1E4E8\">></span></span></code></pre>"
   },
   {
     "name": "vue-vitesse-dark",
@@ -3342,7 +3289,7 @@
             ]
           },
           {
-            "content": ">.",
+            "content": ">",
             "offset": 200,
             "color": "#666666",
             "fontStyle": 0,
@@ -3360,62 +3307,17 @@
                     "scopeName": "punctuation.definition.tag.end.html.vue"
                   }
                 ]
-              },
-              {
-                "content": ".",
-                "scopes": [
-                  {
-                    "scopeName": "text.html.vue"
-                  },
-                  {
-                    "scopeName": "source.css"
-                  },
-                  {
-                    "scopeName": "meta.selector.css"
-                  },
-                  {
-                    "scopeName": "entity.other.attribute-name.class.css"
-                  },
-                  {
-                    "scopeName": "punctuation.definition.entity.css"
-                  }
-                ]
               }
             ]
           },
           {
-            "content": "title",
-            "offset": 202,
-            "color": "#BD976A",
-            "fontStyle": 0,
-            "explanation": [
-              {
-                "content": "title",
-                "scopes": [
-                  {
-                    "scopeName": "text.html.vue"
-                  },
-                  {
-                    "scopeName": "source.css"
-                  },
-                  {
-                    "scopeName": "meta.selector.css"
-                  },
-                  {
-                    "scopeName": "entity.other.attribute-name.class.css"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "content": " ",
-            "offset": 207,
+            "content": ".title ",
+            "offset": 201,
             "color": "#DBD7CAEE",
             "fontStyle": 0,
             "explanation": [
               {
-                "content": " ",
+                "content": ".title ",
                 "scopes": [
                   {
                     "scopeName": "text.html.vue"
@@ -3753,7 +3655,7 @@
         ]
       }
     },
-    "html": "<pre class=\"shiki vitesse-dark\" style=\"background-color:#121212;color:#dbd7caee\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#666666\">&#x3C;</span><span style=\"color:#4D9375\">script</span><span style=\"color:#BD976A\"> setup</span><span style=\"color:#BD976A\"> lang</span><span style=\"color:#666666\">=</span><span style=\"color:#C98A7D77\">\"</span><span style=\"color:#C98A7D\">ts</span><span style=\"color:#C98A7D77\">\"</span><span style=\"color:#666666\">></span></span>\n<span class=\"line\"><span style=\"color:#4D9375\">import</span><span style=\"color:#666666\"> {</span><span style=\"color:#BD976A\"> ref</span><span style=\"color:#666666\"> }</span><span style=\"color:#4D9375\"> from</span><span style=\"color:#C98A7D77\"> '</span><span style=\"color:#C98A7D\">vue</span><span style=\"color:#C98A7D77\">'</span></span>\n<span class=\"line\"><span style=\"color:#CB7676\">const </span><span style=\"color:#BD976A\">count</span><span style=\"color:#666666\"> =</span><span style=\"color:#80A665\"> ref</span><span style=\"color:#666666\">&#x3C;</span><span style=\"color:#5DA994\">number</span><span style=\"color:#666666\">>(</span><span style=\"color:#4C9A91\">0</span><span style=\"color:#666666\">)</span></span>\n<span class=\"line\"><span style=\"color:#666666\">&#x3C;/</span><span style=\"color:#4D9375\">script</span><span style=\"color:#666666\">></span></span>\n<span class=\"line\"><span style=\"color:#666666\">&#x3C;</span><span style=\"color:#4D9375\">template</span><span style=\"color:#666666\">></span></span>\n<span class=\"line\"><span style=\"color:#666666\">  &#x3C;</span><span style=\"color:#4D9375\">h1</span><span style=\"color:#BD976A\"> v-if</span><span style=\"color:#666666\">=</span><span style=\"color:#C98A7D77\">\"</span><span style=\"color:#C98A7D\">count == 1 ? true : 'str'.toUpperCase()</span><span style=\"color:#C98A7D77\">\"</span><span style=\"color:#666666\">></span><span style=\"color:#DBD7CAEE\">{{ count * 2 }}</span><span style=\"color:#666666\">&#x3C;/</span><span style=\"color:#4D9375\">h1</span><span style=\"color:#666666\">></span></span>\n<span class=\"line\"><span style=\"color:#666666\">&#x3C;/</span><span style=\"color:#4D9375\">template</span><span style=\"color:#666666\">></span></span>\n<span class=\"line\"><span style=\"color:#666666\">&#x3C;</span><span style=\"color:#4D9375\">style</span><span style=\"color:#BD976A\"> scoped</span><span style=\"color:#666666\">>.</span><span style=\"color:#BD976A\">title</span><span style=\"color:#666666\"> {</span><span style=\"color:#B8A965\"> color</span><span style=\"color:#666666\">:</span><span style=\"color:#DBD7CAEE\"> v-bind(</span><span style=\"color:#C99076\">color</span><span style=\"color:#DBD7CAEE\">)</span><span style=\"color:#666666\">;</span><span style=\"color:#666666\"> }&#x3C;/</span><span style=\"color:#4D9375\">style</span><span style=\"color:#666666\">></span></span></code></pre>"
+    "html": "<pre class=\"shiki vitesse-dark\" style=\"background-color:#121212;color:#dbd7caee\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#666666\">&#x3C;</span><span style=\"color:#4D9375\">script</span><span style=\"color:#BD976A\"> setup</span><span style=\"color:#BD976A\"> lang</span><span style=\"color:#666666\">=</span><span style=\"color:#C98A7D77\">\"</span><span style=\"color:#C98A7D\">ts</span><span style=\"color:#C98A7D77\">\"</span><span style=\"color:#666666\">></span></span>\n<span class=\"line\"><span style=\"color:#4D9375\">import</span><span style=\"color:#666666\"> {</span><span style=\"color:#BD976A\"> ref</span><span style=\"color:#666666\"> }</span><span style=\"color:#4D9375\"> from</span><span style=\"color:#C98A7D77\"> '</span><span style=\"color:#C98A7D\">vue</span><span style=\"color:#C98A7D77\">'</span></span>\n<span class=\"line\"><span style=\"color:#CB7676\">const </span><span style=\"color:#BD976A\">count</span><span style=\"color:#666666\"> =</span><span style=\"color:#80A665\"> ref</span><span style=\"color:#666666\">&#x3C;</span><span style=\"color:#5DA994\">number</span><span style=\"color:#666666\">>(</span><span style=\"color:#4C9A91\">0</span><span style=\"color:#666666\">)</span></span>\n<span class=\"line\"><span style=\"color:#666666\">&#x3C;/</span><span style=\"color:#4D9375\">script</span><span style=\"color:#666666\">></span></span>\n<span class=\"line\"><span style=\"color:#666666\">&#x3C;</span><span style=\"color:#4D9375\">template</span><span style=\"color:#666666\">></span></span>\n<span class=\"line\"><span style=\"color:#666666\">  &#x3C;</span><span style=\"color:#4D9375\">h1</span><span style=\"color:#BD976A\"> v-if</span><span style=\"color:#666666\">=</span><span style=\"color:#C98A7D77\">\"</span><span style=\"color:#C98A7D\">count == 1 ? true : 'str'.toUpperCase()</span><span style=\"color:#C98A7D77\">\"</span><span style=\"color:#666666\">></span><span style=\"color:#DBD7CAEE\">{{ count * 2 }}</span><span style=\"color:#666666\">&#x3C;/</span><span style=\"color:#4D9375\">h1</span><span style=\"color:#666666\">></span></span>\n<span class=\"line\"><span style=\"color:#666666\">&#x3C;/</span><span style=\"color:#4D9375\">template</span><span style=\"color:#666666\">></span></span>\n<span class=\"line\"><span style=\"color:#666666\">&#x3C;</span><span style=\"color:#4D9375\">style</span><span style=\"color:#BD976A\"> scoped</span><span style=\"color:#666666\">></span><span style=\"color:#DBD7CAEE\">.title </span><span style=\"color:#666666\">{</span><span style=\"color:#B8A965\"> color</span><span style=\"color:#666666\">:</span><span style=\"color:#DBD7CAEE\"> v-bind(</span><span style=\"color:#C99076\">color</span><span style=\"color:#DBD7CAEE\">)</span><span style=\"color:#666666\">;</span><span style=\"color:#666666\"> }&#x3C;/</span><span style=\"color:#4D9375\">style</span><span style=\"color:#666666\">></span></span></code></pre>"
   },
   {
     "name": "angular-html-github-dark",
@@ -9976,6 +9878,9 @@
                     "scopeName": "meta.property-name.scss"
                   },
                   {
+                    "scopeName": "meta.property-name.css"
+                  },
+                  {
                     "scopeName": "support.type.property-name.css"
                   }
                 ]
@@ -12274,6 +12179,9 @@
                   },
                   {
                     "scopeName": "meta.property-name.scss"
+                  },
+                  {
+                    "scopeName": "meta.property-name.css"
                   },
                   {
                     "scopeName": "support.type.property-name.css"
@@ -19182,7 +19090,7 @@
             ]
           },
           {
-            "content": ">",
+            "content": ">p { ",
             "offset": 195,
             "color": "#E1E4E8",
             "fontStyle": 0,
@@ -19203,48 +19111,9 @@
                     "scopeName": "punctuation.definition.tag.end.svelte"
                   }
                 ]
-              }
-            ]
-          },
-          {
-            "content": "p",
-            "offset": 196,
-            "color": "#85E89D",
-            "fontStyle": 0,
-            "explanation": [
+              },
               {
-                "content": "p",
-                "scopes": [
-                  {
-                    "scopeName": "source.svelte"
-                  },
-                  {
-                    "scopeName": "meta.style.svelte"
-                  },
-                  {
-                    "scopeName": "meta.embedded.block.svelte"
-                  },
-                  {
-                    "scopeName": "source.css"
-                  },
-                  {
-                    "scopeName": "meta.selector.css"
-                  },
-                  {
-                    "scopeName": "entity.name.tag.css"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "content": " { ",
-            "offset": 197,
-            "color": "#E1E4E8",
-            "fontStyle": 0,
-            "explanation": [
-              {
-                "content": " ",
+                "content": "p ",
                 "scopes": [
                   {
                     "scopeName": "source.svelte"
@@ -19559,7 +19428,7 @@
         ]
       }
     },
-    "html": "<pre class=\"shiki github-dark\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#E1E4E8\">&#x3C;</span><span style=\"color:#85E89D\">script</span><span style=\"color:#B392F0\"> lang</span><span style=\"color:#E1E4E8\">=</span><span style=\"color:#9ECBFF\">\"ts\"</span><span style=\"color:#E1E4E8\">></span></span>\n<span class=\"line\"><span style=\"color:#F97583\">let</span><span style=\"color:#E1E4E8\"> count</span><span style=\"color:#F97583\">:</span><span style=\"color:#79B8FF\"> number</span><span style=\"color:#F97583\"> =</span><span style=\"color:#E1E4E8\"> $</span><span style=\"color:#B392F0\">state</span><span style=\"color:#E1E4E8\">(</span><span style=\"color:#79B8FF\">0</span><span style=\"color:#E1E4E8\">);</span></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\">&#x3C;/</span><span style=\"color:#85E89D\">script</span><span style=\"color:#E1E4E8\">></span></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\">{#</span><span style=\"color:#F97583\">if</span><span style=\"color:#E1E4E8\"> count </span><span style=\"color:#F97583\">></span><span style=\"color:#79B8FF\"> 0</span><span style=\"color:#E1E4E8\">}&#x3C;</span><span style=\"color:#85E89D\">p</span><span style=\"color:#B392F0\"> class</span><span style=\"color:#E1E4E8\">:</span><span style=\"color:#B392F0\">active</span><span style=\"color:#E1E4E8\">={count </span><span style=\"color:#F97583\">></span><span style=\"color:#79B8FF\"> 1</span><span style=\"color:#E1E4E8\">}>{count}&#x3C;/</span><span style=\"color:#85E89D\">p</span><span style=\"color:#E1E4E8\">>{:</span><span style=\"color:#F97583\">else</span><span style=\"color:#E1E4E8\">}&#x3C;</span><span style=\"color:#85E89D\">p</span><span style=\"color:#E1E4E8\">>zero&#x3C;/</span><span style=\"color:#85E89D\">p</span><span style=\"color:#E1E4E8\">>{/</span><span style=\"color:#F97583\">if</span><span style=\"color:#E1E4E8\">}</span></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\">&#x3C;</span><span style=\"color:#85E89D\">button</span><span style=\"color:#B392F0\"> onclick</span><span style=\"color:#E1E4E8\">={() </span><span style=\"color:#F97583\">=></span><span style=\"color:#E1E4E8\"> count</span><span style=\"color:#F97583\">++</span><span style=\"color:#E1E4E8\">}>increment&#x3C;/</span><span style=\"color:#85E89D\">button</span><span style=\"color:#E1E4E8\">></span></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\">&#x3C;</span><span style=\"color:#85E89D\">style</span><span style=\"color:#E1E4E8\">></span><span style=\"color:#85E89D\">p</span><span style=\"color:#E1E4E8\"> { </span><span style=\"color:#79B8FF\">color</span><span style=\"color:#E1E4E8\">: </span><span style=\"color:#79B8FF\">red</span><span style=\"color:#E1E4E8\"> }&#x3C;/</span><span style=\"color:#85E89D\">style</span><span style=\"color:#E1E4E8\">></span></span></code></pre>"
+    "html": "<pre class=\"shiki github-dark\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#E1E4E8\">&#x3C;</span><span style=\"color:#85E89D\">script</span><span style=\"color:#B392F0\"> lang</span><span style=\"color:#E1E4E8\">=</span><span style=\"color:#9ECBFF\">\"ts\"</span><span style=\"color:#E1E4E8\">></span></span>\n<span class=\"line\"><span style=\"color:#F97583\">let</span><span style=\"color:#E1E4E8\"> count</span><span style=\"color:#F97583\">:</span><span style=\"color:#79B8FF\"> number</span><span style=\"color:#F97583\"> =</span><span style=\"color:#E1E4E8\"> $</span><span style=\"color:#B392F0\">state</span><span style=\"color:#E1E4E8\">(</span><span style=\"color:#79B8FF\">0</span><span style=\"color:#E1E4E8\">);</span></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\">&#x3C;/</span><span style=\"color:#85E89D\">script</span><span style=\"color:#E1E4E8\">></span></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\">{#</span><span style=\"color:#F97583\">if</span><span style=\"color:#E1E4E8\"> count </span><span style=\"color:#F97583\">></span><span style=\"color:#79B8FF\"> 0</span><span style=\"color:#E1E4E8\">}&#x3C;</span><span style=\"color:#85E89D\">p</span><span style=\"color:#B392F0\"> class</span><span style=\"color:#E1E4E8\">:</span><span style=\"color:#B392F0\">active</span><span style=\"color:#E1E4E8\">={count </span><span style=\"color:#F97583\">></span><span style=\"color:#79B8FF\"> 1</span><span style=\"color:#E1E4E8\">}>{count}&#x3C;/</span><span style=\"color:#85E89D\">p</span><span style=\"color:#E1E4E8\">>{:</span><span style=\"color:#F97583\">else</span><span style=\"color:#E1E4E8\">}&#x3C;</span><span style=\"color:#85E89D\">p</span><span style=\"color:#E1E4E8\">>zero&#x3C;/</span><span style=\"color:#85E89D\">p</span><span style=\"color:#E1E4E8\">>{/</span><span style=\"color:#F97583\">if</span><span style=\"color:#E1E4E8\">}</span></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\">&#x3C;</span><span style=\"color:#85E89D\">button</span><span style=\"color:#B392F0\"> onclick</span><span style=\"color:#E1E4E8\">={() </span><span style=\"color:#F97583\">=></span><span style=\"color:#E1E4E8\"> count</span><span style=\"color:#F97583\">++</span><span style=\"color:#E1E4E8\">}>increment&#x3C;/</span><span style=\"color:#85E89D\">button</span><span style=\"color:#E1E4E8\">></span></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\">&#x3C;</span><span style=\"color:#85E89D\">style</span><span style=\"color:#E1E4E8\">>p { </span><span style=\"color:#79B8FF\">color</span><span style=\"color:#E1E4E8\">: </span><span style=\"color:#79B8FF\">red</span><span style=\"color:#E1E4E8\"> }&#x3C;/</span><span style=\"color:#85E89D\">style</span><span style=\"color:#E1E4E8\">></span></span></code></pre>"
   },
   {
     "name": "svelte-vitesse-dark",
@@ -22131,44 +22000,13 @@
             ]
           },
           {
-            "content": "p",
+            "content": "p ",
             "offset": 196,
-            "color": "#4D9375",
-            "fontStyle": 0,
-            "explanation": [
-              {
-                "content": "p",
-                "scopes": [
-                  {
-                    "scopeName": "source.svelte"
-                  },
-                  {
-                    "scopeName": "meta.style.svelte"
-                  },
-                  {
-                    "scopeName": "meta.embedded.block.svelte"
-                  },
-                  {
-                    "scopeName": "source.css"
-                  },
-                  {
-                    "scopeName": "meta.selector.css"
-                  },
-                  {
-                    "scopeName": "entity.name.tag.css"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "content": " ",
-            "offset": 197,
             "color": "#DBD7CAEE",
             "fontStyle": 0,
             "explanation": [
               {
-                "content": " ",
+                "content": "p ",
                 "scopes": [
                   {
                     "scopeName": "source.svelte"
@@ -22515,7 +22353,7 @@
         ]
       }
     },
-    "html": "<pre class=\"shiki vitesse-dark\" style=\"background-color:#121212;color:#dbd7caee\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#666666\">&#x3C;</span><span style=\"color:#4D9375\">script</span><span style=\"color:#BD976A\"> lang</span><span style=\"color:#666666\">=</span><span style=\"color:#C98A7D77\">\"</span><span style=\"color:#C98A7D\">ts</span><span style=\"color:#C98A7D77\">\"</span><span style=\"color:#666666\">></span></span>\n<span class=\"line\"><span style=\"color:#CB7676\">let </span><span style=\"color:#BD976A\">count</span><span style=\"color:#666666\">: </span><span style=\"color:#5DA994\">number</span><span style=\"color:#666666\"> =</span><span style=\"color:#666666\"> $</span><span style=\"color:#80A665\">state</span><span style=\"color:#666666\">(</span><span style=\"color:#4C9A91\">0</span><span style=\"color:#666666\">);</span></span>\n<span class=\"line\"><span style=\"color:#666666\">&#x3C;/</span><span style=\"color:#4D9375\">script</span><span style=\"color:#666666\">></span></span>\n<span class=\"line\"><span style=\"color:#666666\">{#</span><span style=\"color:#4D9375\">if</span><span style=\"color:#BD976A\"> count</span><span style=\"color:#666666\"> ></span><span style=\"color:#4C9A91\"> 0</span><span style=\"color:#666666\">}&#x3C;</span><span style=\"color:#4D9375\">p</span><span style=\"color:#BD976A\"> class</span><span style=\"color:#666666\">:</span><span style=\"color:#BD976A\">active</span><span style=\"color:#666666\">={</span><span style=\"color:#BD976A\">count</span><span style=\"color:#666666\"> ></span><span style=\"color:#4C9A91\"> 1</span><span style=\"color:#666666\">}>{</span><span style=\"color:#BD976A\">count</span><span style=\"color:#666666\">}&#x3C;/</span><span style=\"color:#4D9375\">p</span><span style=\"color:#666666\">>{:</span><span style=\"color:#4D9375\">else</span><span style=\"color:#666666\">}&#x3C;</span><span style=\"color:#4D9375\">p</span><span style=\"color:#666666\">></span><span style=\"color:#DBD7CAEE\">zero</span><span style=\"color:#666666\">&#x3C;/</span><span style=\"color:#4D9375\">p</span><span style=\"color:#666666\">>{/</span><span style=\"color:#4D9375\">if</span><span style=\"color:#666666\">}</span></span>\n<span class=\"line\"><span style=\"color:#666666\">&#x3C;</span><span style=\"color:#4D9375\">button</span><span style=\"color:#BD976A\"> onclick</span><span style=\"color:#666666\">={()</span><span style=\"color:#666666\"> =></span><span style=\"color:#BD976A\"> count</span><span style=\"color:#CB7676\">++</span><span style=\"color:#666666\">}></span><span style=\"color:#DBD7CAEE\">increment</span><span style=\"color:#666666\">&#x3C;/</span><span style=\"color:#4D9375\">button</span><span style=\"color:#666666\">></span></span>\n<span class=\"line\"><span style=\"color:#666666\">&#x3C;</span><span style=\"color:#4D9375\">style</span><span style=\"color:#666666\">></span><span style=\"color:#4D9375\">p</span><span style=\"color:#666666\"> {</span><span style=\"color:#B8A965\"> color</span><span style=\"color:#666666\">:</span><span style=\"color:#C99076\"> red</span><span style=\"color:#666666\"> }&#x3C;/</span><span style=\"color:#4D9375\">style</span><span style=\"color:#666666\">></span></span></code></pre>"
+    "html": "<pre class=\"shiki vitesse-dark\" style=\"background-color:#121212;color:#dbd7caee\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#666666\">&#x3C;</span><span style=\"color:#4D9375\">script</span><span style=\"color:#BD976A\"> lang</span><span style=\"color:#666666\">=</span><span style=\"color:#C98A7D77\">\"</span><span style=\"color:#C98A7D\">ts</span><span style=\"color:#C98A7D77\">\"</span><span style=\"color:#666666\">></span></span>\n<span class=\"line\"><span style=\"color:#CB7676\">let </span><span style=\"color:#BD976A\">count</span><span style=\"color:#666666\">: </span><span style=\"color:#5DA994\">number</span><span style=\"color:#666666\"> =</span><span style=\"color:#666666\"> $</span><span style=\"color:#80A665\">state</span><span style=\"color:#666666\">(</span><span style=\"color:#4C9A91\">0</span><span style=\"color:#666666\">);</span></span>\n<span class=\"line\"><span style=\"color:#666666\">&#x3C;/</span><span style=\"color:#4D9375\">script</span><span style=\"color:#666666\">></span></span>\n<span class=\"line\"><span style=\"color:#666666\">{#</span><span style=\"color:#4D9375\">if</span><span style=\"color:#BD976A\"> count</span><span style=\"color:#666666\"> ></span><span style=\"color:#4C9A91\"> 0</span><span style=\"color:#666666\">}&#x3C;</span><span style=\"color:#4D9375\">p</span><span style=\"color:#BD976A\"> class</span><span style=\"color:#666666\">:</span><span style=\"color:#BD976A\">active</span><span style=\"color:#666666\">={</span><span style=\"color:#BD976A\">count</span><span style=\"color:#666666\"> ></span><span style=\"color:#4C9A91\"> 1</span><span style=\"color:#666666\">}>{</span><span style=\"color:#BD976A\">count</span><span style=\"color:#666666\">}&#x3C;/</span><span style=\"color:#4D9375\">p</span><span style=\"color:#666666\">>{:</span><span style=\"color:#4D9375\">else</span><span style=\"color:#666666\">}&#x3C;</span><span style=\"color:#4D9375\">p</span><span style=\"color:#666666\">></span><span style=\"color:#DBD7CAEE\">zero</span><span style=\"color:#666666\">&#x3C;/</span><span style=\"color:#4D9375\">p</span><span style=\"color:#666666\">>{/</span><span style=\"color:#4D9375\">if</span><span style=\"color:#666666\">}</span></span>\n<span class=\"line\"><span style=\"color:#666666\">&#x3C;</span><span style=\"color:#4D9375\">button</span><span style=\"color:#BD976A\"> onclick</span><span style=\"color:#666666\">={()</span><span style=\"color:#666666\"> =></span><span style=\"color:#BD976A\"> count</span><span style=\"color:#CB7676\">++</span><span style=\"color:#666666\">}></span><span style=\"color:#DBD7CAEE\">increment</span><span style=\"color:#666666\">&#x3C;/</span><span style=\"color:#4D9375\">button</span><span style=\"color:#666666\">></span></span>\n<span class=\"line\"><span style=\"color:#666666\">&#x3C;</span><span style=\"color:#4D9375\">style</span><span style=\"color:#666666\">></span><span style=\"color:#DBD7CAEE\">p </span><span style=\"color:#666666\">{</span><span style=\"color:#B8A965\"> color</span><span style=\"color:#666666\">:</span><span style=\"color:#C99076\"> red</span><span style=\"color:#666666\"> }&#x3C;/</span><span style=\"color:#4D9375\">style</span><span style=\"color:#666666\">></span></span></code></pre>"
   },
   {
     "name": "cpp-github-dark",

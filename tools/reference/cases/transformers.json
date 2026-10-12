@@ -6,6 +6,7 @@
       "ts",
       "tsx",
       "python",
+      "sql",
       "html",
       "md",
       "jinja",
@@ -410,6 +411,56 @@
         "theme": "github-dark",
         "structure": "inline"
       }
+    },
+    {
+      "name": "notationHighlight-split-hash",
+      "transformer": "notationHighlight",
+      "code": "x = 1 # [!code highlight]\ny = 2",
+      "options": {"lang": "python", "theme": "rose-pine"}
+    },
+    {
+      "name": "notationHighlight-split-dash",
+      "transformer": "notationHighlight",
+      "code": "SELECT 1; -- [!code highlight]\nSELECT 2;",
+      "options": {"lang": "sql", "theme": "rose-pine"}
+    },
+    {
+      "name": "notationHighlight-split-standalone",
+      "transformer": "notationHighlight",
+      "code": "# [!code highlight]\nx = 1\ny = 2",
+      "options": {"lang": "python", "theme": "rose-pine"}
+    },
+    {
+      "name": "notationHighlight-content-comment",
+      "transformer": "notationHighlight",
+      "code": "# visible content [!code highlight]\nx = 1",
+      "options": {"lang": "python", "theme": "github-dark"}
+    },
+    {
+      "name": "notationWordHighlight-active-code",
+      "transformer": "notationWordHighlight",
+      "config": {"classActiveCode": "has-word-highlight"},
+      "code": "const hello = 'world' // [!code word:hello]",
+      "options": {"lang": "js", "theme": "github-dark"}
+    },
+    {
+      "name": "renderLineNumber-default",
+      "transformer": "renderLineNumber",
+      "code": "const one = 1\nconst two = 2",
+      "options": {"lang": "js", "theme": "github-dark"}
+    },
+    {
+      "name": "renderLineNumber-custom",
+      "transformer": "renderLineNumber",
+      "config": {"classLineNumber": "gutter", "start": 0},
+      "code": "const one = 1\nconst two = 2",
+      "options": {"lang": "js", "theme": "github-dark"}
+    },
+    {
+      "name": "renderLineNumber-inline",
+      "transformer": "renderLineNumber",
+      "code": "const one = 1\nconst two = 2",
+      "options": {"lang": "js", "theme": "github-dark", "structure": "inline"}
     }
   ]
 }

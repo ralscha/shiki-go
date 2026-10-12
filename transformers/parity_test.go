@@ -29,7 +29,7 @@ func TestReferenceParity(t *testing.T) {
 	if err = json.Unmarshal(data, &cases); err != nil {
 		t.Fatal(err)
 	}
-	h, err := shiki.NewHighlighter(shiki.HighlighterOptions{Langs: []string{"js", "ts", "tsx", "python", "html", "md", "jinja", "liquid"}, Themes: []string{"github-dark", "github-light", "rose-pine"}})
+	h, err := shiki.NewHighlighter(shiki.HighlighterOptions{Langs: []string{"js", "ts", "tsx", "python", "sql", "html", "md", "jinja", "liquid"}, Themes: []string{"github-dark", "github-light", "rose-pine"}})
 	if err != nil {
 		t.Fatal(err)
 	}

@@ -2,6 +2,15 @@
 
 All notable changes to shiki-go are documented in this file.
 
+## 1.0.2 - 2026-10-12
+
+- Complete the Shiki 4.5.0 reference upgrade: synchronize the npm lockfile,
+  source commit, embedded assets, reference fixtures, and compatibility version.
+- Recognize notation markers in split `#` and `--` comment tokens.
+- Fall back to plain text for unknown CLI languages and normalize language names.
+- Extend upstream comparisons for explicit ANSI color levels, comment notation,
+  word-highlight classes, and line-number rendering.
+
 ## 1.0.0 - 2026-09-12
 
 The first stable release establishes the exported APIs in the `shiki`,

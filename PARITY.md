@@ -1,8 +1,8 @@
 # Shiki compatibility
 
 The implemented target is the **native Go library and CLI surface of Shiki
-4.4.3**, using reference checkout
-`48cd2cc695ed2e3357c3f9c370578ea843d6d9a3`.
+4.5.0**, using reference checkout
+`f7d0167873fd676fe4e190bc9b53832fba9ee01d`.
 
 The Go implementation runs without Node.js or cgo. It uses the upstream
 Oniguruma WebAssembly binary through wazero and embeds the complete language
@@ -45,11 +45,11 @@ metadata, or streaming events as appropriate.
 | `catalog.json` | 242 | Every public language: tokens and HTML |
 | `parity.json` | 142 | Core languages, all 65 themes, render options, explanations, decorations |
 | `realworld.json` | 40 | Larger samples across 20 languages and special inputs, with scope explanations |
-| `advanced.json` | 40 | 25 custom grammar/theme/state cases, 3 normalization cases, 12 ANSI output cases |
-| `transformers.json` | 37 | Bundled transformers, bracket coloring, custom options, inline combinations |
+| `advanced.json` | 44 | 25 custom grammar/theme/state cases, 3 normalization cases, 16 ANSI output cases |
+| `transformers.json` | 45 | Bundled transformers, bracket coloring, split comments, line numbers, custom options, inline combinations |
 | `stream.json` | 12 | Chunk boundaries, recalls, Markdown, multiple themes, Unicode, and CRLF |
 | `hast.json` | 336 | Serialization formatting and HTML/SVG node/property combinations |
-| **Total** | **849** | All pass |
+| **Total** | **861** | All pass |
 
 Additional native tests cover ownership and disposal, errors, concurrent use,
 state isolation, transformer hooks, token JSON round trips, HTTP CLI inputs,
@@ -59,17 +59,14 @@ reader chunking, and executable examples.
 
 On Windows amd64 with Go 1.27.1:
 
-- `go test ./... -count=1`: passed after clean fixture regeneration.
-- `go vet ./...`: passed.
-- CLI and development-tool builds with `CGO_ENABLED=0`: Windows, Linux, and
-  macOS on amd64 and arm64.
-- Windows executable: highlighted JavaScript with an empty `PATH`.
+- `go run ./tools check`: verified all 328 asset checksums and module files;
+  all Go tests and vet passed after fixture regeneration.
+- `go run ./tools build --tool all --all`: CLI and development-tool builds
+  with `CGO_ENABLED=0` for Windows, Linux, and macOS on amd64 and arm64.
 - Fixture/asset regeneration: passed using `go run ./tools generate`.
-- Tooling migration: all seven reference fixture files remain byte-identical;
-  all 325 decompressed grammar/theme files, catalog, HAST properties, and WASM
-  retain their original content. Go's gzip output has updated checksums.
-- Portable development tool: builds with `CGO_ENABLED=0` for Windows, Linux,
-  and macOS on amd64 and arm64; local data commands work with an empty `PATH`.
+- Shiki 4.5.0: refreshed 27 grammar assets and 5 themes; extended reference
+  coverage for split comments, word-highlight classes, line numbers, and all
+  four ANSI color levels. Native CLI tests cover unknown-language fallback.
 
 Linux and macOS binaries were cross-compiled, not executed on those operating
 systems in this workspace. The local Go race detector was not run because no C

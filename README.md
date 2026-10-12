@@ -1,7 +1,7 @@
 # shiki-go
 
 A native Go library and CLI implementing Shiki's TextMate syntax highlighting.
-The compatibility target is **Shiki 4.4.3**. All 242 public languages, supporting
+The compatibility target is **Shiki 4.5.0**. All 242 public languages, supporting
 grammars, 65 themes, and the Oniguruma WebAssembly binary are embedded.
 
 Building from source requires **Go 1.27.1 or newer**. Highlighting runs
@@ -27,7 +27,7 @@ To use shiki-go in another Go program, run the following command from the
 directory containing its `go.mod` file:
 
 ```console
-go get github.com/ralscha/shiki-go@v1.0.0
+go get github.com/ralscha/shiki-go@v1.0.2
 ```
 
 If the program does not have a `go.mod` file yet, create one first with
@@ -67,7 +67,7 @@ assets in the compiled program.
 To install the command-line program instead, use `go install`:
 
 ```console
-go install github.com/ralscha/shiki-go/cmd/shiki@v1.0.0
+go install github.com/ralscha/shiki-go/cmd/shiki@v1.0.2
 ```
 
 ## Library
@@ -132,8 +132,8 @@ Errors are returned using Go's usual `(result, error)` convention.
 `HASTToHTML` accepts `HASTOptions` for serialization controls; `SerializeHAST`
 returns an explicit error for malformed nodes. `RawStyle` preserves literal CSS
 declarations, and token JSON decoding supports both string and object styles.
-`Version` reports the shiki-go release (`1.0.0`), while `ShikiVersion` reports
-the compatible upstream Shiki release (`4.4.3`).
+`Version` reports the shiki-go release (`1.0.2`), while `ShikiVersion` reports
+the compatible upstream Shiki release (`4.5.0`).
 
 ### Multiple themes
 

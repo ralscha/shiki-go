@@ -1,4 +1,4 @@
-shiki-go implements the native library and CLI functionality of Shiki 4.4.3.
+shiki-go implements the native library and CLI functionality of Shiki 4.5.0.
 
 This project includes Go translations of Shiki and vscode-textmate algorithms,
 the upstream TextMate grammars and themes, the unmodified Oniguruma WebAssembly
@@ -6,7 +6,7 @@ binary, and HAST property metadata. It also reproduces behavior from Shiki's
 transformers, colorized-brackets, stream, and CLI packages, hast-util-to-html,
 property-information, stringify-entities, and ansis.
 
-Shiki reference commit: 48cd2cc695ed2e3357c3f9c370578ea843d6d9a3
+Shiki reference commit: f7d0167873fd676fe4e190bc9b53832fba9ee01d
 https://github.com/shikijs/shiki
 
 Copyright and license notices for these components and their incorporated

@@ -13,9 +13,9 @@ import (
 
 const (
 	// Version is the shiki-go release version.
-	Version = "1.0.0"
+	Version = "1.0.2"
 	// ShikiVersion is the upstream Shiki compatibility target.
-	ShikiVersion = "4.4.3"
+	ShikiVersion = "4.5.0"
 )
 
 type Language = textmate.Grammar
