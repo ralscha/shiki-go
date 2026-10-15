@@ -11,6 +11,7 @@ import (
 	"os"
 	"path/filepath"
 	"runtime"
+	"slices"
 	"strconv"
 	"strings"
 	"time"
@@ -169,10 +170,8 @@ func resolveLanguage(language string) string {
 		if info.ID == language {
 			return language
 		}
-		for _, alias := range info.Aliases {
-			if alias == language {
-				return language
-			}
+		if slices.Contains(info.Aliases, language) {
+			return language
 		}
 	}
 	return "text"
