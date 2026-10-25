@@ -5,6 +5,7 @@ import (
 	shiki "github.com/ralscha/shiki-go"
 	"os"
 	"testing"
+	"time"
 )
 
 func closeOnCleanup(t testing.TB, closer interface{ Close() error }) {
@@ -87,6 +88,9 @@ func TestReferenceParity(t *testing.T) {
 			default:
 				t.Fatalf("unknown transformer %s", tc.Transformer)
 			}
+			// Reference parity measures complete tokenization, independent of host load.
+			unlimited := time.Duration(0)
+			tc.Options.TokenizeTimeLimit = &unlimited
 			tc.Options.Transformers = []shiki.Transformer{tr}
 			html, err := h.CodeToHTML(tc.Code, tc.Options)
 			if err != nil {

@@ -3,7 +3,7 @@
   "sourceCommit": "f7d0167873fd676fe4e190bc9b53832fba9ee01d",
   "grammars": "tm-grammars@1.32.22",
   "themes": "tm-themes@1.12.12",
-  "oniguruma": "vscode-oniguruma@1.7.0",
+  "oniguruma": "vscode-oniguruma@2.0.1",
   "files": {
     "assets/catalog.json": "7381cd64374e7a248476c9a2ffe6d904290017c0cbc966df125b2cfb58801405",
     "assets/hast-properties.json": "86e39356881bccc1439c30a0f5feac8bb7d88ddec3563bcf77c8c155c1990fc4",
