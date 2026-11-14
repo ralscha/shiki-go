@@ -1,11 +1,11 @@
 {
-  "shiki": "4.5.0",
-  "sourceCommit": "f7d0167873fd676fe4e190bc9b53832fba9ee01d",
+  "shiki": "4.6.0",
+  "sourceCommit": "167a38fea19cfa92b760ba36e157589ca5801274",
   "grammars": "tm-grammars@1.32.22",
   "themes": "tm-themes@1.12.12",
   "oniguruma": "vscode-oniguruma@2.0.1",
   "files": {
-    "assets/catalog.json": "7381cd64374e7a248476c9a2ffe6d904290017c0cbc966df125b2cfb58801405",
+    "assets/catalog.json": "6be754342e7943245d4f04fb96fe284f52615a66b3ecf7ba898aecf04d218023",
     "assets/hast-properties.json": "86e39356881bccc1439c30a0f5feac8bb7d88ddec3563bcf77c8c155c1990fc4",
     "assets/languages/abap.json.gz": "60248b2aedb2b9e3af0ce4a3b51782cc5415b114f86b7ca078c7bdf5b1b21255",
     "assets/languages/actionscript-3.json.gz": "c95d3851a469eed018b9efe03cd48fcdf5bdfa4442afec80fb81732a436dbb5e",

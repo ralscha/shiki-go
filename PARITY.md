@@ -1,8 +1,8 @@
 # Shiki compatibility
 
 The implemented target is the **native Go library and CLI surface of Shiki
-4.5.0**, using reference checkout
-`f7d0167873fd676fe4e190bc9b53832fba9ee01d`.
+4.6.0**, using reference checkout
+`167a38fea19cfa92b760ba36e157589ca5801274`.
 
 The Go implementation runs without Node.js or cgo. It uses the upstream
 Oniguruma WebAssembly binary through wazero and embeds the complete language
@@ -29,7 +29,8 @@ bridge when refreshing assets or fixtures.
 - [x] Custom regex-engine interface, explicit resource disposal, shared engine ownership, and concurrent highlighter calls
 - [x] Runnable examples, API usage documentation, asset checksums, and third-party notices
 
-The registry preserves the reference's lazy-load injection-cache behavior.
+The registry refreshes injections when lazy dependencies or injection grammars
+are loaded after their targets.
 Token and position offsets use UTF-16 code units. The regex-engine interface
 uses UTF-8 byte offsets. JSON-decoded options preserve theme, replacement,
 metadata, attribute, and decoration property ordering where output depends on it.
@@ -57,16 +58,17 @@ reader chunking, and executable examples.
 
 ## Validation performed
 
-On Windows amd64 with Go 1.27.1:
+On Windows amd64 with Go 1.27.4:
 
 - `go run ./tools check`: verified all 328 asset checksums and module files;
   all Go tests and vet passed after fixture regeneration.
 - `go run ./tools build --tool all --all`: CLI and development-tool builds
   with `CGO_ENABLED=0` for Windows, Linux, and macOS on amd64 and arm64.
 - Fixture/asset regeneration: passed using `go run ./tools generate`.
-- Shiki 4.5.0: refreshed 27 grammar assets and 5 themes; extended reference
-  coverage for split comments, word-highlight classes, line numbers, and all
-  four ANSI color levels. Native CLI tests cover unknown-language fallback.
+- Shiki 4.6.0: regenerated assets and reference fixtures, updated injection
+  refresh behavior, aligned streaming offsets and CRLF handling, and converted
+  single-theme token styles to CSS classes. Native regression tests cover late
+  injections and streaming offsets across clone, close, and clear operations.
 
 Linux and macOS binaries were cross-compiled, not executed on those operating
 systems in this workspace. The local Go race detector was not run because no C

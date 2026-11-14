@@ -698,7 +698,7 @@
           },
           {
             "content": "\n",
-            "offset": 0
+            "offset": 19
           }
         ],
         "unstable": []
@@ -709,7 +709,7 @@
         "unstable": [
           {
             "content": "$",
-            "offset": 0,
+            "offset": 20,
             "color": "#9ECBFF",
             "fontStyle": 0
           }
@@ -721,7 +721,7 @@
         "unstable": [
           {
             "content": "${",
-            "offset": 0,
+            "offset": 20,
             "color": "#9ECBFF",
             "fontStyle": 0
           }
@@ -733,13 +733,13 @@
         "unstable": [
           {
             "content": "${",
-            "offset": 0,
+            "offset": 20,
             "color": "#9ECBFF",
             "fontStyle": 0
           },
           {
             "content": "4",
-            "offset": 2,
+            "offset": 22,
             "color": "#79B8FF",
             "fontStyle": 0
           }
@@ -751,13 +751,13 @@
         "unstable": [
           {
             "content": "${",
-            "offset": 0,
+            "offset": 20,
             "color": "#9ECBFF",
             "fontStyle": 0
           },
           {
             "content": "42",
-            "offset": 2,
+            "offset": 22,
             "color": "#79B8FF",
             "fontStyle": 0
           }
@@ -769,19 +769,19 @@
         "unstable": [
           {
             "content": "${",
-            "offset": 0,
+            "offset": 20,
             "color": "#9ECBFF",
             "fontStyle": 0
           },
           {
             "content": "42",
-            "offset": 2,
+            "offset": 22,
             "color": "#79B8FF",
             "fontStyle": 0
           },
           {
             "content": "}",
-            "offset": 4,
+            "offset": 24,
             "color": "#9ECBFF",
             "fontStyle": 0
           }
@@ -793,19 +793,19 @@
         "unstable": [
           {
             "content": "${",
-            "offset": 0,
+            "offset": 20,
             "color": "#9ECBFF",
             "fontStyle": 0
           },
           {
             "content": "42",
-            "offset": 2,
+            "offset": 22,
             "color": "#79B8FF",
             "fontStyle": 0
           },
           {
             "content": "}`",
-            "offset": 4,
+            "offset": 24,
             "color": "#9ECBFF",
             "fontStyle": 0
           }
@@ -816,25 +816,25 @@
         "stable": [
           {
             "content": "${",
-            "offset": 0,
+            "offset": 20,
             "color": "#9ECBFF",
             "fontStyle": 0
           },
           {
             "content": "42",
-            "offset": 2,
+            "offset": 22,
             "color": "#79B8FF",
             "fontStyle": 0
           },
           {
             "content": "}`",
-            "offset": 4,
+            "offset": 24,
             "color": "#9ECBFF",
             "fontStyle": 0
           },
           {
             "content": "\n",
-            "offset": 0
+            "offset": 26
           }
         ],
         "unstable": []
@@ -845,7 +845,7 @@
         "unstable": [
           {
             "content": "/",
-            "offset": 0,
+            "offset": 27,
             "color": "#F97583",
             "fontStyle": 0
           }
@@ -857,7 +857,7 @@
         "unstable": [
           {
             "content": "/*",
-            "offset": 0,
+            "offset": 27,
             "color": "#6A737D",
             "fontStyle": 0
           }
@@ -869,7 +869,7 @@
         "unstable": [
           {
             "content": "/* ",
-            "offset": 0,
+            "offset": 27,
             "color": "#6A737D",
             "fontStyle": 0
           }
@@ -881,7 +881,7 @@
         "unstable": [
           {
             "content": "/* c",
-            "offset": 0,
+            "offset": 27,
             "color": "#6A737D",
             "fontStyle": 0
           }
@@ -893,7 +893,7 @@
         "unstable": [
           {
             "content": "/* co",
-            "offset": 0,
+            "offset": 27,
             "color": "#6A737D",
             "fontStyle": 0
           }
@@ -905,7 +905,7 @@
         "unstable": [
           {
             "content": "/* com",
-            "offset": 0,
+            "offset": 27,
             "color": "#6A737D",
             "fontStyle": 0
           }
@@ -917,7 +917,7 @@
         "unstable": [
           {
             "content": "/* comm",
-            "offset": 0,
+            "offset": 27,
             "color": "#6A737D",
             "fontStyle": 0
           }
@@ -929,7 +929,7 @@
         "unstable": [
           {
             "content": "/* comme",
-            "offset": 0,
+            "offset": 27,
             "color": "#6A737D",
             "fontStyle": 0
           }
@@ -941,7 +941,7 @@
         "unstable": [
           {
             "content": "/* commen",
-            "offset": 0,
+            "offset": 27,
             "color": "#6A737D",
             "fontStyle": 0
           }
@@ -953,7 +953,7 @@
         "unstable": [
           {
             "content": "/* comment",
-            "offset": 0,
+            "offset": 27,
             "color": "#6A737D",
             "fontStyle": 0
           }
@@ -964,13 +964,13 @@
         "stable": [
           {
             "content": "/* comment",
-            "offset": 0,
+            "offset": 27,
             "color": "#6A737D",
             "fontStyle": 0
           },
           {
             "content": "\n",
-            "offset": 0
+            "offset": 37
           }
         ],
         "unstable": []
@@ -981,7 +981,7 @@
         "unstable": [
           {
             "content": "c",
-            "offset": 0,
+            "offset": 38,
             "color": "#6A737D",
             "fontStyle": 0
           }
@@ -993,7 +993,7 @@
         "unstable": [
           {
             "content": "co",
-            "offset": 0,
+            "offset": 38,
             "color": "#6A737D",
             "fontStyle": 0
           }
@@ -1005,7 +1005,7 @@
         "unstable": [
           {
             "content": "con",
-            "offset": 0,
+            "offset": 38,
             "color": "#6A737D",
             "fontStyle": 0
           }
@@ -1017,7 +1017,7 @@
         "unstable": [
           {
             "content": "cont",
-            "offset": 0,
+            "offset": 38,
             "color": "#6A737D",
             "fontStyle": 0
           }
@@ -1029,7 +1029,7 @@
         "unstable": [
           {
             "content": "conti",
-            "offset": 0,
+            "offset": 38,
             "color": "#6A737D",
             "fontStyle": 0
           }
@@ -1041,7 +1041,7 @@
         "unstable": [
           {
             "content": "contin",
-            "offset": 0,
+            "offset": 38,
             "color": "#6A737D",
             "fontStyle": 0
           }
@@ -1053,7 +1053,7 @@
         "unstable": [
           {
             "content": "continu",
-            "offset": 0,
+            "offset": 38,
             "color": "#6A737D",
             "fontStyle": 0
           }
@@ -1065,7 +1065,7 @@
         "unstable": [
           {
             "content": "continue",
-            "offset": 0,
+            "offset": 38,
             "color": "#6A737D",
             "fontStyle": 0
           }
@@ -1077,7 +1077,7 @@
         "unstable": [
           {
             "content": "continued",
-            "offset": 0,
+            "offset": 38,
             "color": "#6A737D",
             "fontStyle": 0
           }
@@ -1089,7 +1089,7 @@
         "unstable": [
           {
             "content": "continued ",
-            "offset": 0,
+            "offset": 38,
             "color": "#6A737D",
             "fontStyle": 0
           }
@@ -1101,7 +1101,7 @@
         "unstable": [
           {
             "content": "continued *",
-            "offset": 0,
+            "offset": 38,
             "color": "#6A737D",
             "fontStyle": 0
           }
@@ -1113,7 +1113,7 @@
         "unstable": [
           {
             "content": "continued */",
-            "offset": 0,
+            "offset": 38,
             "color": "#6A737D",
             "fontStyle": 0
           }
@@ -1123,7 +1123,7 @@
     "closed": [
       {
         "content": "continued */",
-        "offset": 0,
+        "offset": 38,
         "color": "#6A737D",
         "fontStyle": 0
       }
@@ -1199,45 +1199,45 @@
           },
           {
             "content": "\n",
-            "offset": 0
+            "offset": 19
           },
           {
             "content": "${",
-            "offset": 0,
+            "offset": 20,
             "color": "#9ECBFF",
             "fontStyle": 0
           },
           {
             "content": "42",
-            "offset": 2,
+            "offset": 22,
             "color": "#79B8FF",
             "fontStyle": 0
           },
           {
             "content": "}`",
-            "offset": 4,
+            "offset": 24,
             "color": "#9ECBFF",
             "fontStyle": 0
           },
           {
             "content": "\n",
-            "offset": 0
+            "offset": 26
           },
           {
             "content": "/* comment",
-            "offset": 0,
+            "offset": 27,
             "color": "#6A737D",
             "fontStyle": 0
           },
           {
             "content": "\n",
-            "offset": 0
+            "offset": 37
           }
         ],
         "unstable": [
           {
             "content": "continued */",
-            "offset": 0,
+            "offset": 38,
             "color": "#6A737D",
             "fontStyle": 0
           }
@@ -1247,7 +1247,7 @@
     "closed": [
       {
         "content": "continued */",
-        "offset": 0,
+        "offset": 38,
         "color": "#6A737D",
         "fontStyle": 0
       }
@@ -1317,45 +1317,45 @@
           },
           {
             "content": "\n",
-            "offset": 0
+            "offset": 19
           },
           {
             "content": "${",
-            "offset": 0,
+            "offset": 20,
             "color": "#9ECBFF",
             "fontStyle": 0
           },
           {
             "content": "42",
-            "offset": 2,
+            "offset": 22,
             "color": "#79B8FF",
             "fontStyle": 0
           },
           {
             "content": "}`",
-            "offset": 4,
+            "offset": 24,
             "color": "#9ECBFF",
             "fontStyle": 0
           },
           {
             "content": "\n",
-            "offset": 0
+            "offset": 26
           },
           {
             "content": "/* comment",
-            "offset": 0,
+            "offset": 27,
             "color": "#6A737D",
             "fontStyle": 0
           },
           {
             "content": "\n",
-            "offset": 0
+            "offset": 37
           }
         ],
         "unstable": [
           {
             "content": "continued */",
-            "offset": 0,
+            "offset": 38,
             "color": "#6A737D",
             "fontStyle": 0
           }
@@ -1367,7 +1367,7 @@
         "unstable": [
           {
             "content": "continued */",
-            "offset": 0,
+            "offset": 38,
             "color": "#6A737D",
             "fontStyle": 0
           }
@@ -1377,7 +1377,7 @@
     "closed": [
       {
         "content": "continued */",
-        "offset": 0,
+        "offset": 38,
         "color": "#6A737D",
         "fontStyle": 0
       }
@@ -1763,7 +1763,7 @@
           },
           {
             "content": "\n",
-            "offset": 0
+            "offset": 19
           }
         ],
         "unstable": []
@@ -1773,7 +1773,7 @@
         "stable": [
           {
             "content": "\n",
-            "offset": 0
+            "offset": 20
           }
         ],
         "unstable": []
@@ -1784,7 +1784,7 @@
         "unstable": [
           {
             "content": "~",
-            "offset": 0,
+            "offset": 21,
             "color": "#E1E4E8",
             "fontStyle": 0
           }
@@ -1796,7 +1796,7 @@
         "unstable": [
           {
             "content": "~~",
-            "offset": 0,
+            "offset": 21,
             "color": "#E1E4E8",
             "fontStyle": 0
           }
@@ -1808,7 +1808,7 @@
         "unstable": [
           {
             "content": "~~~",
-            "offset": 0,
+            "offset": 21,
             "color": "#E1E4E8",
             "fontStyle": 0
           }
@@ -1820,7 +1820,7 @@
         "unstable": [
           {
             "content": "~~~j",
-            "offset": 0,
+            "offset": 21,
             "color": "#E1E4E8",
             "fontStyle": 0
           }
@@ -1832,7 +1832,7 @@
         "unstable": [
           {
             "content": "~~~js",
-            "offset": 0,
+            "offset": 21,
             "color": "#E1E4E8",
             "fontStyle": 0
           }
@@ -1843,13 +1843,13 @@
         "stable": [
           {
             "content": "~~~js",
-            "offset": 0,
+            "offset": 21,
             "color": "#E1E4E8",
             "fontStyle": 0
           },
           {
             "content": "\n",
-            "offset": 0
+            "offset": 26
           }
         ],
         "unstable": []
@@ -1860,7 +1860,7 @@
         "unstable": [
           {
             "content": "c",
-            "offset": 0,
+            "offset": 27,
             "color": "#E1E4E8",
             "fontStyle": 0
           }
@@ -1872,7 +1872,7 @@
         "unstable": [
           {
             "content": "co",
-            "offset": 0,
+            "offset": 27,
             "color": "#E1E4E8",
             "fontStyle": 0
           }
@@ -1884,7 +1884,7 @@
         "unstable": [
           {
             "content": "con",
-            "offset": 0,
+            "offset": 27,
             "color": "#E1E4E8",
             "fontStyle": 0
           }
@@ -1896,7 +1896,7 @@
         "unstable": [
           {
             "content": "cons",
-            "offset": 0,
+            "offset": 27,
             "color": "#E1E4E8",
             "fontStyle": 0
           }
@@ -1908,7 +1908,7 @@
         "unstable": [
           {
             "content": "const",
-            "offset": 0,
+            "offset": 27,
             "color": "#F97583",
             "fontStyle": 0
           }
@@ -1920,13 +1920,13 @@
         "unstable": [
           {
             "content": "const",
-            "offset": 0,
+            "offset": 27,
             "color": "#F97583",
             "fontStyle": 0
           },
           {
             "content": " ",
-            "offset": 5,
+            "offset": 32,
             "color": "#E1E4E8",
             "fontStyle": 0
           }
@@ -1938,19 +1938,19 @@
         "unstable": [
           {
             "content": "const",
-            "offset": 0,
+            "offset": 27,
             "color": "#F97583",
             "fontStyle": 0
           },
           {
             "content": " ",
-            "offset": 5,
+            "offset": 32,
             "color": "#E1E4E8",
             "fontStyle": 0
           },
           {
             "content": "x",
-            "offset": 6,
+            "offset": 33,
             "color": "#79B8FF",
             "fontStyle": 0
           }
@@ -1962,25 +1962,25 @@
         "unstable": [
           {
             "content": "const",
-            "offset": 0,
+            "offset": 27,
             "color": "#F97583",
             "fontStyle": 0
           },
           {
             "content": " ",
-            "offset": 5,
+            "offset": 32,
             "color": "#E1E4E8",
             "fontStyle": 0
           },
           {
             "content": "x",
-            "offset": 6,
+            "offset": 33,
             "color": "#79B8FF",
             "fontStyle": 0
           },
           {
             "content": " ",
-            "offset": 7,
+            "offset": 34,
             "color": "#E1E4E8",
             "fontStyle": 0
           }
@@ -1992,31 +1992,31 @@
         "unstable": [
           {
             "content": "const",
-            "offset": 0,
+            "offset": 27,
             "color": "#F97583",
             "fontStyle": 0
           },
           {
             "content": " ",
-            "offset": 5,
+            "offset": 32,
             "color": "#E1E4E8",
             "fontStyle": 0
           },
           {
             "content": "x",
-            "offset": 6,
+            "offset": 33,
             "color": "#79B8FF",
             "fontStyle": 0
           },
           {
             "content": " ",
-            "offset": 7,
+            "offset": 34,
             "color": "#E1E4E8",
             "fontStyle": 0
           },
           {
             "content": "=",
-            "offset": 8,
+            "offset": 35,
             "color": "#F97583",
             "fontStyle": 0
           }
@@ -2028,37 +2028,37 @@
         "unstable": [
           {
             "content": "const",
-            "offset": 0,
+            "offset": 27,
             "color": "#F97583",
             "fontStyle": 0
           },
           {
             "content": " ",
-            "offset": 5,
+            "offset": 32,
             "color": "#E1E4E8",
             "fontStyle": 0
           },
           {
             "content": "x",
-            "offset": 6,
+            "offset": 33,
             "color": "#79B8FF",
             "fontStyle": 0
           },
           {
             "content": " ",
-            "offset": 7,
+            "offset": 34,
             "color": "#E1E4E8",
             "fontStyle": 0
           },
           {
             "content": "=",
-            "offset": 8,
+            "offset": 35,
             "color": "#F97583",
             "fontStyle": 0
           },
           {
             "content": " ",
-            "offset": 9,
+            "offset": 36,
             "color": "#E1E4E8",
             "fontStyle": 0
           }
@@ -2070,43 +2070,43 @@
         "unstable": [
           {
             "content": "const",
-            "offset": 0,
+            "offset": 27,
             "color": "#F97583",
             "fontStyle": 0
           },
           {
             "content": " ",
-            "offset": 5,
+            "offset": 32,
             "color": "#E1E4E8",
             "fontStyle": 0
           },
           {
             "content": "x",
-            "offset": 6,
+            "offset": 33,
             "color": "#79B8FF",
             "fontStyle": 0
           },
           {
             "content": " ",
-            "offset": 7,
+            "offset": 34,
             "color": "#E1E4E8",
             "fontStyle": 0
           },
           {
             "content": "=",
-            "offset": 8,
+            "offset": 35,
             "color": "#F97583",
             "fontStyle": 0
           },
           {
             "content": " ",
-            "offset": 9,
+            "offset": 36,
             "color": "#E1E4E8",
             "fontStyle": 0
           },
           {
             "content": "1",
-            "offset": 10,
+            "offset": 37,
             "color": "#79B8FF",
             "fontStyle": 0
           }
@@ -2117,49 +2117,49 @@
         "stable": [
           {
             "content": "const",
-            "offset": 0,
+            "offset": 27,
             "color": "#F97583",
             "fontStyle": 0
           },
           {
             "content": " ",
-            "offset": 5,
+            "offset": 32,
             "color": "#E1E4E8",
             "fontStyle": 0
           },
           {
             "content": "x",
-            "offset": 6,
+            "offset": 33,
             "color": "#79B8FF",
             "fontStyle": 0
           },
           {
             "content": " ",
-            "offset": 7,
+            "offset": 34,
             "color": "#E1E4E8",
             "fontStyle": 0
           },
           {
             "content": "=",
-            "offset": 8,
+            "offset": 35,
             "color": "#F97583",
             "fontStyle": 0
           },
           {
             "content": " ",
-            "offset": 9,
+            "offset": 36,
             "color": "#E1E4E8",
             "fontStyle": 0
           },
           {
             "content": "1",
-            "offset": 10,
+            "offset": 37,
             "color": "#79B8FF",
             "fontStyle": 0
           },
           {
             "content": "\n",
-            "offset": 0
+            "offset": 38
           }
         ],
         "unstable": []
@@ -2170,7 +2170,7 @@
         "unstable": [
           {
             "content": "~",
-            "offset": 0,
+            "offset": 39,
             "color": "#F97583",
             "fontStyle": 0
           }
@@ -2182,7 +2182,7 @@
         "unstable": [
           {
             "content": "~~",
-            "offset": 0,
+            "offset": 39,
             "color": "#F97583",
             "fontStyle": 0
           }
@@ -2194,7 +2194,7 @@
         "unstable": [
           {
             "content": "~~~",
-            "offset": 0,
+            "offset": 39,
             "color": "#E1E4E8",
             "fontStyle": 0
           }
@@ -2204,7 +2204,7 @@
     "closed": [
       {
         "content": "~~~",
-        "offset": 0,
+        "offset": 39,
         "color": "#E1E4E8",
         "fontStyle": 0
       }
@@ -2256,73 +2256,73 @@
           },
           {
             "content": "\n",
-            "offset": 0
+            "offset": 19
           },
           {
             "content": "\n",
-            "offset": 0
+            "offset": 20
           },
           {
             "content": "~~~js",
-            "offset": 0,
+            "offset": 21,
             "color": "#E1E4E8",
             "fontStyle": 0
           },
           {
             "content": "\n",
-            "offset": 0
+            "offset": 26
           },
           {
             "content": "const",
-            "offset": 0,
+            "offset": 27,
             "color": "#F97583",
             "fontStyle": 0
           },
           {
             "content": " ",
-            "offset": 5,
+            "offset": 32,
             "color": "#E1E4E8",
             "fontStyle": 0
           },
           {
             "content": "x",
-            "offset": 6,
+            "offset": 33,
             "color": "#79B8FF",
             "fontStyle": 0
           },
           {
             "content": " ",
-            "offset": 7,
+            "offset": 34,
             "color": "#E1E4E8",
             "fontStyle": 0
           },
           {
             "content": "=",
-            "offset": 8,
+            "offset": 35,
             "color": "#F97583",
             "fontStyle": 0
           },
           {
             "content": " ",
-            "offset": 9,
+            "offset": 36,
             "color": "#E1E4E8",
             "fontStyle": 0
           },
           {
             "content": "1",
-            "offset": 10,
+            "offset": 37,
             "color": "#79B8FF",
             "fontStyle": 0
           },
           {
             "content": "\n",
-            "offset": 0
+            "offset": 38
           }
         ],
         "unstable": [
           {
             "content": "~~~",
-            "offset": 0,
+            "offset": 39,
             "color": "#E1E4E8",
             "fontStyle": 0
           }
@@ -2332,7 +2332,7 @@
     "closed": [
       {
         "content": "~~~",
-        "offset": 0,
+        "offset": 39,
         "color": "#E1E4E8",
         "fontStyle": 0
       }
@@ -2378,73 +2378,73 @@
           },
           {
             "content": "\n",
-            "offset": 0
+            "offset": 19
           },
           {
             "content": "\n",
-            "offset": 0
+            "offset": 20
           },
           {
             "content": "~~~js",
-            "offset": 0,
+            "offset": 21,
             "color": "#E1E4E8",
             "fontStyle": 0
           },
           {
             "content": "\n",
-            "offset": 0
+            "offset": 26
           },
           {
             "content": "const",
-            "offset": 0,
+            "offset": 27,
             "color": "#F97583",
             "fontStyle": 0
           },
           {
             "content": " ",
-            "offset": 5,
+            "offset": 32,
             "color": "#E1E4E8",
             "fontStyle": 0
           },
           {
             "content": "x",
-            "offset": 6,
+            "offset": 33,
             "color": "#79B8FF",
             "fontStyle": 0
           },
           {
             "content": " ",
-            "offset": 7,
+            "offset": 34,
             "color": "#E1E4E8",
             "fontStyle": 0
           },
           {
             "content": "=",
-            "offset": 8,
+            "offset": 35,
             "color": "#F97583",
             "fontStyle": 0
           },
           {
             "content": " ",
-            "offset": 9,
+            "offset": 36,
             "color": "#E1E4E8",
             "fontStyle": 0
           },
           {
             "content": "1",
-            "offset": 10,
+            "offset": 37,
             "color": "#79B8FF",
             "fontStyle": 0
           },
           {
             "content": "\n",
-            "offset": 0
+            "offset": 38
           }
         ],
         "unstable": [
           {
             "content": "~~~",
-            "offset": 0,
+            "offset": 39,
             "color": "#E1E4E8",
             "fontStyle": 0
           }
@@ -2456,7 +2456,7 @@
         "unstable": [
           {
             "content": "~~~",
-            "offset": 0,
+            "offset": 39,
             "color": "#E1E4E8",
             "fontStyle": 0
           }
@@ -2466,7 +2466,7 @@
     "closed": [
       {
         "content": "~~~",
-        "offset": 0,
+        "offset": 39,
         "color": "#E1E4E8",
         "fontStyle": 0
       }
@@ -2960,16 +2960,8 @@
             }
           },
           {
-            "content": "\r",
-            "offset": 11,
-            "htmlStyle": {
-              "color": "#24292E",
-              "--shiki-dark": "#E1E4E8"
-            }
-          },
-          {
             "content": "\n",
-            "offset": 0
+            "offset": 12
           }
         ],
         "unstable": []
@@ -2980,7 +2972,7 @@
         "unstable": [
           {
             "content": "/",
-            "offset": 0,
+            "offset": 13,
             "htmlStyle": {
               "color": "#D73A49",
               "--shiki-dark": "#F97583"
@@ -2994,7 +2986,7 @@
         "unstable": [
           {
             "content": "//",
-            "offset": 0,
+            "offset": 13,
             "htmlStyle": {
               "color": "#6A737D",
               "--shiki-dark": "#6A737D"
@@ -3008,7 +3000,7 @@
         "unstable": [
           {
             "content": "// ",
-            "offset": 0,
+            "offset": 13,
             "htmlStyle": {
               "color": "#6A737D",
               "--shiki-dark": "#6A737D"
@@ -3022,7 +3014,7 @@
         "unstable": [
           {
             "content": "// c",
-            "offset": 0,
+            "offset": 13,
             "htmlStyle": {
               "color": "#6A737D",
               "--shiki-dark": "#6A737D"
@@ -3036,7 +3028,7 @@
         "unstable": [
           {
             "content": "// co",
-            "offset": 0,
+            "offset": 13,
             "htmlStyle": {
               "color": "#6A737D",
               "--shiki-dark": "#6A737D"
@@ -3050,7 +3042,7 @@
         "unstable": [
           {
             "content": "// com",
-            "offset": 0,
+            "offset": 13,
             "htmlStyle": {
               "color": "#6A737D",
               "--shiki-dark": "#6A737D"
@@ -3064,7 +3056,7 @@
         "unstable": [
           {
             "content": "// comm",
-            "offset": 0,
+            "offset": 13,
             "htmlStyle": {
               "color": "#6A737D",
               "--shiki-dark": "#6A737D"
@@ -3078,7 +3070,7 @@
         "unstable": [
           {
             "content": "// comme",
-            "offset": 0,
+            "offset": 13,
             "htmlStyle": {
               "color": "#6A737D",
               "--shiki-dark": "#6A737D"
@@ -3092,7 +3084,7 @@
         "unstable": [
           {
             "content": "// commen",
-            "offset": 0,
+            "offset": 13,
             "htmlStyle": {
               "color": "#6A737D",
               "--shiki-dark": "#6A737D"
@@ -3106,7 +3098,7 @@
         "unstable": [
           {
             "content": "// comment",
-            "offset": 0,
+            "offset": 13,
             "htmlStyle": {
               "color": "#6A737D",
               "--shiki-dark": "#6A737D"
@@ -3119,7 +3111,7 @@
         "stable": [
           {
             "content": "// comment",
-            "offset": 0,
+            "offset": 13,
             "htmlStyle": {
               "color": "#6A737D",
               "--shiki-dark": "#6A737D"
@@ -3127,7 +3119,7 @@
           },
           {
             "content": "\n",
-            "offset": 0
+            "offset": 23
           }
         ],
         "unstable": []
@@ -3223,20 +3215,12 @@
             }
           },
           {
-            "content": "\r",
-            "offset": 11,
-            "htmlStyle": {
-              "color": "#24292E",
-              "--shiki-dark": "#E1E4E8"
-            }
-          },
-          {
             "content": "\n",
-            "offset": 0
+            "offset": 12
           },
           {
             "content": "// comment",
-            "offset": 0,
+            "offset": 13,
             "htmlStyle": {
               "color": "#6A737D",
               "--shiki-dark": "#6A737D"
@@ -3244,7 +3228,7 @@
           },
           {
             "content": "\n",
-            "offset": 0
+            "offset": 23
           }
         ],
         "unstable": []
@@ -3332,20 +3316,12 @@
             }
           },
           {
-            "content": "\r",
-            "offset": 11,
-            "htmlStyle": {
-              "color": "#24292E",
-              "--shiki-dark": "#E1E4E8"
-            }
-          },
-          {
             "content": "\n",
-            "offset": 0
+            "offset": 12
           },
           {
             "content": "// comment",
-            "offset": 0,
+            "offset": 13,
             "htmlStyle": {
               "color": "#6A737D",
               "--shiki-dark": "#6A737D"
@@ -3353,7 +3329,7 @@
           },
           {
             "content": "\n",
-            "offset": 0
+            "offset": 23
           }
         ],
         "unstable": []
@@ -3467,13 +3443,13 @@
           },
           {
             "content": "\n",
-            "offset": 0
+            "offset": 8
           }
         ],
         "unstable": [
           {
             "content": "",
-            "offset": 0
+            "offset": 9
           }
         ]
       },
@@ -3482,17 +3458,17 @@
         "stable": [
           {
             "content": "",
-            "offset": 0
+            "offset": 9
           },
           {
             "content": "\n",
-            "offset": 0
+            "offset": 9
           }
         ],
         "unstable": [
           {
             "content": "",
-            "offset": 0
+            "offset": 10
           }
         ]
       },
@@ -3502,7 +3478,7 @@
         "unstable": [
           {
             "content": "t",
-            "offset": 0
+            "offset": 10
           }
         ]
       },
@@ -3512,7 +3488,7 @@
         "unstable": [
           {
             "content": "te",
-            "offset": 0
+            "offset": 10
           }
         ]
       },
@@ -3522,7 +3498,7 @@
         "unstable": [
           {
             "content": "tex",
-            "offset": 0
+            "offset": 10
           }
         ]
       },
@@ -3532,7 +3508,7 @@
         "unstable": [
           {
             "content": "text",
-            "offset": 0
+            "offset": 10
           }
         ]
       }
@@ -3540,7 +3516,7 @@
     "closed": [
       {
         "content": "text",
-        "offset": 0
+        "offset": 10
       }
     ]
   },
@@ -3574,21 +3550,21 @@
           },
           {
             "content": "\n",
-            "offset": 0
+            "offset": 8
           },
           {
             "content": "",
-            "offset": 0
+            "offset": 9
           },
           {
             "content": "\n",
-            "offset": 0
+            "offset": 9
           }
         ],
         "unstable": [
           {
             "content": "text",
-            "offset": 0
+            "offset": 10
           }
         ]
       }
@@ -3596,7 +3572,7 @@
     "closed": [
       {
         "content": "text",
-        "offset": 0
+        "offset": 10
       }
     ]
   },
@@ -3631,21 +3607,21 @@
           },
           {
             "content": "\n",
-            "offset": 0
+            "offset": 8
           },
           {
             "content": "",
-            "offset": 0
+            "offset": 9
           },
           {
             "content": "\n",
-            "offset": 0
+            "offset": 9
           }
         ],
         "unstable": [
           {
             "content": "text",
-            "offset": 0
+            "offset": 10
           }
         ]
       },
@@ -3655,7 +3631,7 @@
         "unstable": [
           {
             "content": "text",
-            "offset": 0
+            "offset": 10
           }
         ]
       }
@@ -3663,7 +3639,7 @@
     "closed": [
       {
         "content": "text",
-        "offset": 0
+        "offset": 10
       }
     ]
   }

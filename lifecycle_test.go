@@ -85,6 +85,48 @@ func TestGrammarStateLifecycle(t *testing.T) {
 	}
 }
 
+func TestLateInjectionsSurviveLazyLanguageReload(t *testing.T) {
+	languages := []*Language{
+		{Name: "host", ScopeName: "source.host", EmbeddedLangsLazy: []string{"dependency"}},
+		{Name: "child", ScopeName: "source.host.child", EmbeddedLangsLazy: []string{"dependency"}},
+		{Name: "unrelated", ScopeName: "source.hostile"},
+	}
+	h, err := NewHighlighter(HighlighterOptions{Languages: languages, Themes: []string{"github-dark"}})
+	if err != nil {
+		t.Fatal(err)
+	}
+	closeOnCleanup(t, h)
+	check := func(injected bool) {
+		t.Helper()
+		for _, lang := range languages {
+			result, err := h.CodeToTokens("TODO", Options{Lang: lang.Name, Theme: "github-dark"})
+			if err != nil {
+				t.Fatal(err)
+			}
+			want := "#E1E4E8"
+			if injected && lang.Name != "unrelated" {
+				want = "#F97583"
+			}
+			if len(result.Tokens[0]) != 1 || result.Tokens[0][0].Color != want {
+				t.Fatalf("%s: expected color %s, got %#v", lang.Name, want, result.Tokens)
+			}
+		}
+	}
+	check(false) // Compile the target grammars before loading the injection.
+	if err := h.LoadLanguageRegistrations(&Language{
+		Name: "late-injection", ScopeName: "source.late-injection",
+		InjectTo: []string{"source.host"}, InjectionSelector: "L:source.host",
+		Patterns: []*Rule{{Match: "TODO", Name: "keyword.control"}},
+	}); err != nil {
+		t.Fatal(err)
+	}
+	check(true)
+	if err := h.LoadLanguageRegistrations(&Language{Name: "dependency", ScopeName: "source.dependency"}); err != nil {
+		t.Fatal(err)
+	}
+	check(true)
+}
+
 func TestNormalizeThemePreservesExistingColorReplacements(t *testing.T) {
 	theme := NormalizeTheme(&Theme{
 		Name:              "custom",

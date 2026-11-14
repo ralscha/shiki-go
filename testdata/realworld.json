@@ -63653,10 +63653,10 @@
                     "scopeName": "meta.tag.structure.div.start.html"
                   },
                   {
-                    "scopeName": "meta.attribute.style.html"
+                    "scopeName": "meta.attribute.style.vue"
                   },
                   {
-                    "scopeName": "entity.other.attribute-name.html"
+                    "scopeName": "entity.other.attribute-name.html.vue"
                   }
                 ]
               }
@@ -63678,17 +63678,17 @@
                     "scopeName": "meta.tag.structure.div.start.html"
                   },
                   {
-                    "scopeName": "meta.attribute.style.html"
+                    "scopeName": "meta.attribute.style.vue"
                   },
                   {
-                    "scopeName": "punctuation.separator.key-value.html"
+                    "scopeName": "punctuation.separator.key-value.html.vue"
                   }
                 ]
               }
             ]
           },
           {
-            "content": "\"color: red\"",
+            "content": "\"",
             "offset": 179,
             "color": "#9ECBFF",
             "fontStyle": 0,
@@ -63703,21 +63703,26 @@
                     "scopeName": "meta.tag.structure.div.start.html"
                   },
                   {
-                    "scopeName": "meta.attribute.style.html"
+                    "scopeName": "meta.attribute.style.vue"
                   },
                   {
-                    "scopeName": "meta.embedded.line.css"
+                    "scopeName": "source.css.embedded.html.vue"
                   },
                   {
-                    "scopeName": "string.quoted.double.html"
-                  },
-                  {
-                    "scopeName": "punctuation.definition.string.begin.html"
+                    "scopeName": "punctuation.definition.string.begin.html.vue"
                   }
                 ]
-              },
+              }
+            ]
+          },
+          {
+            "content": "color",
+            "offset": 180,
+            "color": "#79B8FF",
+            "fontStyle": 0,
+            "explanation": [
               {
-                "content": "color: red",
+                "content": "color",
                 "scopes": [
                   {
                     "scopeName": "text.html.markdown"
@@ -63726,19 +63731,106 @@
                     "scopeName": "meta.tag.structure.div.start.html"
                   },
                   {
-                    "scopeName": "meta.attribute.style.html"
+                    "scopeName": "meta.attribute.style.vue"
                   },
                   {
-                    "scopeName": "meta.embedded.line.css"
+                    "scopeName": "source.css.embedded.html.vue"
                   },
                   {
-                    "scopeName": "string.quoted.double.html"
+                    "scopeName": "meta.property-name.css"
                   },
                   {
-                    "scopeName": "source.css"
+                    "scopeName": "meta.property-name.css"
+                  },
+                  {
+                    "scopeName": "support.type.property-name.css"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "content": ": ",
+            "offset": 185,
+            "color": "#E1E4E8",
+            "fontStyle": 0,
+            "explanation": [
+              {
+                "content": ":",
+                "scopes": [
+                  {
+                    "scopeName": "text.html.markdown"
+                  },
+                  {
+                    "scopeName": "meta.tag.structure.div.start.html"
+                  },
+                  {
+                    "scopeName": "meta.attribute.style.vue"
+                  },
+                  {
+                    "scopeName": "source.css.embedded.html.vue"
+                  },
+                  {
+                    "scopeName": "punctuation.separator.key-value.css"
                   }
                 ]
               },
+              {
+                "content": " ",
+                "scopes": [
+                  {
+                    "scopeName": "text.html.markdown"
+                  },
+                  {
+                    "scopeName": "meta.tag.structure.div.start.html"
+                  },
+                  {
+                    "scopeName": "meta.attribute.style.vue"
+                  },
+                  {
+                    "scopeName": "source.css.embedded.html.vue"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "content": "red",
+            "offset": 187,
+            "color": "#79B8FF",
+            "fontStyle": 0,
+            "explanation": [
+              {
+                "content": "red",
+                "scopes": [
+                  {
+                    "scopeName": "text.html.markdown"
+                  },
+                  {
+                    "scopeName": "meta.tag.structure.div.start.html"
+                  },
+                  {
+                    "scopeName": "meta.attribute.style.vue"
+                  },
+                  {
+                    "scopeName": "source.css.embedded.html.vue"
+                  },
+                  {
+                    "scopeName": "meta.property-value.css"
+                  },
+                  {
+                    "scopeName": "support.constant.color.w3c-standard-color-name.css"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "content": "\"",
+            "offset": 190,
+            "color": "#9ECBFF",
+            "fontStyle": 0,
+            "explanation": [
               {
                 "content": "\"",
                 "scopes": [
@@ -63749,19 +63841,13 @@
                     "scopeName": "meta.tag.structure.div.start.html"
                   },
                   {
-                    "scopeName": "meta.attribute.style.html"
+                    "scopeName": "meta.attribute.style.vue"
                   },
                   {
-                    "scopeName": "meta.embedded.line.css"
+                    "scopeName": "source.css.embedded.html.vue"
                   },
                   {
-                    "scopeName": "string.quoted.double.html"
-                  },
-                  {
-                    "scopeName": "punctuation.definition.string.end.html"
-                  },
-                  {
-                    "scopeName": "source.css"
+                    "scopeName": "punctuation.definition.string.end.html.vue"
                   }
                 ]
               }
@@ -63990,7 +64076,7 @@
         ]
       }
     },
-    "html": "<pre class=\"shiki github-dark\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#E1E4E8\">---</span></span>\n<span class=\"line\"><span style=\"color:#85E89D\">title</span><span style=\"color:#E1E4E8\">: </span><span style=\"color:#9ECBFF\">Example</span></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\">---</span></span>\n<span class=\"line\"><span style=\"color:#79B8FF;font-weight:bold\"># Title with </span><span style=\"color:#E1E4E8;font-weight:bold\">**bold**</span><span style=\"color:#79B8FF;font-weight:bold\"> and </span><span style=\"color:#E1E4E8;font-style:italic\">*italic*</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#85E89D\">> Quote</span></span>\n<span class=\"line\"><span style=\"color:#85E89D\">> with nested </span><span style=\"color:#E1E4E8;font-weight:bold\">**style**</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#FFAB70\">-</span><span style=\"color:#E1E4E8\"> [</span><span style=\"color:#DBEDFF;text-decoration:underline\">x</span><span style=\"color:#E1E4E8\">] task</span></span>\n<span class=\"line\"><span style=\"color:#FFAB70\">-</span><span style=\"color:#79B8FF\"> \\*</span><span style=\"color:#E1E4E8\">escaped*</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\">~~~python</span></span>\n<span class=\"line\"><span style=\"color:#F97583\">def</span><span style=\"color:#B392F0\"> f</span><span style=\"color:#E1E4E8\">(x):</span></span>\n<span class=\"line\"><span style=\"color:#F97583\">    return</span><span style=\"color:#F97583\"> f</span><span style=\"color:#9ECBFF\">\"value </span><span style=\"color:#79B8FF\">{</span><span style=\"color:#E1E4E8\">x</span><span style=\"color:#F97583\">!r</span><span style=\"color:#79B8FF\">}</span><span style=\"color:#9ECBFF\">\"</span></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\">~~~</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\">&#x3C;</span><span style=\"color:#85E89D\">div</span><span style=\"color:#B392F0\"> style</span><span style=\"color:#E1E4E8\">=</span><span style=\"color:#9ECBFF\">\"color: red\"</span><span style=\"color:#E1E4E8\">>HTML </span><span style=\"color:#79B8FF\">&#x26;amp;</span><span style=\"color:#E1E4E8\"> text&#x3C;/</span><span style=\"color:#85E89D\">div</span><span style=\"color:#E1E4E8\">></span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\">| name | value |</span></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\">| --- | --- |</span></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\">| \\| escaped | `code` |</span></span></code></pre>"
+    "html": "<pre class=\"shiki github-dark\" style=\"background-color:#24292e;color:#e1e4e8\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#E1E4E8\">---</span></span>\n<span class=\"line\"><span style=\"color:#85E89D\">title</span><span style=\"color:#E1E4E8\">: </span><span style=\"color:#9ECBFF\">Example</span></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\">---</span></span>\n<span class=\"line\"><span style=\"color:#79B8FF;font-weight:bold\"># Title with </span><span style=\"color:#E1E4E8;font-weight:bold\">**bold**</span><span style=\"color:#79B8FF;font-weight:bold\"> and </span><span style=\"color:#E1E4E8;font-style:italic\">*italic*</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#85E89D\">> Quote</span></span>\n<span class=\"line\"><span style=\"color:#85E89D\">> with nested </span><span style=\"color:#E1E4E8;font-weight:bold\">**style**</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#FFAB70\">-</span><span style=\"color:#E1E4E8\"> [</span><span style=\"color:#DBEDFF;text-decoration:underline\">x</span><span style=\"color:#E1E4E8\">] task</span></span>\n<span class=\"line\"><span style=\"color:#FFAB70\">-</span><span style=\"color:#79B8FF\"> \\*</span><span style=\"color:#E1E4E8\">escaped*</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\">~~~python</span></span>\n<span class=\"line\"><span style=\"color:#F97583\">def</span><span style=\"color:#B392F0\"> f</span><span style=\"color:#E1E4E8\">(x):</span></span>\n<span class=\"line\"><span style=\"color:#F97583\">    return</span><span style=\"color:#F97583\"> f</span><span style=\"color:#9ECBFF\">\"value </span><span style=\"color:#79B8FF\">{</span><span style=\"color:#E1E4E8\">x</span><span style=\"color:#F97583\">!r</span><span style=\"color:#79B8FF\">}</span><span style=\"color:#9ECBFF\">\"</span></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\">~~~</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\">&#x3C;</span><span style=\"color:#85E89D\">div</span><span style=\"color:#B392F0\"> style</span><span style=\"color:#E1E4E8\">=</span><span style=\"color:#9ECBFF\">\"</span><span style=\"color:#79B8FF\">color</span><span style=\"color:#E1E4E8\">: </span><span style=\"color:#79B8FF\">red</span><span style=\"color:#9ECBFF\">\"</span><span style=\"color:#E1E4E8\">>HTML </span><span style=\"color:#79B8FF\">&#x26;amp;</span><span style=\"color:#E1E4E8\"> text&#x3C;/</span><span style=\"color:#85E89D\">div</span><span style=\"color:#E1E4E8\">></span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\">| name | value |</span></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\">| --- | --- |</span></span>\n<span class=\"line\"><span style=\"color:#E1E4E8\">| \\| escaped | `code` |</span></span></code></pre>"
   },
   {
     "name": "markdown-vitesse-dark",
@@ -65513,7 +65599,7 @@
           {
             "content": "style",
             "offset": 173,
-            "color": "#BD976A",
+            "color": "#80A665",
             "fontStyle": 0,
             "explanation": [
               {
@@ -65526,10 +65612,10 @@
                     "scopeName": "meta.tag.structure.div.start.html"
                   },
                   {
-                    "scopeName": "meta.attribute.style.html"
+                    "scopeName": "meta.attribute.style.vue"
                   },
                   {
-                    "scopeName": "entity.other.attribute-name.html"
+                    "scopeName": "entity.other.attribute-name.html.vue"
                   }
                 ]
               }
@@ -65551,10 +65637,10 @@
                     "scopeName": "meta.tag.structure.div.start.html"
                   },
                   {
-                    "scopeName": "meta.attribute.style.html"
+                    "scopeName": "meta.attribute.style.vue"
                   },
                   {
-                    "scopeName": "punctuation.separator.key-value.html"
+                    "scopeName": "punctuation.separator.key-value.html.vue"
                   }
                 ]
               }
@@ -65563,7 +65649,7 @@
           {
             "content": "\"",
             "offset": 179,
-            "color": "#C98A7D77",
+            "color": "#666666",
             "fontStyle": 0,
             "explanation": [
               {
@@ -65576,29 +65662,26 @@
                     "scopeName": "meta.tag.structure.div.start.html"
                   },
                   {
-                    "scopeName": "meta.attribute.style.html"
+                    "scopeName": "meta.attribute.style.vue"
                   },
                   {
-                    "scopeName": "meta.embedded.line.css"
+                    "scopeName": "source.css.embedded.html.vue"
                   },
                   {
-                    "scopeName": "string.quoted.double.html"
-                  },
-                  {
-                    "scopeName": "punctuation.definition.string.begin.html"
+                    "scopeName": "punctuation.definition.string.begin.html.vue"
                   }
                 ]
               }
             ]
           },
           {
-            "content": "color: red",
+            "content": "color",
             "offset": 180,
-            "color": "#C98A7D",
+            "color": "#B8A965",
             "fontStyle": 0,
             "explanation": [
               {
-                "content": "color: red",
+                "content": "color",
                 "scopes": [
                   {
                     "scopeName": "text.html.markdown"
@@ -65607,16 +65690,103 @@
                     "scopeName": "meta.tag.structure.div.start.html"
                   },
                   {
-                    "scopeName": "meta.attribute.style.html"
+                    "scopeName": "meta.attribute.style.vue"
                   },
                   {
-                    "scopeName": "meta.embedded.line.css"
+                    "scopeName": "source.css.embedded.html.vue"
                   },
                   {
-                    "scopeName": "string.quoted.double.html"
+                    "scopeName": "meta.property-name.css"
                   },
                   {
-                    "scopeName": "source.css"
+                    "scopeName": "meta.property-name.css"
+                  },
+                  {
+                    "scopeName": "support.type.property-name.css"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "content": ":",
+            "offset": 185,
+            "color": "#666666",
+            "fontStyle": 0,
+            "explanation": [
+              {
+                "content": ":",
+                "scopes": [
+                  {
+                    "scopeName": "text.html.markdown"
+                  },
+                  {
+                    "scopeName": "meta.tag.structure.div.start.html"
+                  },
+                  {
+                    "scopeName": "meta.attribute.style.vue"
+                  },
+                  {
+                    "scopeName": "source.css.embedded.html.vue"
+                  },
+                  {
+                    "scopeName": "punctuation.separator.key-value.css"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "content": " ",
+            "offset": 186,
+            "color": "#DBD7CAEE",
+            "fontStyle": 0,
+            "explanation": [
+              {
+                "content": " ",
+                "scopes": [
+                  {
+                    "scopeName": "text.html.markdown"
+                  },
+                  {
+                    "scopeName": "meta.tag.structure.div.start.html"
+                  },
+                  {
+                    "scopeName": "meta.attribute.style.vue"
+                  },
+                  {
+                    "scopeName": "source.css.embedded.html.vue"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "content": "red",
+            "offset": 187,
+            "color": "#C99076",
+            "fontStyle": 0,
+            "explanation": [
+              {
+                "content": "red",
+                "scopes": [
+                  {
+                    "scopeName": "text.html.markdown"
+                  },
+                  {
+                    "scopeName": "meta.tag.structure.div.start.html"
+                  },
+                  {
+                    "scopeName": "meta.attribute.style.vue"
+                  },
+                  {
+                    "scopeName": "source.css.embedded.html.vue"
+                  },
+                  {
+                    "scopeName": "meta.property-value.css"
+                  },
+                  {
+                    "scopeName": "support.constant.color.w3c-standard-color-name.css"
                   }
                 ]
               }
@@ -65625,7 +65795,7 @@
           {
             "content": "\"",
             "offset": 190,
-            "color": "#C98A7D77",
+            "color": "#666666",
             "fontStyle": 0,
             "explanation": [
               {
@@ -65638,19 +65808,13 @@
                     "scopeName": "meta.tag.structure.div.start.html"
                   },
                   {
-                    "scopeName": "meta.attribute.style.html"
+                    "scopeName": "meta.attribute.style.vue"
                   },
                   {
-                    "scopeName": "meta.embedded.line.css"
+                    "scopeName": "source.css.embedded.html.vue"
                   },
                   {
-                    "scopeName": "string.quoted.double.html"
-                  },
-                  {
-                    "scopeName": "punctuation.definition.string.end.html"
-                  },
-                  {
-                    "scopeName": "source.css"
+                    "scopeName": "punctuation.definition.string.end.html.vue"
                   }
                 ]
               }
@@ -65911,7 +66075,7 @@
         ]
       }
     },
-    "html": "<pre class=\"shiki vitesse-dark\" style=\"background-color:#121212;color:#dbd7caee\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#666666\">---</span></span>\n<span class=\"line\"><span style=\"color:#B8A965\">title</span><span style=\"color:#666666\">:</span><span style=\"color:#C98A7D\"> Example</span></span>\n<span class=\"line\"><span style=\"color:#666666\">---</span></span>\n<span class=\"line\"><span style=\"color:#666666;font-weight:bold\">#</span><span style=\"color:#4D9375;font-weight:bold\"> Title with </span><span style=\"color:#666666;font-weight:bold\">**</span><span style=\"color:#DBD7CAEE;font-weight:bold\">bold</span><span style=\"color:#666666;font-weight:bold\">**</span><span style=\"color:#4D9375;font-weight:bold\"> and </span><span style=\"color:#666666;font-style:italic\">*</span><span style=\"color:#DBD7CAEE;font-style:italic\">italic</span><span style=\"color:#666666;font-style:italic\">*</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#666666\">></span><span style=\"color:#5D99A9\"> Quote</span></span>\n<span class=\"line\"><span style=\"color:#666666\">></span><span style=\"color:#5D99A9\"> with nested </span><span style=\"color:#666666;font-weight:bold\">**</span><span style=\"color:#DBD7CAEE;font-weight:bold\">style</span><span style=\"color:#666666;font-weight:bold\">**</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#D4976C\">-</span><span style=\"color:#666666\"> [</span><span style=\"color:#C98A7D\">x</span><span style=\"color:#666666\">]</span><span style=\"color:#DBD7CAEE\"> task</span></span>\n<span class=\"line\"><span style=\"color:#D4976C\">-</span><span style=\"color:#C99076\"> \\*</span><span style=\"color:#DBD7CAEE\">escaped*</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#666666\">~~~</span><span style=\"color:#DBD7CAEE\">python</span></span>\n<span class=\"line\"><span style=\"color:#CB7676\">def</span><span style=\"color:#80A665\"> f</span><span style=\"color:#666666\">(</span><span style=\"color:#DBD7CAEE\">x</span><span style=\"color:#666666\">):</span></span>\n<span class=\"line\"><span style=\"color:#4D9375\">    return</span><span style=\"color:#CB7676\"> f</span><span style=\"color:#C98A7D\">\"value </span><span style=\"color:#C99076\">{</span><span style=\"color:#DBD7CAEE\">x</span><span style=\"color:#CB7676\">!r</span><span style=\"color:#C99076\">}</span><span style=\"color:#C98A7D\">\"</span></span>\n<span class=\"line\"><span style=\"color:#666666\">~~~</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#666666\">&#x3C;</span><span style=\"color:#4D9375\">div</span><span style=\"color:#BD976A\"> style</span><span style=\"color:#666666\">=</span><span style=\"color:#C98A7D77\">\"</span><span style=\"color:#C98A7D\">color: red</span><span style=\"color:#C98A7D77\">\"</span><span style=\"color:#666666\">></span><span style=\"color:#DBD7CAEE\">HTML </span><span style=\"color:#666666\">&#x26;</span><span style=\"color:#C99076\">amp</span><span style=\"color:#666666\">;</span><span style=\"color:#DBD7CAEE\"> text</span><span style=\"color:#666666\">&#x3C;/</span><span style=\"color:#4D9375\">div</span><span style=\"color:#666666\">></span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#DBD7CAEE\">| name | value |</span></span>\n<span class=\"line\"><span style=\"color:#DBD7CAEE\">| --- | --- |</span></span>\n<span class=\"line\"><span style=\"color:#DBD7CAEE\">| \\| escaped | `code` |</span></span></code></pre>"
+    "html": "<pre class=\"shiki vitesse-dark\" style=\"background-color:#121212;color:#dbd7caee\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#666666\">---</span></span>\n<span class=\"line\"><span style=\"color:#B8A965\">title</span><span style=\"color:#666666\">:</span><span style=\"color:#C98A7D\"> Example</span></span>\n<span class=\"line\"><span style=\"color:#666666\">---</span></span>\n<span class=\"line\"><span style=\"color:#666666;font-weight:bold\">#</span><span style=\"color:#4D9375;font-weight:bold\"> Title with </span><span style=\"color:#666666;font-weight:bold\">**</span><span style=\"color:#DBD7CAEE;font-weight:bold\">bold</span><span style=\"color:#666666;font-weight:bold\">**</span><span style=\"color:#4D9375;font-weight:bold\"> and </span><span style=\"color:#666666;font-style:italic\">*</span><span style=\"color:#DBD7CAEE;font-style:italic\">italic</span><span style=\"color:#666666;font-style:italic\">*</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#666666\">></span><span style=\"color:#5D99A9\"> Quote</span></span>\n<span class=\"line\"><span style=\"color:#666666\">></span><span style=\"color:#5D99A9\"> with nested </span><span style=\"color:#666666;font-weight:bold\">**</span><span style=\"color:#DBD7CAEE;font-weight:bold\">style</span><span style=\"color:#666666;font-weight:bold\">**</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#D4976C\">-</span><span style=\"color:#666666\"> [</span><span style=\"color:#C98A7D\">x</span><span style=\"color:#666666\">]</span><span style=\"color:#DBD7CAEE\"> task</span></span>\n<span class=\"line\"><span style=\"color:#D4976C\">-</span><span style=\"color:#C99076\"> \\*</span><span style=\"color:#DBD7CAEE\">escaped*</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#666666\">~~~</span><span style=\"color:#DBD7CAEE\">python</span></span>\n<span class=\"line\"><span style=\"color:#CB7676\">def</span><span style=\"color:#80A665\"> f</span><span style=\"color:#666666\">(</span><span style=\"color:#DBD7CAEE\">x</span><span style=\"color:#666666\">):</span></span>\n<span class=\"line\"><span style=\"color:#4D9375\">    return</span><span style=\"color:#CB7676\"> f</span><span style=\"color:#C98A7D\">\"value </span><span style=\"color:#C99076\">{</span><span style=\"color:#DBD7CAEE\">x</span><span style=\"color:#CB7676\">!r</span><span style=\"color:#C99076\">}</span><span style=\"color:#C98A7D\">\"</span></span>\n<span class=\"line\"><span style=\"color:#666666\">~~~</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#666666\">&#x3C;</span><span style=\"color:#4D9375\">div</span><span style=\"color:#80A665\"> style</span><span style=\"color:#666666\">=</span><span style=\"color:#666666\">\"</span><span style=\"color:#B8A965\">color</span><span style=\"color:#666666\">:</span><span style=\"color:#C99076\"> red</span><span style=\"color:#666666\">\"</span><span style=\"color:#666666\">></span><span style=\"color:#DBD7CAEE\">HTML </span><span style=\"color:#666666\">&#x26;</span><span style=\"color:#C99076\">amp</span><span style=\"color:#666666\">;</span><span style=\"color:#DBD7CAEE\"> text</span><span style=\"color:#666666\">&#x3C;/</span><span style=\"color:#4D9375\">div</span><span style=\"color:#666666\">></span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#DBD7CAEE\">| name | value |</span></span>\n<span class=\"line\"><span style=\"color:#DBD7CAEE\">| --- | --- |</span></span>\n<span class=\"line\"><span style=\"color:#DBD7CAEE\">| \\| escaped | `code` |</span></span></code></pre>"
   },
   {
     "name": "shellscript-github-dark",

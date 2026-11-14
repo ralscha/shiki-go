@@ -78,6 +78,49 @@ func TestChunkingAndRecalls(t *testing.T) {
 	}
 }
 
+func TestOffsetsAcrossCloneCloseAndClear(t *testing.T) {
+	h, err := shiki.NewHighlighter(shiki.HighlighterOptions{Themes: []string{"github-dark"}})
+	if err != nil {
+		t.Fatal(err)
+	}
+	closeOnCleanup(t, h)
+	tokenizer := NewTokenizer(h, shiki.Options{Lang: "text", Theme: "github-dark"})
+	first, err := tokenizer.Enqueue("a😀\r\nb")
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(first.Stable) != 2 || first.Stable[1].Content != "\n" || first.Stable[1].Offset != 4 || first.Unstable[0].Offset != 5 {
+		t.Fatalf("incorrect UTF-16 or CRLF offsets: %#v", first)
+	}
+	clone := tokenizer.Clone()
+	for _, current := range []*Tokenizer{tokenizer, clone} {
+		next, err := current.Enqueue("\nc")
+		if err != nil {
+			t.Fatal(err)
+		}
+		if len(next.Stable) != 2 || next.Stable[0].Offset != 5 || next.Stable[1].Offset != 6 || next.Unstable[0].Offset != 7 {
+			t.Fatalf("continuation lost its offset: %#v", next)
+		}
+	}
+	closed := clone.Close()
+	if len(closed) != 1 || closed[0].Content != "c" || closed[0].Offset != 7 {
+		t.Fatalf("close lost the final offset: %#v", closed)
+	}
+	tokenizer.Clear()
+	if len(tokenizer.TokensStable()) != 0 || len(tokenizer.TokensUnstable()) != 0 {
+		t.Fatal("clear retained tokens")
+	}
+	for _, current := range []*Tokenizer{tokenizer, clone} {
+		next, err := current.Enqueue("fresh")
+		if err != nil {
+			t.Fatal(err)
+		}
+		if next.Recall != 0 || len(next.Unstable) != 1 || next.Unstable[0].Offset != 0 {
+			t.Fatalf("offset was not reset: %#v", next)
+		}
+	}
+}
+
 type byteReader struct{ data []byte }
 
 func (r *byteReader) Read(p []byte) (int, error) {

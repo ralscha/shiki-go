@@ -37,6 +37,13 @@ func StyleToClass(options ...StyleToClassOptions) *StyleToClassTransformer {
 			shiki.AddClassToHAST(n, class)
 		}
 		return nil, nil
+	}, Span: func(_ *shiki.TransformerContext, n *shiki.Node, _, _ int, _ *shiki.Node, _ shiki.Token) (*shiki.Node, error) {
+		if style, ok := n.Properties["style"].(string); ok && style != "" {
+			class := s.register(style)
+			delete(n.Properties, "style")
+			shiki.AddClassToHAST(n, class)
+		}
+		return nil, nil
 	}, Tokens: func(_ *shiki.TransformerContext, lines [][]shiki.Token) ([][]shiki.Token, error) {
 		for i, line := range lines {
 			for j := range line {

@@ -7,7 +7,6 @@ import (
 	"fmt"
 	shiki "github.com/ralscha/shiki-go"
 	"io"
-	"strings"
 	"sync"
 	"unicode/utf8"
 )
@@ -23,6 +22,7 @@ type Tokenizer struct {
 	options          shiki.Options
 	stable, unstable []shiki.Token
 	chunk            string
+	chunkOffset      int
 	state            *shiki.GrammarState
 }
 
@@ -35,26 +35,30 @@ func (t *Tokenizer) Enqueue(chunk string) (Result, error) {
 	if t.highlighter == nil {
 		return Result{}, fmt.Errorf("shiki: stream requires a highlighter")
 	}
-	lines := strings.Split(t.chunk+chunk, "\n")
+	lines := shiki.SplitLines(t.chunk + chunk)
 	result := Result{Recall: len(t.unstable), Stable: []shiki.Token{}, Unstable: []shiki.Token{}}
 	state := t.state
 	for i, line := range lines {
 		options := t.options
 		options.GrammarState = state
-		tokens, err := t.highlighter.CodeToTokens(line, options)
+		tokens, err := t.highlighter.CodeToTokens(line.Content, options)
 		if err != nil {
 			return Result{}, err
+		}
+		for j := range tokens.Tokens[0] {
+			tokens.Tokens[0][j].Offset += t.chunkOffset + line.Offset
 		}
 		if i+1 < len(lines) {
 			state = tokens.GrammarState
 			result.Stable = append(result.Stable, tokens.Tokens[0]...)
-			result.Stable = append(result.Stable, shiki.Token{Content: "\n", Offset: 0})
+			result.Stable = append(result.Stable, shiki.Token{Content: "\n", Offset: t.chunkOffset + lines[i+1].Offset - 1})
 		} else {
 			result.Unstable = tokens.Tokens[0]
 		}
 	}
 	t.state = state
-	t.chunk = lines[len(lines)-1]
+	t.chunk = lines[len(lines)-1].Content
+	t.chunkOffset += lines[len(lines)-1].Offset
 	t.stable = append(t.stable, result.Stable...)
 	t.unstable = append([]shiki.Token{}, result.Unstable...)
 	return result, nil
@@ -65,6 +69,7 @@ func (t *Tokenizer) Close() []shiki.Token {
 	stable := append([]shiki.Token{}, t.unstable...)
 	t.unstable = []shiki.Token{}
 	t.chunk = ""
+	t.chunkOffset = 0
 	t.state = nil
 	return stable
 }
@@ -74,6 +79,7 @@ func (t *Tokenizer) Clear() {
 	t.stable = []shiki.Token{}
 	t.unstable = []shiki.Token{}
 	t.chunk = ""
+	t.chunkOffset = 0
 	t.state = nil
 }
 func (t *Tokenizer) Clone() *Tokenizer {
@@ -83,6 +89,7 @@ func (t *Tokenizer) Clone() *Tokenizer {
 	clone.stable = append([]shiki.Token{}, t.stable...)
 	clone.unstable = append([]shiki.Token{}, t.unstable...)
 	clone.chunk = t.chunk
+	clone.chunkOffset = t.chunkOffset
 	clone.state = t.state
 	return clone
 }

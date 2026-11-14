@@ -23,7 +23,6 @@ type Highlighter struct {
 	langOrder, themeOrder, aliasOrder []string
 	tokenizers                        map[string]*textmate.Tokenizer
 	activeGrammars                    map[string]bool
-	ensuredScopes                     map[string]bool
 	injectionScopes                   map[string][]string
 	deferGrammarInit                  bool
 	closed                            bool
@@ -40,7 +39,6 @@ func NewHighlighter(options HighlighterOptions) (*Highlighter, error) {
 	}
 	h := &Highlighter{engine: engine, ownsEngine: options.Engine == nil, languages: map[string]*Language{}, scopes: map[string]*Language{}, themes: map[string]*compiledTheme{}, aliases: map[string]string{}, tokenizers: map[string]*textmate.Tokenizer{}}
 	h.activeGrammars = map[string]bool{}
-	h.ensuredScopes = map[string]bool{}
 	h.injectionScopes = map[string][]string{}
 	h.deferGrammarInit = true
 	fail := func(err error) (*Highlighter, error) { _ = h.Close(); return nil, err }
@@ -147,8 +145,23 @@ func (h *Highlighter) register(l *Language) error {
 	return nil
 }
 
-// Shiki initializes grammar registrations before tokenization. Lazy dependency
-// reloads clear TextMate's injection table while its ensured-scope cache remains.
+func (h *Highlighter) injectionsForScope(scope string) []string {
+	var injections []string
+	parts := strings.Split(scope, ".")
+	for i := 1; i <= len(parts); i++ {
+		target := strings.Join(parts[:i], ".")
+		for _, name := range h.langOrder {
+			candidate := h.languages[name]
+			if hasString(candidate.InjectTo, target) {
+				injections = append(injections, candidate.ScopeName)
+			}
+		}
+	}
+	return injections
+}
+
+// Shiki initializes grammar registrations before tokenization and refreshes
+// injections when lazy dependencies or new injection grammars are loaded.
 // Keep that registration state separate from our lazily compiled scanners.
 func (h *Highlighter) initializeLanguages(names []string) {
 	if h.deferGrammarInit {
@@ -164,26 +177,22 @@ func (h *Highlighter) initializeLanguages(names []string) {
 		defer delete(visiting, name)
 		g := h.languages[name]
 		h.activeGrammars[name] = true
-		if !h.ensuredScopes[g.ScopeName] {
-			h.ensuredScopes[g.ScopeName] = true
-			var injections []string
-			parts := strings.Split(g.ScopeName, ".")
-			for i := 1; i <= len(parts); i++ {
-				target := strings.Join(parts[:i], ".")
-				for _, other := range h.langOrder {
-					candidate := h.languages[other]
-					if hasString(candidate.InjectTo, target) {
-						injections = append(injections, candidate.ScopeName)
+		h.injectionScopes[g.ScopeName] = h.injectionsForScope(g.ScopeName)
+		for _, other := range h.langOrder {
+			candidate := h.languages[other]
+			if other == name || visiting[other] {
+				continue
+			}
+			reload := hasString(candidate.EmbeddedLangsLazy, name)
+			if h.activeGrammars[other] {
+				for _, target := range g.InjectTo {
+					if candidate.ScopeName == target || strings.HasPrefix(candidate.ScopeName, target+".") {
+						reload = reload || !slices.Equal(h.injectionScopes[candidate.ScopeName], h.injectionsForScope(candidate.ScopeName))
 					}
 				}
 			}
-			h.injectionScopes[g.ScopeName] = injections
-		}
-		for _, other := range h.langOrder {
-			candidate := h.languages[other]
-			if other != name && !visiting[other] && hasString(candidate.EmbeddedLangsLazy, name) {
+			if reload {
 				h.activeGrammars[other] = false
-				delete(h.injectionScopes, candidate.ScopeName)
 				if t := h.tokenizers[other]; t != nil {
 					t.Close()
 					delete(h.tokenizers, other)

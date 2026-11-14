@@ -168,8 +168,8 @@
       "lang": "js",
       "theme": "github-dark"
     },
-    "html": "<pre class=\"shiki github-dark __shiki_1wf9g5\" tabindex=\"0\"><code><span class=\"line\"><span style=\"color:#F97583\">const</span><span style=\"color:#79B8FF\"> x</span><span style=\"color:#F97583\"> =</span><span style=\"color:#79B8FF\"> 1</span></span></code></pre>",
-    "css": ".__shiki_1wf9g5{background-color:#24292e;color:#e1e4e8}"
+    "html": "<pre class=\"shiki github-dark __shiki_1wf9g5\" tabindex=\"0\"><code><span class=\"line\"><span class=\"__shiki_1dpefj\">const</span><span class=\"__shiki_19snpg\"> x</span><span class=\"__shiki_1dpefj\"> =</span><span class=\"__shiki_19snpg\"> 1</span></span></code></pre>",
+    "css": ".__shiki_1dpefj{color:#F97583}.__shiki_19snpg{color:#79B8FF}.__shiki_1wf9g5{background-color:#24292e;color:#e1e4e8}"
   },
   {
     "name": "compactLineOptions-16",

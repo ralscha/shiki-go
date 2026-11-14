@@ -2,6 +2,15 @@
 
 All notable changes to shiki-go are documented in this file.
 
+## 1.0.3 - 2026-11-14
+
+- Complete the Shiki 4.6.0 reference upgrade: synchronize bundled assets,
+  checksums, reference fixtures, source commit, and compatibility metadata.
+- Refresh grammar injections when lazy dependencies or new injections load.
+- Preserve global UTF-16 streaming offsets and handle CRLF line endings.
+- Convert single-theme token styles to CSS classes with `StyleToClass`.
+- Update dependencies and require Go 1.27.4 or newer.
+
 ## 1.0.2 - 2026-10-12
 
 - Complete the Shiki 4.5.0 reference upgrade: synchronize the npm lockfile,
